@@ -2,11 +2,18 @@
 <hr/>
 <!-- CANVAS INICIO   -->
 <div>
+    <ngx-signature-pad
+      #signature
+      [options]="options"
+      (beginSign)="onBeginSign()"
+      (endSign)="onEndSign()">
+    </ngx-signature-pad>
 </div>
 <!-- CANVAS FIN      -->
 <!-- BOTONES INICIO   -->
 <hr/>
-<button (click)="clearSignature()">Clear Signature</button>
+<input type="button" value="[save]" (click)="this.saveSignature()">
+<button (click)="this.clearSignature()">Clear Signature</button>
 <!-- BOTONES FIN      -->
 <hr />
 <a routerLink="/Home">[Volver al Menú]</a>  

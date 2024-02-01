@@ -1,39 +1,59 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component, ViewChild                          } from '@angular/core';
+import { NgxSignatureOptions, NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad';
 //
 @Component({
   selector: 'app-ocr',
   templateUrl: './ocr.component.html',
-  styleUrl: './ocr.component.css'
+  styleUrls: ['./ocr.component.css']
 })
 export class OcrComponent {
-  //
-  //@ViewChild("signaturePad") signaturePad!: SignaturePad;
-  //
-  /*signaturePadOptions: Object = {
-    'minWidth': 2,
-    'canvasWidth': 500,
-    'canvasHeight': 300
-  };*/
-  //
-  ngAfterViewInit() {
-    //
-  }
-  drawBegin() {
-    // Do something when drawing begins
-    console.log('Drawing began');
-  }
-
-  drawComplete() {
-    // Do something when drawing is complete
-    console.log('Drawing complete');
-  }
-
-  clearSignature() {
-    // Clear the signature pad
-    //this.signaturePad.clear();
-  }
+  /** Catch object, call functions via instance object */
+  @ViewChild('signature') signature: NgxSignaturePadComponent | undefined;
+  /** You can see more introduction in the below about NgxSignatureOptions */
+  public options: NgxSignatureOptions = {
+    backgroundColor: '#F4F5F5',
+    width : 100,
+    height: 100,
+    css: {
+      'border-radius': '16px'
+    }
+  };
+  /** The begin event of sign */
+  onBeginSign(): void { }
+ 
+  /** The end event of sign */
+  onEndSign(): void { }
   //
   saveSignature() {
-      //
+     //
+     console.log("Saving signature...");
+     // PNG
+     let dataUrl : string  = this.signature?.toDataURL()!;
+     console.log('Data URL:', dataUrl);
+
+     // Create an anchor element
+     const downloadLink : HTMLAnchorElement = document.createElement('a');
+
+     // Set href attribute with the data URL
+     downloadLink.href = dataUrl;
+
+     // Set a suggested filename for the download
+     downloadLink.download = 'signature.png';
+
+     // Append the anchor to the body
+     document.body.appendChild(downloadLink);
+
+     // Trigger a click event on the anchor
+     downloadLink.click();
+
+     // Remove the anchor from the body
+     document.body.removeChild(downloadLink);
+  }
+  // Trigger a click event on the anchor
+  clearSignature() {
+     //
+     console.log("clearing signature...");
+     // PNG
+     this.signature?.clear();
   }
 }
