@@ -1,0 +1,82 @@
+////////////////////////////////////////////////////////////////////////////
+// SCM
+////////////////////////////////////////////////////////////////////////////
+
+--[_] URL PROD : https://apereznwo.github.io/CS_WebApiAngularDemo-forked-/
+
+--[_] SETUP :
+
+        --[_] npm install --legacy-peer-deps 
+
+-----------------------------------------------------------------------
+--[_] DEPLOY ON GITHUB CODESPACES
+-----------------------------------------------------------------------
+Build your Angular application: 
+
+# Create a production build of your Angular application 
+using the Angular CLI:
+
+ng build --c=production
+
+# Replace <base href="/"> with
+https://apereznwo.github.io/CS_WebApiAngularDemo-forked-/
+
+Deploy to GitHub Pages: You can create a GitHub Pages branch or use the gh-pages 
+package to automate the deployment process. 
+
+Here's an example using the angular-cli-ghpages package:
+
+# Install the angular-cli-ghpages package globally
+(skip) npm install -g angular-cli-ghpages
+
+# Deploy the built application to GitHub Pages
+(skip)npx ngh --dir=dist/sandbox
+
+Replace your-angular-app with the name of your Angular app's directory 
+where the build artifacts are located.
+
+Configure GitHub Pages: Go to your GitHub repository settings, 
+navigate to the GitHub Pages section, 
+and set the source branch to the one you used for deployment (e.g., gh-pages). 
+
+GitHub will provide you with a URL where your Angular application will be hosted.
+
+Remember, this method will make your Angular application available at a URL like 
+
+https://github.com/aperezNWO/CS_WebApiAngularDemo-forked-/
+
+This URL will be accessible publicly, providing a permanent link to your deployed application.
+
+# npm run build-and-deploy
+
+-------------------------------------------------------------
+--[_] chat
+-------------------------------------------------------------
+
+Socket.IO Client: npm install socket.io-client
+
+-------------------------------------------------------------
+--[_] app-shell
+-------------------------------------------------------------
+ng run sandbox:app-shell:production  
+
+
+-------------------------------------------------------------
+--[_] hosting
+-------------------------------------------------------------
+
+¿where can I host an angula and node.js application for free?
+
+¿How can I host a node.js page in github pages?
+
+https://chat.openai.com/share/91515abd-1f5d-48c8-b8d2-529ae88a094d
+
+¿where can I host an angula and node.js application for free?
+
+https://g.co/bard/share/f615e1c2cb68
+
+¿How can I host a node.js page in github pages?
+
+https://g.co/bard/share/0ff09e2380c7
+
+[EXPORT BARD ANSWERS TO GOOGLE DOCUMENTS]
