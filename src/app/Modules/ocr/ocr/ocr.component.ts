@@ -1,5 +1,7 @@
 import { Component, ViewChild                          } from '@angular/core';
-import { NgxSignatureOptions, NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad';
+import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
+import { NgxSignatureOptions } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
+
 //
 @Component({
   selector: 'app-ocr',

@@ -9,7 +9,7 @@ import { SquareComponent } from "../square/square.component";
     selector: 'app-board-online',
     standalone: true,
     templateUrl: './board.component.html',
-    styleUrl: './board.component.css',
+    styleUrls: ['./board.component.css'],
     imports: [CommonModule, SquareComponent]
 })
 export class BoardOnlineComponent {

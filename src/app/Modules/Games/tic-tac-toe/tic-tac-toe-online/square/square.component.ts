@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './square.component.html',
-  styleUrl: './square.component.css'
+  styleUrls: ['./square.component.css']
 })
 export class SquareComponent {
   //

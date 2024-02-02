@@ -1,55 +1,47 @@
-import { Component, ViewChild                          } from '@angular/core';
-import { NgxSignatureOptions, NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad';
+import { Component, VERSION, ViewChild                          } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConfigService } from './Services/config.service';
+import { Title } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //
-  title = 'PWA_DEMO_ENV_TEST';
-   /** Catch object, call functions via instance object */
-   @ViewChild('signature') signature: NgxSignaturePadComponent | undefined;
-
-   /** You can see more introduction in the below about NgxSignatureOptions */
-   public options: NgxSignatureOptions = {
-     backgroundColor: '#F4F5F5',
-     width : 100,
-     height: 100,
-     css: {
-       'border-radius': '16px'
-     }
-   };
- 
-   /** The begin event of sign */
-   onBeginSign(): void { }
- 
-   /** The end event of sign */
-   onEndSign(): void { }
    //
-   saveSignature() {
+   title          : string = 'PWA_DEMO_ENV_TEST';
+   //
+   _title         : string = '';
+   _appName       : string = '';
+   _appVersion    : string = '';
+   runtimeVersion : string = VERSION.full;
+   //
+  constructor(private router: Router, private configService: ConfigService , private titleService : Title) {
+    // IMPLEMENT AS MAP AND ITERATE
+    let keyName  : string = '';
+    let keyValue : string = '';
+    //
+    keyName  = 'appName';
+    keyValue = this.configService.getConfigValue(keyName);
+    //
+    this._appName = keyValue;
+    //
+    keyName          = 'appVersion';
+    keyValue         = this.configService.getConfigValue(keyName);
+    this._appVersion = keyValue;
+    //
+    console.log(`${keyName} :  ${this.configService.getConfigValue(keyName)} `)
+    //
+    router.navigateByUrl('/Home');
+  }
+  //
+  ngOnInit() {
       //
-      console.log("Saving signature...");
-      // PNG
-      let dataUrl : string  = this.signature?.toDataURL()!;
-      console.log('Data URL:', dataUrl);
-
-      // Create an anchor element
-      const downloadLink : HTMLAnchorElement = document.createElement('a');
-
-      // Set href attribute with the data URL
-      downloadLink.href = dataUrl;
-
-      // Set a suggested filename for the download
-      downloadLink.download = 'signature.png';
-
-      // Append the anchor to the body
-      document.body.appendChild(downloadLink);
-
-      // Trigger a click event on the anchor
-      downloadLink.click();
-
-      // Remove the anchor from the body
-      document.body.removeChild(downloadLink);
-   }
+      this.titleService.setTitle(`${this._appName} ${this._appVersion}`);
+  }
+  //
+  getValueFromConfig(key: string) {
+    return this.configService.getConfigValue(key);
+  }
 }

@@ -10,7 +10,7 @@ import { PdfEngine                    } from 'src/app/Models/pdf-engine.service'
 @Component({
   selector: 'app-sudoku',
   templateUrl: './sudoku.component.html',
-  styleUrl: './sudoku.component.css',
+  styleUrls: ['./sudoku.component.css'],
 })
 //
 export class SudokuComponent implements OnInit, AfterViewInit {

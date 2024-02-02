@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './square.component.html',
-  styleUrl: './square.component.css'
+  styleUrls: ['./square.component.css']
 })
 //
 export class SquareComponent {

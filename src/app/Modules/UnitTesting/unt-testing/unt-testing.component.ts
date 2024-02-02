@@ -6,7 +6,7 @@ import { Observable       } from 'rxjs';
 @Component({
   selector: 'app-unt-testing',
   templateUrl: './unt-testing.component.html',
-  styleUrl: './unt-testing.component.css',
+  styleUrls: ['./unt-testing.component.css'],
 })
 //
 export class UntTestingComponent {
