@@ -22,7 +22,7 @@ import { BoardOnlineComponent          } from './Modules/Games/tic-tac-toe/tic-t
 import { OcrComponent                  } from './Modules/ocr/ocr/ocr.component';
 import { ConfigService                 } from './Services/config.service';
 import { AppRoutingModule              } from './app-routing.module';
-import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.module';
+import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();

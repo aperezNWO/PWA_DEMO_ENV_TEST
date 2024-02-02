@@ -9,7 +9,9 @@
     "test": "ng test",
     "deploy": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\"",
     "publish-codespaces": "npx ngh --dir=dist//pwa-demo-env-test",
-    "build-and-deploy-codespaces": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\" && npx ngh --dir=dist//pwa-demo-env-test"
+    "build-and-deploy-codespaces": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\" && npx ngh --dir=dist//pwa-demo-env-test",
+    "publish-vstudiocode": "npx ngh --dir=dist\\pwa-demo-env-test",
+    "build-and-deploy-vstudiocode": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\" && npx ngh --dir=dist\\pwa-demo-env-test"
   },
   "private": true,
   "dependencies": {

@@ -1,8 +1,7 @@
-import { Component, VERSION, ViewChild                          } from '@angular/core';
-import { Router } from '@angular/router';
-import { ConfigService } from './Services/config.service';
-import { Title } from '@angular/platform-browser';
-
+import { Component, VERSION    } from '@angular/core';
+import { Router                } from '@angular/router';
+import { Title                 } from '@angular/platform-browser';
+import { ConfigService         } from './Services/config.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
