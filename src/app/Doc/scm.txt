@@ -49,7 +49,7 @@ https://apereznwo.github.io/PWA_DEMO_ENV_TEST/
 This URL will be accessible publicly, providing a permanent link to your deployed application.
 
 # npm run build-and-deploy
-# build-and-deploy-vstudiocode
+# npm run build-and-deploy-vstudiocode
 -------------------------------------------------------------
 --[_] chat
 -------------------------------------------------------------
