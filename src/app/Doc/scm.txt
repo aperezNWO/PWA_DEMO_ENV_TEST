@@ -44,11 +44,12 @@ GitHub will provide you with a URL where your Angular application will be hosted
 Remember, this method will make your Angular application available at a URL like 
 
 https://github.com/aperezNWO/CS_WebApiAngularDemo-forked-/
+https://apereznwo.github.io/PWA_DEMO_ENV_TEST/
 
 This URL will be accessible publicly, providing a permanent link to your deployed application.
 
 # npm run build-and-deploy
-
+# build-and-deploy-vstudiocode
 -------------------------------------------------------------
 --[_] chat
 -------------------------------------------------------------
