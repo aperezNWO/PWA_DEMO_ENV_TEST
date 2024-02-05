@@ -25,14 +25,13 @@ import { AppRoutingModule              } from './app-routing.module';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { Html404Component              } from './html404/html404.component';
 import { Observable, catchError, finalize, of, tap, throwError } from 'rxjs';
-import { Router } from '@angular/router';
-import { LogType } from './Models/algorithm-models.model';
-import { MCSDService } from './Services/mcsd.service';
+import { Router                        } from '@angular/router';
+import { LogType                       } from './Models/algorithm-models.model';
+import { MCSDService                   } from './Services/mcsd.service';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
 }
-//
 //
 @Injectable({
   providedIn: 'root'
@@ -62,7 +61,6 @@ export class LoggingInterceptor implements HttpInterceptor {
       );
   }
 }
-//
 //  
 @Injectable({
   providedIn: 'root'
@@ -75,13 +73,14 @@ export class CustomErrorHandler implements ErrorHandler {
     handleError(_error: Error): void 
     { 
       // 
-      console.warn("[CUSTOM ERROR HANDLING]:\n" + _error); 
+      console.warn("[CUSTOM ERROR HANDLING]:\n" + _error.name + "\n" + _error.message); 
       //
       let logType : LogType = LogType.Error
       //
-      //this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]",_error.message,logType);
-    } 
-}
+      this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]",_error.message,logType);
+      //
+    }
+}   
 //
 @NgModule({
     declarations: [
@@ -126,4 +125,10 @@ export class CustomErrorHandler implements ErrorHandler {
         NgxSignaturePadModule,
     ]
 })
-export class AppModule {}
+export class AppModule {
+
+    constructor(customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor)
+    {
+      
+    }
+}

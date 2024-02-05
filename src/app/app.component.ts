@@ -2,6 +2,7 @@ import { Component, VERSION    } from '@angular/core';
 import { Router                } from '@angular/router';
 import { Title                 } from '@angular/platform-browser';
 import { ConfigService         } from './Services/config.service';
+import { CustomErrorHandler, LoggingInterceptor } from './app.module';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,7 +17,7 @@ export class AppComponent {
    _appVersion    : string = '';
    runtimeVersion : string = VERSION.full;
    //
-  constructor(private router: Router, private configService: ConfigService , private titleService : Title) {
+  constructor(private router: Router, private configService: ConfigService , private titleService : Title, customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor) {
     // IMPLEMENT AS MAP AND ITERATE
     let keyName  : string = '';
     let keyValue : string = '';

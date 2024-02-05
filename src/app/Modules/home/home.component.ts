@@ -1,6 +1,7 @@
-import { Component     } from '@angular/core';
-import { Router        } from '@angular/router';
-import { ConfigService } from 'src/app/Services/config.service';
+import { Component          } from '@angular/core';
+import { Router             } from '@angular/router';
+import { ConfigService      } from 'src/app/Services/config.service';
+import { CustomErrorHandler, LoggingInterceptor } from 'src/app/app.module';
 //
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent {
   _appVersion    : string = '';
   title          : string = '';
   //
-  constructor(private router: Router, private configService: ConfigService) {
+  constructor(private router: Router, private configService: ConfigService,public customErrorHandler : CustomErrorHandler,public loggingInterceptor : LoggingInterceptor) {
     // IMPLEMENT AS MAP AND ITERATE
     let keyName  : string = '';
     let keyValue : string = '';
