@@ -9,6 +9,7 @@ import { UntTestingComponent } from './Modules/UnitTesting/unt-testing/unt-testi
 import { OcrComponent } from './Modules/ocr/ocr/ocr.component';
 import { ChatComponent } from './Modules/chat/chat/chat.component';
 import { AppComponent } from './app.component';
+import { Html404Component } from './html404/html404.component';
 
 //
 const routes : Routes = [
@@ -20,7 +21,8 @@ const routes : Routes = [
   { path: 'UnitTesting'      , component: UntTestingComponent        },
   { path: 'Chat'             , component: ChatComponent              },
   { path: 'Ocr'              , component: OcrComponent               },
-  { path: '**'               , component: AppComponent               },
+  { path: 'Html404'          , component: Html404Component           },
+  //{ path: '**/*'             , component: AppComponent               },
 ];
 
 @NgModule({
