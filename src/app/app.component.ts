@@ -17,7 +17,7 @@ export class AppComponent {
    _appVersion    : string = '';
    runtimeVersion : string = VERSION.full;
    //
-  constructor(private router: Router, private configService: ConfigService , private titleService : Title, customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor) {
+  constructor(public router: Router, private configService: ConfigService , private titleService : Title, public customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor) {
     // IMPLEMENT AS MAP AND ITERATE
     let keyName  : string = '';
     let keyValue : string = '';
@@ -33,7 +33,7 @@ export class AppComponent {
     //
     console.log(`${keyName} :  ${this.configService.getConfigValue(keyName)} `)
     //
-    router.navigateByUrl('/Home');
+    //router.navigateByUrl('/Home');
   }
   //
   ngOnInit() {

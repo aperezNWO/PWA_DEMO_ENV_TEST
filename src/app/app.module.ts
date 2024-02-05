@@ -1,11 +1,14 @@
-import { APP_INITIALIZER, ErrorHandler, Injectable, NgModule     } from '@angular/core';
+import { APP_INITIALIZER, ErrorHandler } from '@angular/core';
+import { Injectable, NgModule          } from '@angular/core';
 import { CommonModule, DatePipe        } from '@angular/common';
 import { FormsModule                   } from '@angular/forms';
 import { ReactiveFormsModule           } from '@angular/forms';
 import { BrowserModule                 } from '@angular/platform-browser';
 import { provideClientHydration        } from '@angular/platform-browser';
 import { BrowserAnimationsModule       } from '@angular/platform-browser/animations';
-import { HTTP_INTERCEPTORS, HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse                    } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';  
+import { HttpHandler, HttpInterceptor  } from '@angular/common/http';  
+import { HttpRequest, HttpResponse     } from '@angular/common/http';                 
 import { HttpClientModule              } from '@angular/common/http';
 import { AppComponent                  } from './app.component';
 import { HomeComponent                 } from './Modules/home/home.component';
@@ -24,8 +27,7 @@ import { ConfigService                 } from './Services/config.service';
 import { AppRoutingModule              } from './app-routing.module';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { Html404Component              } from './html404/html404.component';
-import { Observable, catchError, finalize, of, tap, throwError } from 'rxjs';
-import { Router                        } from '@angular/router';
+import { finalize, tap                 } from 'rxjs';
 import { LogType                       } from './Models/algorithm-models.model';
 import { MCSDService                   } from './Services/mcsd.service';
 //
@@ -56,7 +58,7 @@ export class LoggingInterceptor implements HttpInterceptor {
         finalize(() => {
           const elapsed = Date.now() - started;
           const msg = `${req.method} "${req.urlWithParams}" ${ok} in ${elapsed} ms.`;
-          console.warn(' [REQUESTIN URL (INTERCEPT)] : ' + msg);
+          console.warn(' [REQUEST URL (INTERCEPT)] : ' + msg);
         })
       );
   }
@@ -127,8 +129,4 @@ export class CustomErrorHandler implements ErrorHandler {
 })
 export class AppModule {
 
-    constructor(customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor)
-    {
-      
-    }
 }

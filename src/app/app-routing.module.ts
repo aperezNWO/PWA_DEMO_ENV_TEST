@@ -14,6 +14,7 @@ import { Html404Component } from './html404/html404.component';
 //
 const routes : Routes = [
   { path: 'Home'             , component: HomeComponent              },
+  { path: ''                 , component: HomeComponent              },
   { path: 'Sudoku'           , component: SudokuComponent            },
   { path: 'TicTacToe'        , component: TicTacToeComponent         },
   { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   },
@@ -21,8 +22,7 @@ const routes : Routes = [
   { path: 'UnitTesting'      , component: UntTestingComponent        },
   { path: 'Chat'             , component: ChatComponent              },
   { path: 'Ocr'              , component: OcrComponent               },
-  { path: 'Html404'          , component: Html404Component           },
-  //{ path: '**/*'             , component: AppComponent               },
+  { path: '**'               , component: Html404Component           },
 ];
 
 @NgModule({
