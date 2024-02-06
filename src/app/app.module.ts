@@ -11,6 +11,8 @@ import { HttpHandler, HttpInterceptor  } from '@angular/common/http';
 import { HttpRequest, HttpResponse     } from '@angular/common/http';                 
 import { HttpClientModule              } from '@angular/common/http';
 import { AppComponent                  } from './app.component';
+import { LogType                       } from './Models/algorithm-models.model';
+import { AppRoutingModule              } from './app-routing.module';
 import { HomeComponent                 } from './Modules/home/home.component';
 import { SudokuComponent               } from './Modules/Games/sudoku/sudoku.component';
 import { BoardComponent                } from "./Modules/Games/tic-tac-toe/offline/board/board.component";
@@ -24,12 +26,10 @@ import { ChatComponent                 } from './Modules/chat/chat/chat.componen
 import { BoardOnlineComponent          } from './Modules/Games/tic-tac-toe/tic-tac-toe-online/board/board.component';
 import { OcrComponent                  } from './Modules/ocr/ocr/ocr.component';
 import { ConfigService                 } from './Services/config.service';
-import { AppRoutingModule              } from './app-routing.module';
-import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { Html404Component              } from './html404/html404.component';
-import { finalize, tap                 } from 'rxjs';
-import { LogType                       } from './Models/algorithm-models.model';
 import { MCSDService                   } from './Services/mcsd.service';
+import { finalize, tap                 } from 'rxjs';
+import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
