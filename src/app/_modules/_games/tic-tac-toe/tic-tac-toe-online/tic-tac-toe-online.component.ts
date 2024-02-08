@@ -1,5 +1,5 @@
 import { Component   } from '@angular/core';
-import { ChatService } from 'src/app/Services/chat.service';
+import { ChatService } from 'src/app/_services/chat.service';
 
 @Component({
   selector: 'app-tic-tac-toe-online',

@@ -1,14 +1,14 @@
-import { NgModule                 } from '@angular/core';
-import { RouterModule, Routes     } from '@angular/router';
-import { HomeComponent            } from './Modules/home/home.component';
-import { SudokuComponent          } from './Modules/Games/sudoku/sudoku.component';
-import { TicTacToeComponent       } from './Modules/Games/tic-tac-toe/offline/tic-tac-toe.component';
-import { TicTacToeOnlineComponent } from './Modules/Games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
-import { HanoiTowersComponent     } from './Modules/Games/hanoi-towers/game-hanoi.component';
-import { UntTestingComponent      } from './Modules/UnitTesting/unt-testing/unt-testing.component';
-import { OcrComponent             } from './Modules/Miscelaneous/ocr/ocr.component';
-import { ChatComponent            } from './Modules/chat/chat/chat.component';
-import { NotFoundPageComponent    } from './Modules/home/not-found-page/not-found-page.component';
+import { NgModule                     } from '@angular/core';
+import { RouterModule, Routes          } from '@angular/router';
+import { HomeComponent                 } from './_modules/_home/home.component';
+import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
+import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
+import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
+import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
+import { HanoiTowersComponent          } from './_modules/_games/hanoi-towers/game-hanoi.component';
+import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
+import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
+import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
 //
 const routes : Routes = [
   { path: 'Home'             , component: HomeComponent              },

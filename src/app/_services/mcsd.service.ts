@@ -1,9 +1,9 @@
 import { Injectable, OnInit                                      } from '@angular/core';
 import { HttpClient, HttpEvent, HttpHandler, HttpHeaders         } from '@angular/common/http';
 import { HttpRequest, HttpResponse  , HttpInterceptor            } from '@angular/common/http';
+import { ConfigService                                           } from './config.service';
+import { LogEntry, LogType, SearchCriteria                       } from '../_models/algorithm-models.model';
 import { Observable                                              } from 'rxjs';
-import { ConfigService } from './config.service';
-import { LogEntry, LogType, SearchCriteria } from '../Models/algorithm-models.model';
 //
 @Injectable({
   providedIn: 'root'
