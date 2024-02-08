@@ -1,6 +1,6 @@
 import { Component        } from '@angular/core';
 import { Router           } from '@angular/router';
-import { AlgorithmService } from 'src/app/Services/algorithm.service';
+import { AlgorithmService } from 'src/app/_services/algorithm.service';
 import { Observable       } from 'rxjs';
 //
 @Component({

@@ -1,16 +1,16 @@
 import { CommonModule             } from '@angular/common';
 import { Component, ViewChild     } from '@angular/core';
-import { ListItem } from 'src/app/Models/algorithm-models.model';
-import { TicTacToeEngine          } from 'src/app/Models/game-engine.model';
-import { ChatService              } from 'src/app/Services/chat.service';
-import { SquareComponent } from "../square/square.component";
-
+import { SquareComponent          } from "../square/square.component";
+import { ListItem                 } from 'src/app/_models/algorithm-models.model';
+import { TicTacToeEngine          } from 'src/app/_models/game-engine.model';
+import { ChatService              } from 'src/app/_services/chat.service';
+//
 @Component({
-    selector: 'app-board-online',
-    standalone: true,
+    selector   : 'app-board-online',
+    standalone : true,
     templateUrl: './board.component.html',
-    styleUrls: ['./board.component.css'],
-    imports: [CommonModule, SquareComponent]
+    styleUrls  : ['./board.component.css'],
+    imports    : [CommonModule, SquareComponent]
 })
 export class BoardOnlineComponent {
   //--------------------------------------------------------------------

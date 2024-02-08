@@ -2,10 +2,10 @@ import { Component, Injectable, OnInit            } from '@angular/core';
 import { ViewChild, AfterViewInit     } from '@angular/core';
 import { FormBuilder, Validators      } from '@angular/forms';
 import { HttpEventType, HttpResponse  } from '@angular/common/http';
-import { AlgorithmService             } from 'src/app/Services/algorithm.service';
+import { AlgorithmService             } from 'src/app/_services/algorithm.service';
+import { PdfEngine                    } from 'src/app/_models/pdf-engine.service';
+import { ListItem                     } from '../../../_models/algorithm-models.model';
 import { Observable                   } from 'rxjs';
-import { ListItem                     } from '../../../Models/algorithm-models.model';
-import { PdfEngine                    } from 'src/app/Models/pdf-engine.service';
 //
 @Component({
   selector: 'app-sudoku',

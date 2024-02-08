@@ -112,6 +112,9 @@ export class CustomErrorHandler implements ErrorHandler {
     ],
     bootstrap: [AppComponent],
     imports: [
+        BoardComponent,
+        TowerComponent,
+        BoardOnlineComponent,
         AppRoutingModule,
         CommonModule,
         FormsModule,
@@ -119,9 +122,6 @@ export class CustomErrorHandler implements ErrorHandler {
         HttpClientModule,
         BrowserModule,
         BrowserAnimationsModule,
-        BoardComponent,
-        TowerComponent,
-        BoardOnlineComponent,
         NgxSignaturePadModule,
     ]
 })

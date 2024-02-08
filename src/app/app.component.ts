@@ -1,7 +1,7 @@
 import { Component, VERSION    } from '@angular/core';
 import { Router                } from '@angular/router';
 import { Title                 } from '@angular/platform-browser';
-import { ConfigService         } from './Services/config.service';
+import { ConfigService         } from './_services/config.service';
 import { CustomErrorHandler, LoggingInterceptor } from './app.module';
 @Component({
   selector: 'app-root',
