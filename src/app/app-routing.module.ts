@@ -9,6 +9,9 @@ import { HanoiTowersComponent          } from './_modules/_games/hanoi-towers/ga
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
+import { DevComponent                  } from './_modules/_home/dev/dev.component';
+import { SCMComponent                  } from './_modules/_home/scm/scm.component';
+import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 //
 const routes : Routes = [
   { path: 'Home'             , component: HomeComponent              },
@@ -20,7 +23,10 @@ const routes : Routes = [
   { path: 'UnitTesting'      , component: UntTestingComponent        },
   { path: 'Chat'             , component: ChatComponent              },
   { path: 'Ocr'              , component: OcrComponent               },
-  { path: '**'               , component: NotFoundPageComponent       },
+  { path: 'Dev'              , component: DevComponent               },
+  { path: 'SCM'              , component: SCMComponent               },
+  { path: 'Topics'           , component: TopicsComponent            },
+  { path: '**'               , component: NotFoundPageComponent      },
 ];
 
 @NgModule({

@@ -29,6 +29,10 @@ import { ConfigService                 } from './_services/config.service';
 import { MCSDService                   } from './_services/mcsd.service';
 import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
+import { NavComponent } from './_modules/_home/nav/nav.component';
+import { DevComponent } from './_modules/_home/dev/dev.component';
+import { SCMComponent } from './_modules/_home/scm/scm.component';
+import { TopicsComponent } from './_modules/_home/topics/topics.component';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -94,7 +98,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     MessageComponent, 
                     ChatComponent, 
                     TicTacToeOnlineComponent, 
-                    OcrComponent, 
+                    OcrComponent, NavComponent, DevComponent, SCMComponent, TopicsComponent, 
                   ],
     providers: [DatePipe, HttpClient, provideClientHydration(),
       [
