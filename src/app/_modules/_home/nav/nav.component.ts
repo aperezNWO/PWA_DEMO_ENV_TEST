@@ -76,7 +76,5 @@ export class NavComponent {
   ngOnInit() {
     //
     this.titleService.setTitle(this._title);
-    //
-    this.NavbarCollapsed = false;
   }
 }
