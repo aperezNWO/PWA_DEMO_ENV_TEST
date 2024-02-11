@@ -38,7 +38,7 @@ export class NavComponent {
     }    
   ];
   //
-  private  navbarCollapsed                                     : boolean = true;
+  private  navbarCollapsed     : boolean = true;
   //
   public get NavbarCollapsed() : boolean {
     //
@@ -76,5 +76,7 @@ export class NavComponent {
   ngOnInit() {
     //
     this.titleService.setTitle(this._title);
+    //
+    this.NavbarCollapsed = false;
   }
 }
