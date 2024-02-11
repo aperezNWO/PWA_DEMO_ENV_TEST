@@ -13,6 +13,11 @@
 -----------------------------------------------------------------------
 Build your Angular application: 
 
+# install angular cli
+
+ npm cache clean --force 
+ npm install     --force 
+
 # Create a production build of your Angular application 
 using the Angular CLI:
 

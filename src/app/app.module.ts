@@ -10,9 +10,10 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpHandler, HttpInterceptor  } from '@angular/common/http';  
 import { HttpRequest, HttpResponse     } from '@angular/common/http';                 
 import { HttpClientModule              } from '@angular/common/http';
+import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
 import { AppComponent                  } from './app.component';
-import { LogType                       } from './_models/algorithm-models.model';
 import { AppRoutingModule              } from './app-routing.module';
+import { LogType                       } from './_models/algorithm-models.model';
 import { HomeComponent                 } from './_modules/_home/home.component';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { BoardComponent                } from "./_modules/_games/tic-tac-toe/offline/board/board.component";
@@ -127,6 +128,7 @@ export class CustomErrorHandler implements ErrorHandler {
         BrowserModule,
         BrowserAnimationsModule,
         NgxSignaturePadModule,
+        NgbModule,
     ]
 })
 export class AppModule {

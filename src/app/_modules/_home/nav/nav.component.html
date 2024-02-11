@@ -17,8 +17,8 @@
         </button>
         <!--fin menu toogle -->
         <!-- menu items inicio -->
-        <div class="collapse navbar-collapse subtitle" id="navbarItems" #navbarItems>
-            <!--[ngbCollapse]="this.NavbarCollapsed"-->
+        <div class="collapse navbar-collapse subtitle" id="navbarItems" #navbarItems
+            [ngbCollapse]="this.NavbarCollapsed">
             <ul class="navbar-nav" *ngFor="let page of pages">
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/{{page.url}}"><span>{{page.text}}</span></a>
