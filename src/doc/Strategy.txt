@@ -137,3 +137,8 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
 [EXPORT BARD ANSWERS TO GOOGLE DOCUMENTS]
 
+/////////////////////////////////////////////
+// PWA
+/////////////////////////////////////////////
+
+--[_] https://web.dev/learn/pwa/service-workers
