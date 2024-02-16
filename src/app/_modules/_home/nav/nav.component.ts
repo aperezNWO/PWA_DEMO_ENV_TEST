@@ -54,11 +54,12 @@ export class NavComponent {
     // IMPLEMENT AS MAP AND ITERATE
     //
     this._appBrand   = this.configService.getConfigValue("appBrand");
-    this._appVersion = this.configService.getConfigValue("appVersion");;
+    this._appEnv     = this.configService.getConfigValue("appEnv");
+    this._appVersion = this.configService.getConfigValue("appVersion");
     //
-    this._title      = `${this._appBrand} ${this._appVersion}`;
+    this._title      = `${this._appBrand} - ${this._appEnv}  - v[${this._appVersion}]`;
     //
-    console.log(`${this._title}`)
+    console.log(`${this._title}`);
   }
   //
   ngOnInit() {
