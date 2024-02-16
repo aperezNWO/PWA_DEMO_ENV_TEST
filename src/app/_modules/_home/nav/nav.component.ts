@@ -13,9 +13,9 @@ export class NavComponent {
   //
   title          : string = 'PWA_DEMO_ENV_TEST';
   //
-  _brand         : string = '';
   _title         : string = '';
-  _appName       : string = '';
+  _appBrand      : string = '';
+  _appEnv        : string = '';
   _appVersion    : string = '';
   runtimeVersion : string = VERSION.full;
   //
@@ -52,25 +52,13 @@ export class NavComponent {
   //
   constructor(public router: Router, private configService: ConfigService , private titleService : Title, public customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor) {
     // IMPLEMENT AS MAP AND ITERATE
-    let keyName  : string = '';
-    let keyValue : string = '';
     //
-    keyName  = 'appName';
-    keyValue = this.configService.getConfigValue(keyName);
+    this._appBrand   = this.configService.getConfigValue("appBrand");
+    this._appVersion = this.configService.getConfigValue("appVersion");;
     //
-    this._appName = keyValue;
+    this._title      = `${this._appBrand} ${this._appVersion}`;
     //
-    keyName          = 'appVersion';
-    keyValue         = this.configService.getConfigValue(keyName);
-    this._appVersion = keyValue;
-    //
-    console.log(`${keyName} :  ${this.configService.getConfigValue(keyName)} `)
-    //
-    this._title = `${this._appName} ${this._appVersion}`;
-    //
-    this._brand = this._appName;
-    //
-    //router.navigateByUrl('/Home');
+    console.log(`${this._title}`)
   }
   //
   ngOnInit() {
