@@ -1,13 +1,6 @@
-<header class="subtitle">
-    <div class="navigation subtitle">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light subtitle">
-        <!-- inicio brand -->
-        <a class="navbar-brand" href="#">
-            <div class="subtitle">
-              <h2>{{this._appBrand}}</h2>
-            </div>
-        </a>
-        <!-- fin brand -->
+<header class="">
+    <div class="">
+      <nav class="navbar navbar-expand-lg subtitle">
         <!--menu toggle - WORKS ON MOBILE VERSION-->
         <button class="navbar-toggler" type="button" data-toggle="collapse"     
           data-target="#navbarItems" aria-controls="navbarItems"                
@@ -16,12 +9,19 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <!--fin menu toogle -->
+        <!-- inicio brand -->
+        <a class="navbar-brand" href="#">
+          <div class="subtitle" (click)="this.NavbarCollapsed=true;">
+            <h2>{{this._appBrand}}</h2>
+          </div>
+        </a>
+        <!-- fin brand -->
         <!-- menu items inicio -->
         <div class="collapse navbar-collapse subtitle" id="navbarItems" #navbarItems
             [ngbCollapse]="this.NavbarCollapsed">
             <ul class="navbar-nav" *ngFor="let page of pages">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/{{page.url}}"><span>{{page.text}}</span></a>
+                    <a class="nav-link" routerLink="/{{page.url}}" (click)="this.NavbarCollapsed=true;"><div align="left">{{page.text}}</div></a>
                 </li>
             </ul>
         </div>
