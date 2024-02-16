@@ -9,7 +9,7 @@
     "test": "ng test",
     "deploy": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\"",
     "publish": "npx ngh --dir=dist\\pwa-demo-env-test",
-    "build-and-deploy": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\" && npx ngh --dir=dist\\pwa-demo-env-test"
+    "deploy-and-publish": "ng build --c=production --base-href=\"https://apereznwo.github.io/PWA_DEMO_ENV_TEST/\" && npx ngh --dir=dist\\pwa-demo-env-test"
   },
   "private": true,
   "dependencies": {
