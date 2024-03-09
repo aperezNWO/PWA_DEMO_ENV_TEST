@@ -191,5 +191,8 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
         --[_] EPPPlus referene. Complete references.
         --[_] Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering).
         --[_] https://vercel.com/apereznwos-projects/~/integrations
+        --[_] angular academy.
+        --[_] angular certification.
+           
 
 /////////////////////////////////////////////
