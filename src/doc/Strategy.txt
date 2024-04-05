@@ -104,5 +104,8 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
         --[_] django  demo / backend source.
         --[_] chatgtp / xls demo / node.js.      
         --[_] c# certification.      
+        --[_] php laravel, python, flutter, kottlin, ionic,
+        --[_] google appscript / microsoft material.
+        --[_]  somee entry point
 
 /////////////////////////////////////////////
