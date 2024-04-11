@@ -104,8 +104,15 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
         --[_] django  demo / backend source.
         --[_] chatgtp / xls demo / node.js.      
         --[_] c# certification.      
-        --[_] php laravel, python, flutter, kottlin, ionic,
-        --[_] google appscript / microsoft material.
+        --[_] php laravel, python, ionic.
+              --[_]https://replit.com/
+        --[_] google dev initiatives. 
+              --[_] appscript / microsoft material.
+              --{_} flutter.
+              --[_] Kottling.
+              --{_} https://idx.dev/#introduction
+              --{_} I.A. Styudio.
+              --{_} Google cloud dev.
         --[_]  somee entry point
 
 /////////////////////////////////////////////
