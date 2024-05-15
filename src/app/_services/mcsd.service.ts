@@ -170,15 +170,15 @@ export class MCSDService implements OnInit {
     ////////////////////////////////////////////////////////////////  
     //
     getLogRemoto(_searchCriteria : SearchCriteria) {
-        //
-        let url    = this._baseUrlNetCore + 'demos/generarinformejson';
-        //    
-        return this.http.get<LogEntry[]>(url);
+      //
+      let url        : string =  `${this._baseUrlNetCore}demos/generarinformejson`;
+      //    
+      return this.http.get<LogEntry[]>(url);
     }
     //
     getLogRemotoNodeJS(_searchCriteria : SearchCriteria) : Observable<string>{
       //
-      let p_url       : string = `https://jh6mc8-4000.csb.app/generarinformejson`;
+      let p_url       : string = `${this._baseUrlNetCore}demos/generarinformejson`;
       //
       let nodeJsOutput: Observable<string> = this.http.get<string>(
         p_url,
@@ -504,7 +504,9 @@ export class MCSDService implements OnInit {
   }
   //
   uploadBase64Image(base64Image: string) {
-    let url = 'https://cqxd3m-3000.csb.app/upload'
+    //
+    let url = this._configService.getConfigValue('baseUrlNodeJsOcr');
+    //
     return this.http.post(url, { base64Image });
   }
 }
