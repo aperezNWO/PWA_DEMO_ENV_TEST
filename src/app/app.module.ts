@@ -34,6 +34,7 @@ import { NavComponent } from './_modules/_home/nav/nav.component';
 import { DevComponent } from './_modules/_home/dev/dev.component';
 import { SCMComponent } from './_modules/_home/scm/scm.component';
 import { TopicsComponent } from './_modules/_home/topics/topics.component';
+import { ButtonModule } from 'primeng/button';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -129,6 +130,7 @@ export class CustomErrorHandler implements ErrorHandler {
         BrowserAnimationsModule,
         NgxSignaturePadModule,
         NgbModule,
+        ButtonModule,
     ]
 })
 export class AppModule {
