@@ -126,5 +126,11 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
        --[_] index with param url.
 --[_]  https://www.veracode.com
 --[_]  ofrecer directamente a angular community.
+--[_]  Tailwind
+--[_]  NgBootstrap
+--[_]  PrimeNg.
+--[_]  Ionic.
+--[_]  https://bulma.io.
+
 
 /////////////////////////////////////////////
