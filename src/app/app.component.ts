@@ -3,6 +3,7 @@ import { Router                } from '@angular/router';
 import { Title                 } from '@angular/platform-browser';
 import { ConfigService         } from './_services/config.service';
 import { CustomErrorHandler, LoggingInterceptor } from './app.module';
+import { ActivatedRoute                         } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +18,15 @@ export class AppComponent {
    _appVersion    : string = '';
    runtimeVersion : string = VERSION.full;
    //
-  constructor(public router: Router, private configService: ConfigService , private titleService : Title, public customErrorHandler: CustomErrorHandler, public loggingInterceptor : LoggingInterceptor) {
+   redirectPage   : string | null = null;
+   //
+  constructor(    public router             : Router
+                , private configService     : ConfigService 
+                , private titleService      : Title
+                , public customErrorHandler : CustomErrorHandler
+                , public loggingInterceptor : LoggingInterceptor
+                , public route              : ActivatedRoute) 
+  {
     // IMPLEMENT AS MAP AND ITERATE
     let keyName  : string = '';
     let keyValue : string = '';
@@ -39,6 +48,25 @@ export class AppComponent {
   ngOnInit() {
       //
       this.titleService.setTitle(`${this._appName} ${this._appVersion}`);
+      //
+      this.route.queryParams.subscribe(params => {
+        //
+        this.redirectPage = params['redirectPage'] ? params['redirectPage'] : "" ;
+        //
+        if (this.redirectPage !== undefined)
+        {
+          switch (this.redirectPage)
+          {
+            case "sudoku":
+              //
+              console.log("Redirecting To Page : "  +  this.redirectPage );
+              //
+              this.router.navigateByUrl('/Sudoku');
+              //
+              break;
+            }
+          }
+      });
   }
   //
   getValueFromConfig(key: string) {
