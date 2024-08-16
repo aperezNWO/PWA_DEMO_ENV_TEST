@@ -52,7 +52,12 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 // TODO LIST
 /////////////////////////////////////////////
 
---[_] Angular Url Query Param. 
+--[x] Angular Url Query Param. 
 
+--[>] RXJS Playground.
+
+      --[>] Improve Hanoi Program.
+
+      --[>] Replace timers with observables.
 
 /////////////////////////////////////////////

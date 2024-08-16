@@ -10,7 +10,6 @@ import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { HttpHandler, HttpInterceptor  } from '@angular/common/http';  
 import { HttpRequest, HttpResponse     } from '@angular/common/http';                 
 import { HttpClientModule              } from '@angular/common/http';
-import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
 import { AppComponent                  } from './app.component';
 import { AppRoutingModule              } from './app-routing.module';
 import { LogType                       } from './_models/algorithm-models.model';
@@ -28,13 +27,15 @@ import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic
 import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
 import { ConfigService                 } from './_services/config.service';
 import { MCSDService                   } from './_services/mcsd.service';
+import { NavComponent                  } from './_modules/_home/nav/nav.component';
+import { DevComponent                  } from './_modules/_home/dev/dev.component';
+import { SCMComponent                  } from './_modules/_home/scm/scm.component';
+import { TopicsComponent               } from './_modules/_home/topics/topics.component';
+import { RxJSPlaygroundComponent       } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
 import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
-import { NavComponent } from './_modules/_home/nav/nav.component';
-import { DevComponent } from './_modules/_home/dev/dev.component';
-import { SCMComponent } from './_modules/_home/scm/scm.component';
-import { TopicsComponent } from './_modules/_home/topics/topics.component';
-import { ButtonModule } from 'primeng/button';
+import { ButtonModule                  } from 'primeng/button';
+import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -99,6 +100,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     UntTestingComponent, 
                     MessageComponent, 
                     ChatComponent, 
+                    RxJSPlaygroundComponent,
                     TicTacToeOnlineComponent, 
                     OcrComponent, NavComponent, DevComponent, SCMComponent, TopicsComponent, 
                   ],
