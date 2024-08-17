@@ -1,5 +1,15 @@
 <h1>[RXJS  PLAYGROUND]</h1>
 <hr>
+<div>
+    Current observable values 
+    <li *ngFor="let item of this.service.CurrentValue">
+        {{ item }}
+    </li>
+    <br>
+    Current observable value 
+    {{ this.service.Numbers | async }}
+</div>
+<hr>
 <span align="left">
     <a routerLink="/Dev">[Menu]</a>
 </span>
