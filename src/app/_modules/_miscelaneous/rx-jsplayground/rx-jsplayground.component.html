@@ -2,12 +2,14 @@
 <hr>
 <div>
     Current observable values 
+    <br>
+    <br>
     <li *ngFor="let item of this.service.CurrentValue">
         {{ item }}
     </li>
     <br>
     Current observable value 
-    {{ this.service.Numbers | async }}
+    {{ this.service.delayedObservable | async }}
 </div>
 <hr>
 <span align="left">

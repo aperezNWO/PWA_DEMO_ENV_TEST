@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { concatMap, delay, from, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,25 +10,19 @@ export class ObservableService {
  //
   public numbers$ = of(1, 2, 3);
   //
+  public delayedObservable : any;
+  //
   public constructor()
   {
     //
-    this.numbers$.subscribe(() => {
-      console.log('Observable emitted the next value from service to array : ' + 1);
-      this._currentValue.push(1);
+    this.delayedObservable = from(this.numbers$).pipe(
+      concatMap(value => of(value).pipe(delay(1000)))
+    );
+    //
+    this.delayedObservable.subscribe((value: number) => {
+      console.log('Observable emitted the next value from service to array : ' + value);
+      this._currentValue.push(value);
     });
-    /*
-    // 
-    this.numbers$.subscribe({
-      next(value : number){
-       //
-       console.log('Observable emitted the next value from service : ' + value);
-       //
-     },
-     error(err)  { console.error('Observable emitted an error: ' + err); },
-     complete()  { console.log('Observable emitted the complete notification');
-     }
-   });*/
   }
   //
   public get CurrentValue()
