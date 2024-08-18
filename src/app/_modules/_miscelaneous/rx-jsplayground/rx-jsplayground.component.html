@@ -1,15 +1,13 @@
 <h1>[RXJS  PLAYGROUND]</h1>
 <hr>
 <div>
-    Current observable values 
-    <br>
-    <br>
-    <li *ngFor="let item of this.service.CurrentValue">
-        {{ item }}
-    </li>
-    <br>
-    Current observable value 
+    Current observable value :
     {{ this.service.delayedObservable | async }}
+</div>
+<hr>
+<div>
+    Current BehaviourSubject value :
+    {{ this.service.CurrentItem| async }}
 </div>
 <hr>
 <span align="left">
