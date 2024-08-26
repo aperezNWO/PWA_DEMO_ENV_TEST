@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, concatMap, delay, from, interval, map, of, take } from 'rxjs';
+import { BehaviorSubject, concatMap, delay, from, interval, map, Observable, of, scan, Subject, take, tap } from 'rxjs';
 
+//
 @Injectable({
   providedIn: 'root'
 })
@@ -21,7 +22,6 @@ export class ObservableService {
   private items        = ['a', 'b', 'c', 'd', 'e'];
   private itemSubject = new BehaviorSubject<string | null>(null);
   private currentItem$ = this.itemSubject.asObservable();
-
   //
   public constructor()
   {
@@ -29,6 +29,8 @@ export class ObservableService {
       this.TestBasicObservable();
       //
       this.TestBehaviourSubject();
+      //
+      this.TestHanoi();
   }
   //
   TestBasicObservable()
@@ -58,7 +60,47 @@ export class ObservableService {
           this.itemSubject.next(item)
 
       });
-   }
+  }
+  //
+  TestHanoi()
+  {
+      /*
+      //
+      let rods$: BehaviorSubject<number[][]> | undefined;
+      let moves$: Observable<number[][]> | undefined;
+
+    rods$ = new BehaviorSubject<number[][]>([
+      [3, 2, 1],
+      [],
+      []
+    ]);
+
+    moves$ = rods$.pipe(
+      scan((state, rods) => {
+
+  
+        
+        const fromIndex = rods.findIndex(rod => rod.length > 0);
+        const toIndex = rods.findIndex(rod => rod.length === 0 || rod[rod.length - 1] > rods[fromIndex][rods[fromIndex].length - 1]);
+
+        if (fromIndex !== -1 && toIndex !== -1) {
+          const disk = rods[fromIndex].pop()!;
+          rods[toIndex].push(disk);
+
+          console.log('hanoi disk : ' + rods)
+        }
+
+        return rods;
+      }, rods$.value)
+    );
+
+    moves$.subscribe({
+      next(value) { console.log('Hanoi next value: ' + value); },
+      error(err)  { console.error('Hanoi emitted an error: ' + err); },
+      complete()  { console.log('Hanoi complete notification'); }
+    });
+    */
+  }
   //
   public get CurrentValue()
   {
