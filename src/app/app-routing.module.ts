@@ -12,7 +12,8 @@ import { NotFoundPageComponent         } from './_modules/_home/not-found-page/n
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
-import { RxJSPlaygroundComponent } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
+import { RxJSPlaygroundComponent       } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
+import { HanoiTowerComponent           } from './_modules/_games/hanoi-tower/hanoi-tower.component';
 //
 const routes : Routes = [
   { path: 'Home'             , component: HomeComponent              },
@@ -21,6 +22,7 @@ const routes : Routes = [
   { path: 'TicTacToe'        , component: TicTacToeComponent         },
   { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   },
   { path: 'Hanoi'            , component: HanoiTowersComponent       },
+  { path: 'HanoiRjxs'        , component: HanoiTowerComponent        },
   { path: 'UnitTesting'      , component: UntTestingComponent        },
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
   { path: 'Chat'             , component: ChatComponent              },
