@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AsyncPipe, NgFor } from '@angular/common';;
 
 interface Disk {
   size: number;
@@ -8,47 +7,8 @@ interface Disk {
 
 @Component({
   selector: 'app-hanoi-tower',
-  template: `
-    <div class="game-container">
-      <div *ngFor="let tower of towers$ | async; let i = index" class="tower">
-        <h2>Tower {{ i + 1 }}</h2>
-        <div class="disks-container">
-          <div *ngFor="let disk of tower" class="disk" [style.width.px]="disk.size * 20">
-            {{ disk.size }}
-          </div>
-        </div>
-        <button (click)="selectTower(i)">Select</button>
-      </div>
-    </div>
-    <div>
-      <p>Moves: {{ moves$ | async }}</p>
-      <button (click)="resetGame()">Reset Game</button>
-    </div>
-  `,
-  styles: [`
-    .game-container {
-      display: flex;
-      justify-content: space-around;
-    }
-    .tower {
-      text-align: center;
-    }
-    .disks-container {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      height: 200px;
-    }
-    .disk {
-      height: 20px;
-      background-color: #007bff;
-      margin: 2px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-    }
-  `],
+  templateUrl:'./hanoi-tower.component.html',
+  styleUrl: './hanoi-tower.component.css',
 })
 export class HanoiTowerComponent implements OnInit {
   private gameState$ = new BehaviorSubject<Disk[][]>([
