@@ -54,12 +54,20 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
 --[x] Angular Url Query Param. 
 
---[>] RXJS Playground.
+--[x] RXJS Playground.
 
-      --[>] https://v17.angular.io/guide/observables
+      --[x] https://v17.angular.io/guide/observables
 
-      --[>] Improve Hanoi Program.
+      --[x] Replace timers with observables.
 
-      --[>] Replace timers with observables.
+--[>>] Improve Hanoi Program.
+     
+      --[>>] Hanoi RJXS
+
+      --[>>] Hanoi Game Engine.
+
+      --[>>] Hanoi RJXS - Auto 
+
+            --[>>] Merge Hanoi RJXS with Hanoi Game Engine. 
 
 /////////////////////////////////////////////
