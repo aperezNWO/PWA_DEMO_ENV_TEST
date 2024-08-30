@@ -12,16 +12,17 @@ import { HttpRequest, HttpResponse     } from '@angular/common/http';
 import { HttpClientModule              } from '@angular/common/http';
 import { AppComponent                  } from './app.component';
 import { AppRoutingModule              } from './app-routing.module';
-import { LogType                       } from './_models/algorithm-models.model';
+import { LogType                       } from './_models/algorithm.model';
 import { HomeComponent                 } from './_modules/_home/home.component';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { BoardComponent                } from "./_modules/_games/tic-tac-toe/offline/board/board.component";
 import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
 import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
+import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-towers/game-hanoi.component';
+import { TowerComponent                } from './_modules/_games/hanoi/hanoi-towers/tower/tower.component';
+import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
+import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-auto/hanoi-auto.component';
 import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
-import { TowerComponent                } from "./_modules/_games/hanoi-towers/tower/tower.component";
-import { HanoiTowersComponent          } from './_modules/_games/hanoi-towers/game-hanoi.component';
-import { HanoiTowerComponent           } from './_modules/_games/hanoi-tower/hanoi-tower.component';
 import { MessageComponent              } from './_modules/_miscelaneous/chat/message/message.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
@@ -98,13 +99,18 @@ export class CustomErrorHandler implements ErrorHandler {
                     SudokuComponent, 
                     TicTacToeComponent, 
                     HanoiTowersComponent, 
-                    HanoiTowerComponent,
+                    HanoiObservableComponent,
+                    HanoiAutoComponent,
                     UntTestingComponent, 
                     MessageComponent, 
                     ChatComponent, 
                     RxJSPlaygroundComponent,
                     TicTacToeOnlineComponent, 
-                    OcrComponent, NavComponent, DevComponent, SCMComponent, TopicsComponent, 
+                    OcrComponent, 
+                    NavComponent, 
+                    DevComponent, 
+                    SCMComponent, 
+                    TopicsComponent, 
                   ],
     providers: [DatePipe, HttpClient, provideClientHydration(),
       [

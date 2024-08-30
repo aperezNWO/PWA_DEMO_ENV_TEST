@@ -7,10 +7,10 @@ interface Disk {
 
 @Component({
   selector: 'app-hanoi-tower',
-  templateUrl:'./hanoi-tower.component.html',
-  styleUrl: './hanoi-tower.component.css',
+  templateUrl:'./hanoi-observable.component.html',
+  styleUrl: './hanoi-observable.component.css',
 })
-export class HanoiTowerComponent implements OnInit {
+export class HanoiObservableComponent implements OnInit {
   private gameState$ = new BehaviorSubject<Disk[][]>([
     [{ size: 3 }, { size: 2 }, { size: 1 }],
     [],

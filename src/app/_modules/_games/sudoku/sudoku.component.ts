@@ -3,8 +3,8 @@ import { ViewChild, AfterViewInit     } from '@angular/core';
 import { FormBuilder, Validators      } from '@angular/forms';
 import { HttpEventType, HttpResponse  } from '@angular/common/http';
 import { AlgorithmService             } from 'src/app/_services/algorithm.service';
-import { PdfEngine                    } from 'src/app/_models/pdf-engine.service';
-import { ListItem                     } from '../../../_models/algorithm-models.model';
+import { PdfEngine                    } from 'src/app/_engines/pdf-engine';
+import { ListItem                     } from '../../../_models/algorithm.model';
 import { Observable                   } from 'rxjs';
 //
 @Component({

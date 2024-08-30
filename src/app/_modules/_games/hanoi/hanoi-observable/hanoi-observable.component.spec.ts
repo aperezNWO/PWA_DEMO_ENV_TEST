@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HanoiTowerComponent } from './hanoi-tower.component';
+import { HanoiTowerComponent } from './hanoi-observable.component';
 
 describe('HanoiTowersComponent', () => {
   let component: HanoiTowerComponent;

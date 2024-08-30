@@ -1,4 +1,5 @@
-
+<h4>[HANOI- OBSERVABLE]</h4>
+<br>
 <div class="game-container">
     <div *ngFor="let tower of towers$ | async; let i = index" class="tower">
       <h2>Tower {{ i + 1 }}</h2>
@@ -14,4 +15,7 @@
     <p>Moves: {{ moves$ | async }}</p>
     <button (click)="resetGame()">Reset Game</button>
   </div>
-  
+<hr />
+<div align="left">
+    <a routerLink="/Dev">[Volver al Menú]</a>  
+</div>

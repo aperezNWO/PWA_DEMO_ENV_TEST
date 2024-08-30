@@ -1,8 +1,8 @@
 import { Component, OnInit, AfterViewInit , ViewChild } from '@angular/core';
 import { CommonModule                                 } from '@angular/common';
 import { SquareComponent                              } from "../square/square.component";
-import { ListItem                                     } from 'src/app/_models/algorithm-models.model';
-import { TicTacToeEngine                              } from 'src/app/_models/game-engine.model';
+import { ListItem                                     } from 'src/app/_models/algorithm.model';
+import { TicTacToeEngine                              } from 'src/app/_engines/tictactoe-engine';
 //
 @Component({
     selector: 'app-board',

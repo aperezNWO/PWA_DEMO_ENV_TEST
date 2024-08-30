@@ -1,9 +1,9 @@
 import { CommonModule             } from '@angular/common';
 import { Component, ViewChild     } from '@angular/core';
 import { SquareComponent          } from "../square/square.component";
-import { ListItem                 } from 'src/app/_models/algorithm-models.model';
-import { TicTacToeEngine          } from 'src/app/_models/game-engine.model';
+import { ListItem                 } from 'src/app/_models/algorithm.model';
 import { ChatService              } from 'src/app/_services/chat.service';
+import { TicTacToeEngine          } from 'src/app/_engines/tictactoe-engine';
 //
 @Component({
     selector   : 'app-board-online',
@@ -27,9 +27,9 @@ export class BoardOnlineComponent {
   protected IsNewGame                      : boolean = false;
   protected showBoard                      : boolean = false;
   //
-  public    ticTacToeEngine                : TicTacToeEngine = new TicTacToeEngine();
-  //  
-  constructor(private chatService: ChatService) {
+  constructor(private chatService         : ChatService,
+              public  ticTacToeEngine     : TicTacToeEngine)  
+  {
       //
   }
   //

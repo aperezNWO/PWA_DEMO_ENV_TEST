@@ -9,7 +9,7 @@ let items         = ['a', 'b', 'c', 'd', 'e'];
 let itemSubject   = new BehaviorSubject<string | null>(null);
 let currentItem$  = itemSubject.asObservable();
 // TEST HANOI
-let _delayedObservableHanoi: any;
+let _delayedObservableIteration: any;
 //
 function TestBehaviourSubject() {
 
@@ -31,26 +31,30 @@ function TestBehaviourSubject() {
         //  
         console.log('Behaviour subject complete notification');
         //
-        TestHanoi();
+        TestIteration();
       }
     })
 }
 //
-function TestHanoi() {
+function TestIteration() {
   //
-  const values = ['A', 'B', 'C', 'D', 'E'];
+  const values    = ['A', 'B', 'C', 'D', 'E'];
   const delayTime = 1000; // Delay in milliseconds
   //
-  _delayedObservableHanoi = from(values).pipe(
+  _delayedObservableIteration = from(values).pipe(
     concatMap(value => of(value).pipe(delay(delayTime)))
   );
  //
-  _delayedObservableHanoi.subscribe({
-      next(result: any) { console.log(`Hanoi emitted Result: ${result}`); },
-      error(err: string) { console.error('Hanoi emitted an error: ' + err); },
+  _delayedObservableIteration.subscribe({
+      next(result: any)  { 
+        console.log(`Iteration emitted Result: ${result}`); 
+      },
+      error(err: string) { 
+        console.error('Iteration emitted an error: ' + err); 
+      },
       complete() {
         //  
-        console.log('Hanoi complete notification');
+        console.log('Iteration complete notification');
       }
     });
 }
@@ -102,9 +106,8 @@ export class ObservableService {
   public get delayedObservable() {
     return _delayedObservable;
   }
-
   
-  public get delayedObservableHanoi() {
-    return _delayedObservableHanoi;
+  public get delayedObservableIteration() {
+    return _delayedObservableIteration;
   }
 }

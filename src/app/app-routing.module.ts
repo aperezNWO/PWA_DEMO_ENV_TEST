@@ -4,8 +4,10 @@ import { HomeComponent                 } from './_modules/_home/home.component';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
 import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
+import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-auto/hanoi-auto.component';
+import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-towers/game-hanoi.component';
+import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
-import { HanoiTowersComponent          } from './_modules/_games/hanoi-towers/game-hanoi.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
@@ -13,7 +15,6 @@ import { DevComponent                  } from './_modules/_home/dev/dev.componen
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { RxJSPlaygroundComponent       } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
-import { HanoiTowerComponent           } from './_modules/_games/hanoi-tower/hanoi-tower.component';
 //
 const routes : Routes = [
   { path: 'Home'             , component: HomeComponent              },
@@ -22,7 +23,8 @@ const routes : Routes = [
   { path: 'TicTacToe'        , component: TicTacToeComponent         },
   { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   },
   { path: 'Hanoi'            , component: HanoiTowersComponent       },
-  { path: 'HanoiRjxs'        , component: HanoiTowerComponent        },
+  { path: 'HanoiRjxs'        , component: HanoiObservableComponent   },
+  { path: 'HanoiAuto'        , component: HanoiAutoComponent         },
   { path: 'UnitTesting'      , component: UntTestingComponent        },
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
   { path: 'Chat'             , component: ChatComponent              },
