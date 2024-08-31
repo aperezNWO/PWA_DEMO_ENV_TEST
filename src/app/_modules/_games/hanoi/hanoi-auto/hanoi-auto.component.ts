@@ -11,13 +11,14 @@ export class HanoiAutoComponent implements OnInit {
 
     constructor(public hanoiEngine : HanoiEngine)
     {
-        this.hanoiEngine.newGame();
-        this.hanoiEngine.startGame();       
+ 
     }
 
     //
     ngOnInit() {
-      this.hanoiEngine.resetGame();
+        //
+        this.hanoiEngine.manual_resetGame();
+        //this.hanoiEngine.auto_startGame();      
     }
  
 }

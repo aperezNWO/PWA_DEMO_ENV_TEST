@@ -63,16 +63,16 @@ export class HanoiEngine
           this._diskAmtList.push(new ListItem(3,"3",true));
           this._diskAmtList.push(new ListItem(4,"4",false));
   }
-  selectTower(towerIndex: number) {
+  manual_selectTower(towerIndex: number) {
     if (this.selectedTower === null) {
       this.selectedTower = towerIndex;
     } else {
-      this.moveDisk(this.selectedTower, towerIndex);
+      this.manual_moveDisk(this.selectedTower, towerIndex);
       this.selectedTower = null;
     }
   }
   //
-  moveDisk(fromTower: number, toTower: number) {
+  manual_moveDisk(fromTower: number, toTower: number) {
     const currentState = this.gameState$.getValue();
     const diskToMove = currentState[fromTower].pop();
 
@@ -82,14 +82,14 @@ export class HanoiEngine
         targetTower.push(diskToMove);
         this.gameState$.next(currentState);
         this.movesSubject$.next(this.movesSubject$.getValue() + 1);
-        this.checkWinCondition();
+        this._checkWinCondition();
       } else {
         currentState[fromTower].push(diskToMove);
       }
     }
   }
   //
-  resetGame() {
+  manual_resetGame() {
     this.gameState$.next([
       [{ size: 3 }, { size: 2 }, { size: 1 }],
       [],
@@ -97,9 +97,12 @@ export class HanoiEngine
     ]);
     this.movesSubject$.next(0);
     this.selectedTower = null;
+
+    //
+    this.auto_newGame();
   }
   //
-  private checkWinCondition() {
+  private _checkWinCondition() {
     const currentState = this.gameState$.getValue();
     if (currentState[2].length === 3) {
       console.log('Congratulations! You solved the puzzle!');
@@ -107,165 +110,174 @@ export class HanoiEngine
     }
   }
 ////////////////////////////////////////////////////////////////////
-//
-printSteps()
-{
-  // END RECURSION
-  if (this._stepsIndex > this._stepsAmt)
-  {
-    //
-    clearTimeout(this._timeoutId); 
-    //
-    return;
-  }
   //
-  if (this._stepsIndex == 0)
+  auto_printSteps()
   {
-    //
-    this.steps.push("[BEGIN STEPS]");
-  }
-  //
-  if (this._steps[this._stepsIndex])
-  {
-    //
-    let scrollableElement = document.querySelector('.steps-container');
-    //
-    if (scrollableElement)
-        scrollableElement.scrollTop = scrollableElement.scrollHeight;
-    //      
-    let hanoiStep   : HanoiStep = this._steps[this._stepsIndex];
-    let n           : number    = hanoiStep.n;
-    let from        : string    = hanoiStep.from;
-    let to          : string    = hanoiStep.to;
-    //
-    let message : string = `Step ${(this._stepsIndex + 1)} of ${this._stepsAmt}. Move disk ${n} from Tower ${from} to Tower ${to}`;
-    //
-    console.log(message);
-    // 
-    this.steps.push(message);
-    // 
-    this.makeMove(hanoiStep);
-  }
-  //    
-  this._stepsIndex++;
-  //
-  if ((this._stepsIndex) == this._stepsAmt)
-  {
-    //
-    this.steps.push("[END STEPS]");
-    //
-  }
-  //
-  this._timeoutId = setTimeout(() => {
-      
+    // END RECURSION
+    if (this._stepsIndex > this._stepsAmt)
+    {
       //
-      this.printSteps();  
-
-  }, this._delayInMilliseconds); // Delay each move by 1 second        
-}
-//
-makeMove(hanoiStep: HanoiStep) {
-  let _n           : number = hanoiStep.n;
-  let _from        : string = hanoiStep.from;
-  let _to          : string = hanoiStep.to;
-  //    
-  let diskInfo    : DiskInfo | undefined = undefined;
-  // 
-  switch (_from) {
-      case 'A':
-        diskInfo = this.towerA.get(_n);
-        this.towerA.set(_n, new DiskInfo(_n,"-"));
-        break;
-      case 'B':
-        diskInfo = this.towerB.get(_n);
-        this.towerB.set(_n, new DiskInfo(_n,"-"));
-        break;
-      case 'C':
-        diskInfo = this.towerC.get(_n);
-        this.towerC.set(_n, new DiskInfo(_n,"-"));
-        break;
-  }
-  //
-  switch (_to) {
-    case 'A':
-      this.towerA.set(_n,diskInfo);
-      break;
-    case 'B':
-      this.towerB.set(_n,diskInfo);
-      break;
-    case 'C':
-      this.towerC.set(_n,diskInfo);
-      break;
-  };
-}
-//
-saveStep(n: number, from: string, to: string) {
-  // Implement logic to move a single disk from 'from' tower to 'to' tower
-  let hanoiStep : HanoiStep = new HanoiStep(n,from,to);
-  //
-  this._steps.push(hanoiStep);
-  //
-  this._stepsAmt++;
-}
-//
-towerOfHanoi(n : number, from_rod : string, to_rod : string, aux_rod : string ):void
-{
-    if (n === 0) {
+      clearTimeout(this._timeoutId); 
+      //
       return;
     }
-    this.towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
-    this.saveStep(n,from_rod,to_rod);
-    this.towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
-}
-//
-newGame():void {
-  //
-  console.log("[HANOI TOWERS] - [NEW GAME]")
-  //
-  //this._diskAmt   = parseInt(this.__diskAmtList.nativeElement.options[this.__diskAmtList.nativeElement.options.selectedIndex].value);
-  //
-  this._diskAmt   = 3;
-  //
-  if (this._diskAmt === 0)
-      return;
-  //
-  this.towerA      =  new Map<number,( DiskInfo | undefined)>();
-  let  graph      : string = "";
-  for (let i= 1; i <= this._diskAmt; i++) {
-    graph = graph + "*";
-    this.towerA.set(i,new DiskInfo(i,graph));
-  }  
-  //
-  this.towerB    =  new Map<number,( DiskInfo | undefined)>();
-  for (let i= 1; i <= this._diskAmt; i++) {
-    this.towerB.set(i,new DiskInfo(i,"-"));
-  }  
-  //
-  this.towerC    =  new Map<number,( DiskInfo | undefined)>();
-  for (let i= 1; i <= this._diskAmt; i++) {
-    this.towerC.set(i,new DiskInfo(i,"-"));
-  }  
-  //
-  this.steps        = [];
-  this._steps       = [];
-  this._stepsIndex  = 0;
-  this._stepsAmt    = 0;
-  //
-  this._startGame  = false;
-}
-//  
-startGame():void {
-  //
-  console.log("[HANOI TOWERS] - [START GAME]")
-  //
-  if (this._diskAmt === 0)
-    return;
-  //
-  this._startGame = true;
-  // A, B and C are names of rods
-  this.towerOfHanoi(this._diskAmt, 'A', 'C', 'B');
-  //
-  this.printSteps();
-}
+    //
+    if (this._stepsIndex == 0)
+    {
+      //
+      this.steps.push("[BEGIN STEPS]");
+    }
+    //
+    if (this._steps[this._stepsIndex])
+    {
+      //
+      let scrollableElement = document.querySelector('.steps-container');
+      //
+      if (scrollableElement)
+          scrollableElement.scrollTop = scrollableElement.scrollHeight;
+      //      
+      let hanoiStep   : HanoiStep = this._steps[this._stepsIndex];
+      let n           : number    = hanoiStep.n;
+      let from        : string    = hanoiStep.from;
+      let to          : string    = hanoiStep.to;
+      //
+      let message : string = `Step ${(this._stepsIndex + 1)} of ${this._stepsAmt}. Move disk ${n} from Tower ${from} to Tower ${to}`;
+      //
+      console.log(message);
+      // 
+      this.steps.push(message);
+      // 
+      this.auto_makeMove(hanoiStep);
+      //
+      let n_from : number = hanoiStep.from.charCodeAt(0) - 65
+      let n_to   : number = hanoiStep.to.charCodeAt(0)   - 65; 
+      //
+      //
+      console.log(` Manuel Step ${n_from} to ${n_to} `);
+      //
+      this.manual_moveDisk(n_from, n_to);
+    }
+    //    
+    this._stepsIndex++;
+    //
+    if ((this._stepsIndex) == this._stepsAmt)
+    {
+      //
+      this.steps.push("[END STEPS]");
+      //
+    }
+    //
+    this._timeoutId = setTimeout(() => {
+        
+        //
+        this.auto_printSteps();  
 
+    }, this._delayInMilliseconds); // Delay each move by 1 second        
+  }
+  //
+  auto_makeMove(hanoiStep: HanoiStep) {
+    let _n           : number = hanoiStep.n;
+    let _from        : string = hanoiStep.from;
+    let _to          : string = hanoiStep.to;
+    //    
+    let diskInfo    : DiskInfo | undefined = undefined;
+    // 
+    switch (_from) {
+        case 'A':
+          diskInfo = this.towerA.get(_n);
+          this.towerA.set(_n, new DiskInfo(_n,"-"));
+          break;
+        case 'B':
+          diskInfo = this.towerB.get(_n);
+          this.towerB.set(_n, new DiskInfo(_n,"-"));
+          break;
+        case 'C':
+          diskInfo = this.towerC.get(_n);
+          this.towerC.set(_n, new DiskInfo(_n,"-"));
+          break;
+    }
+    //
+    switch (_to) {
+      case 'A':
+        this.towerA.set(_n,diskInfo);
+        break;
+      case 'B':
+        this.towerB.set(_n,diskInfo);
+        break;
+      case 'C':
+        this.towerC.set(_n,diskInfo);
+        break;
+    };
+  }
+  //
+  auto_saveStep(n: number, from: string, to: string) {
+    // Implement logic to move a single disk from 'from' tower to 'to' tower
+    let hanoiStep : HanoiStep = new HanoiStep(n,from,to);
+    //
+    this._steps.push(hanoiStep);
+    //
+    this._stepsAmt++;
+  }
+  //
+  auto_towerOfHanoi(n : number, from_rod : string, to_rod : string, aux_rod : string ):void
+  {
+      if (n === 0) {
+        return;
+      }
+      this.auto_towerOfHanoi(n - 1, from_rod, aux_rod, to_rod);
+      this.auto_saveStep(n,from_rod,to_rod);
+      this.auto_towerOfHanoi(n - 1, aux_rod, to_rod, from_rod);
+  }
+  //
+  auto_newGame():void {
+    //
+    console.log("[HANOI TOWERS] - [NEW GAME]")
+    //
+    //this._diskAmt   = parseInt(this.__diskAmtList.nativeElement.options[this.__diskAmtList.nativeElement.options.selectedIndex].value);
+    //
+    this._diskAmt   = 3;
+    //
+    if (this._diskAmt === 0)
+        return;
+    //
+    this.towerA      =  new Map<number,( DiskInfo | undefined)>();
+    let  graph      : string = "";
+    for (let i= 1; i <= this._diskAmt; i++) {
+      graph = graph + "*";
+      this.towerA.set(i,new DiskInfo(i,graph));
+    }  
+    //
+    this.towerB    =  new Map<number,( DiskInfo | undefined)>();
+    for (let i= 1; i <= this._diskAmt; i++) {
+      this.towerB.set(i,new DiskInfo(i,"-"));
+    }  
+    //
+    this.towerC    =  new Map<number,( DiskInfo | undefined)>();
+    for (let i= 1; i <= this._diskAmt; i++) {
+      this.towerC.set(i,new DiskInfo(i,"-"));
+    }  
+    //
+    this.steps        = [];
+    this._steps       = [];
+    this._stepsIndex  = 0;
+    this._stepsAmt    = 0;
+    //
+    this._startGame  = false;
+  }
+  //  
+  auto_startGame():void {
+    //
+    this.auto_newGame();
+    //
+    console.log("[HANOI TOWERS] - [START GAME]")
+    //
+    if (this._diskAmt === 0)
+      return;
+    //
+    this._startGame = true;
+    // A, B and C are names of rods
+    this.auto_towerOfHanoi(this._diskAmt, 'A', 'C', 'B');
+    //
+    this.auto_printSteps();
+  }
 }
