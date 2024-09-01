@@ -102,12 +102,14 @@ export class HanoiEngine
     this.auto_newGame();
   }
   //
-  private _checkWinCondition() {
+  public _checkWinCondition() {
     const currentState = this.gameState$.getValue();
     if (currentState[2].length === 3) {
       console.log('Congratulations! You solved the puzzle!');
       // You can add more win condition logic here
+      return true;
     }
+    return false;
   }
 ////////////////////////////////////////////////////////////////////
   //

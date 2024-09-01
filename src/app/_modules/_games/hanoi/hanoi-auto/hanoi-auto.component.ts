@@ -18,7 +18,7 @@ export class HanoiAutoComponent implements OnInit {
     ngOnInit() {
         //
         this.hanoiEngine.manual_resetGame();
-        //this.hanoiEngine.auto_startGame();      
+    
     }
  
 }
