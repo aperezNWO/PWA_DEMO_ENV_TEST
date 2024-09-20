@@ -68,7 +68,7 @@ export class UntTestingComponent {
   //
   TestSpringBoot(): void {
     //
-    console.log('[TEST SPRINBBOOT] \n');
+    console.log('[TEST SPRINGBOOT] \n');
     //
     this.BtnTestSpringBootCaption = '...(retrieving data)...';
     //
@@ -82,12 +82,12 @@ export class UntTestingComponent {
         //
         console.log('[TEST - NODEJS] - (return): ' + this.lblStatusSpringBoot);
         //
-        this.BtnTestSpringBootCaption = '[TEST NODE.JS]';
+        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
       },
       error: (err: Error) => {
         //
         console.error(
-          '[TEST - NODEJS] - (ERROR) : ' + JSON.stringify(err.message),
+          '[TEST - SPRINBBOOT] - (ERROR) : ' + JSON.stringify(err.message),
         );
       },
       complete: () => {
