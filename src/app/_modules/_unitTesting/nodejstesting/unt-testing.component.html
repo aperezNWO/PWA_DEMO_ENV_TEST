@@ -1,9 +1,16 @@
 <div align="left">
+    <hr>
     <h1>[NODE.JS]</h1>
-    <hr>
+    <br>
     <input type="button" (click)="this.TestNodeJs()" value="{{this.BtnTestNodeJSCaption}}" [disabled]="!(this.BtnTestNodeJSCaption == '[TEST NODE.JS]')">
-    <hr>
+    <br>
     <label id="lblStatusNodeJs">Test Result :[{{this.lblStatusNodeJs}}]</label>
+    <hr>
+    <h1>[SPRING BOOT]</h1>
+    <input type="button" (click)="this.TestSpringBoot()" value="{{this.BtnTestSpringBootCaption}}" [disabled]="!(this.BtnTestSpringBootCaption == '[TEST SPRINGBOOT]')">
+    <br>
+    <label id="lblStatusSprinbBoot">Test Result :[{{this.lblStatusSpringBoot}}]</label>
+    <hr>
 </div>
 <hr />
 <div align="left">

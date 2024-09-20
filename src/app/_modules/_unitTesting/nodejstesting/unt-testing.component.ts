@@ -15,6 +15,10 @@ export class UntTestingComponent {
   //
   protected BtnTestNodeJSCaption: string = '[TEST NODE.JS]';
   //
+  protected lblStatusSpringBoot: string = '';
+  //
+  protected BtnTestSpringBootCaption: string = '[TEST SPRINGBOOT]';
+  //
   constructor(
     private algorithmService: AlgorithmService,
     private router: Router,
@@ -60,5 +64,39 @@ export class UntTestingComponent {
     };
     //
     testNodeJsObservable.subscribe(testNodeJsObserver);
+  }
+  //
+  TestSpringBoot(): void {
+    //
+    console.log('[TEST SPRINBBOOT] \n');
+    //
+    this.BtnTestSpringBootCaption = '...(retrieving data)...';
+    //
+    let testSprinbBootObservable: Observable<string> =
+      this.algorithmService._TestSprinbBoot();
+    //
+    const testSprinbBootObserver = {
+      next: (jsonData: string) => {
+        //
+        this.lblStatusSpringBoot =  jsonData;
+        //
+        console.log('[TEST - NODEJS] - (return): ' + this.lblStatusSpringBoot);
+        //
+        this.BtnTestSpringBootCaption = '[TEST NODE.JS]';
+      },
+      error: (err: Error) => {
+        //
+        console.error(
+          '[TEST - NODEJS] - (ERROR) : ' + JSON.stringify(err.message),
+        );
+      },
+      complete: () => {
+        //
+        console.log('[TEST - springboot]  -  (COMPLETE)');
+        //
+      },
+    };
+    //
+    testSprinbBootObservable.subscribe(testSprinbBootObserver);
   }
 }
