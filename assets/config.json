@@ -6,6 +6,7 @@
     "baseUrlNodeJs"      : "https://tmvqhs-4000.csb.app/",
     "baseUrlNodeJsChat"  : "https://d57kw2-3000.csb.app/",
     "baseUrlNodeJsOcr"   : "https://rjts8s-3000.csb.app/upload",
-    "baseUrlSpringBoot"  : "https://pgpf9r-8080.csb.app/"
+    "baseUrlSpringBoot"  : "https://pgpf9r-8080.csb.app/",
+    "baseUrlSpringBoot_" : "http://localhost:8080/"
 }
   
