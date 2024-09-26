@@ -55,6 +55,10 @@ export class UntTestingComponent {
         console.error(
           '[TEST - NODEJS] - (ERROR) : ' + JSON.stringify(err.message),
         );
+        //
+        this.lblStatusNodeJs      =   err.message;
+        //
+        this.BtnTestNodeJSCaption = '[TEST NODE.JS]';
       },
       complete: () => {
         //
@@ -86,14 +90,19 @@ export class UntTestingComponent {
       },
       error: (err: Error) => {
         //
+        let _status : string = JSON.stringify(err.message);
+        //
         console.error(
-          '[TEST - SPRINBBOOT] - (ERROR) : ' + JSON.stringify(err.message),
+          '[TEST - SPRINBBOOT] - (ERROR) : ' + _status 
         );
+        //
+        this.lblStatusSpringBoot =  _status;
+        //
+        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
       },
       complete: () => {
         //
         console.log('[TEST - springboot]  -  (COMPLETE)');
-        //
       },
     };
     //
