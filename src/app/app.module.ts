@@ -34,10 +34,12 @@ import { DevComponent                  } from './_modules/_home/dev/dev.componen
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { RxJSPlaygroundComponent       } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
+import { PhotoCaptureComponent         } from './_modules/_miscelaneous/photo-capture/photo-capture.component';
 import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
 import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
+import { saveAs                        } from 'file-saver';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -111,6 +113,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     DevComponent, 
                     SCMComponent, 
                     TopicsComponent, 
+                    PhotoCaptureComponent,
                   ],
     providers: [DatePipe, HttpClient, provideClientHydration(),
       [

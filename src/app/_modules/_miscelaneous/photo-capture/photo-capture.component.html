@@ -1,0 +1,14 @@
+<h4>[HANOI- AUTO]</h4>
+<hr/>
+<div class="camera-container">
+    <video #video autoplay></video>
+    <canvas #canvas hidden></canvas>
+    <button (click)="capturePhoto()">Capture Photo</button>
+    <button (click)="saveImage()">Save Image</button>
+    <img [src]="capturedImage" *ngIf="capturedImage" alt="Captured Photo" />
+  </div>
+<hr />
+<div align="left">
+    <a routerLink="/Dev">[Volver al Menu]</a>      
+</div>
+
