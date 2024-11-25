@@ -1,12 +1,24 @@
+<style>
+    video {
+      /*transform: scaleX(1); /* Flip horizontally */
+      /*-webkit-transform: scaleX(1); /* For Safari */
+      width: 50%; /* Optional: adjust video size */
+      height:50%;
+      transform: scaleX(1); 
+    }
+  </style>
 <h4>[HANOI- AUTO]</h4>
 <hr/>
 <div class="camera-container">
-    <video #video autoplay></video>
-    <canvas #canvas hidden></canvas>
+    <video #video autoplay ></video>
+    <canvas #canvas hidden ></canvas>
     <button (click)="capturePhoto()">Capture Photo</button>
     <button (click)="saveImage()">Save Image</button>
     <img [src]="capturedImage" *ngIf="capturedImage" alt="Captured Photo" />
   </div>
+<div>
+    Status : <label id="lblStatus">{{this.status}}</label>
+</div>
 <hr />
 <div align="left">
     <a routerLink="/Dev">[Volver al Menu]</a>      

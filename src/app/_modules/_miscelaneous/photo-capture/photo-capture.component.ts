@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { saveAs                           } from 'file-saver';
+import { MCSDService } from 'src/app/_services/mcsd.service';
 
 @Component({
   selector: 'app-photo-capture',
@@ -12,13 +13,21 @@ export class PhotoCaptureComponent {
 
   capturedImage: string | null = null;
 
+  status       : string | null = null;      
+  //
+  constructor(public mcsdService : MCSDService)
+  {
+
+  }
+
   ngAfterViewInit() {
     this.startCamera();
   }
 
   startCamera() {
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then((stream) => {
+    navigator.mediaDevices.getUserMedia({ 
+      video: { facingMode: { exact: 'environment' } }, // Outward-facing camera
+    }).then((stream) => {
         this.video.nativeElement.srcObject = stream;
       })
       .catch((err) => {
@@ -32,8 +41,12 @@ export class PhotoCaptureComponent {
     const context = canvas.getContext('2d');
 
     if (context) {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
+
+      canvas.width = video.videoWidth / 4;
+      canvas.height = video.videoHeight / 4;
+
+      console.log("width: " + canvas.width + " height: " + canvas.height);
+
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
       this.capturedImage = canvas.toDataURL('image/png');
     }
@@ -41,8 +54,9 @@ export class PhotoCaptureComponent {
 
   saveImage() {
     if (this.capturedImage) {
-      const blob = this.dataURLToBlob(this.capturedImage);
-      saveAs(blob, 'captured-photo.png');
+      //const blob = this.dataURLToBlob(this.capturedImage);
+      //saveAs(blob, 'captured-photo.png');
+      this.uploadImage(this.capturedImage)
     }
   }
 
@@ -56,5 +70,28 @@ export class PhotoCaptureComponent {
     }
 
     return new Blob([byteArray], { type: mimeString });
+  }
+
+  uploadImage(base64ImageString : string):void {
+    // Replace 'yourBase64ImageString' with the actual base64 image string
+    //const base64ImageString = 'yourBase64ImageString';
+    //this.statusButton = '..parsing..';
+    //
+    this.mcsdService.uploadBase64Image(base64ImageString).subscribe(
+      (response) => {
+        console.log('Image uploaded successfully:', response);
+        //
+        this.status = JSON.parse(JSON.stringify(response))['message'];
+        //this.statusButton = '[save]';
+      },
+      (error) => {
+        //
+        console.error('Error uploading image:', error);
+        //
+        //this.status = error;
+        //
+        //this.statusButton = '[save]';
+      }
+    );
   }
 }
