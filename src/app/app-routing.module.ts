@@ -9,6 +9,7 @@ import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-tow
 import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
 import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
+import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
@@ -30,6 +31,7 @@ const routes : Routes = [
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
   { path: 'PhotoCapture'     , component: PhotoCaptureComponent      },
+  { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   },
   { path: 'Ocr'              , component: OcrComponent               },
   { path: 'Dev'              , component: DevComponent               },
   { path: 'SCM'              , component: SCMComponent               },

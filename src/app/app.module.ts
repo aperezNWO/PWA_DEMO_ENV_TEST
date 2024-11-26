@@ -25,6 +25,7 @@ import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-aut
 import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
 import { MessageComponent              } from './_modules/_miscelaneous/chat/message/message.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
+import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
 import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
 import { ConfigService                 } from './_services/config.service';
@@ -39,7 +40,6 @@ import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
 import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
-import { saveAs                        } from 'file-saver';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -109,6 +109,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     RxJSPlaygroundComponent,
                     TicTacToeOnlineComponent, 
                     OcrComponent, 
+                    OcrPhotoCaptureComponent,
                     NavComponent, 
                     DevComponent, 
                     SCMComponent, 

@@ -1,0 +1,18 @@
+#signatureCanvas
+{
+    width:400px;
+    height:400px;
+    background-color: aliceblue;
+}
+
+.signature-pad {
+    border: 2px solid #000;
+}
+
+video {
+    /*transform: scaleX(1); /* Flip horizontally */
+    /*-webkit-transform: scaleX(1); /* For Safari */
+    width: 50%; /* Optional: adjust video size */
+    height:50%;
+    transform: scaleX(1); 
+  }
