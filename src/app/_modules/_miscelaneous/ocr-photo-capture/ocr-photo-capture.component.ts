@@ -30,6 +30,7 @@ export class OcrPhotoCaptureComponent {
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
 
   capturedImage: string | null = null;
+  facingMode: string | null = null;
 
   constructor(public mcsdService : MCSDService)
   {
@@ -94,8 +95,13 @@ export class OcrPhotoCaptureComponent {
   ////////////////////////////////////////////////////
   
   startCamera() {
+
+    this.facingMode = 'environment' ;
+    
     navigator.mediaDevices.getUserMedia({ 
-      video: { facingMode: { exact: 'environment' } }, // Outward-facing camera
+      // exact: 'user'          //  Selects the camera facing the user (typically the front-facing camera).
+      // exact : "environment"  //  Selects the camera facing away from the user (typically the rear-facing camera).
+      video: { facingMode: { exact: this.facingMode } }, // Outward-facing camera
     }).then((stream) => {
         this.video.nativeElement.srcObject = stream;
       })
@@ -106,8 +112,8 @@ export class OcrPhotoCaptureComponent {
 
 
   capturePhoto() {
-    const video = this.video.nativeElement;
-    const canvas = this.canvas.nativeElement;
+    const video   = this.video.nativeElement;
+    const canvas  = this.canvas.nativeElement;
     const context = canvas.getContext('2d');
 
     if (context) {
