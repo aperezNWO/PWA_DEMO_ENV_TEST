@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild     } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild,Renderer2    } from '@angular/core';
 import { MCSDService              } from 'src/app/_services/mcsd.service';
 import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
 import { NgxSignatureOptions      } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
@@ -27,7 +27,9 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   public statusButton  : string = '[save]';
   
   ///////////////////////////////////////////////////////////////
-  @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
+  @ViewChild('video', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
+  private videoStream: MediaStream | null = null;
+  private isFrontCamera: boolean = true;
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
   //
   capturedImage       : string | null = null;
@@ -43,6 +45,8 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   //
   @ViewChild('_sourceList')    _sourceList       : any;
   //
+  videoStyle            : string | null = "width: 150px;height:150px; transform : scaleX(1);"; 
+  //
   constructor(public mcsdService : MCSDService)
   {
       //
@@ -56,13 +60,19 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
     this.startCamera();
   }
   //  
+  
   ngAfterViewInit() {
-    //-----------------------------------------------------------------------------
+
+      //-----------------------------------------------------------------------------
     this.__sourceList = new Array();
     //
     this.__sourceList.push( new _languageName(0,"(SELECCIONE OPCION..)" ,false));        
     this.__sourceList.push( new _languageName(1,"(DESDE CANVAS)"        ,true));        
     this.__sourceList.push( new _languageName(2,"(DESDE CAMARA)"        ,false));        
+  }
+  //
+  ngOnDestroy(): void {
+    this.stopCamera();
   }
   //
   selectionChange() {
@@ -134,21 +144,26 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
 
   ////////////////////////////////////////////////////
   
-  startCamera() {
-
-    this.facingMode = 'user' ;
-    
-    navigator.mediaDevices.getUserMedia({ 
-      // exact: 'user'          //  Selects the camera facing the user (typically the front-facing camera).
-      // exact : "environment"  //  Selects the camera facing away from the user (typically the rear-facing camera).
-      video: { facingMode: { exact: 'environment'  } }, // Outward-facing camera
-    }).then((stream) => {
-        this.video.nativeElement.srcObject = stream;
-      })
-      .catch((err) => {
-        console.error('Error accessing camera:', err);
+  async startCamera(): Promise<void> {
+    try {
+      this.videoStream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: this.isFrontCamera ? 'user' : 'environment' },
       });
+      if (this.videoStream) {
+        this.videoElement.nativeElement.srcObject = this.videoStream;
+      }
+    } catch (error) {
+      console.error('Error accessing the camera:', error);
+    }
   }
+  //
+  stopCamera(): void {
+    if (this.videoStream) {
+      this.videoStream.getTracks().forEach((track) => track.stop());
+      this.videoStream = null;
+    }
+  }
+
   //
 
   capturePhoto() {
@@ -156,7 +171,7 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
     this.cameraContainerHidden = true;
     this.capturedImageHidden   = false;
     //
-    const video   = this.video.nativeElement;
+    const video   = this.videoElement.nativeElement;
     const canvas  = this.canvas.nativeElement;
     const context = canvas.getContext('2d');
     //
@@ -193,5 +208,13 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
 
     return new Blob([byteArray], { type: mimeString });
   }
-  
+  //
+  async flipCamera() : Promise<void> {
+    //
+    console.log('flippling camera');
+    //
+    this.isFrontCamera = !this.isFrontCamera;
+    this.stopCamera();
+    await this.startCamera();
+  }
 }

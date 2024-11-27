@@ -21,7 +21,7 @@
     <div id ="cameraContainer" [hidden]="this.hiddenCameraContainer">
         <hr>
        <div class="camera-container" [hidden]="this.cameraContainerHidden">
-            <video #video autoplay ></video>
+            <video #video autoplay [style]="this.videoStyle"></video>
             <canvas #canvas hidden ></canvas>
        </div>
        <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo" />
@@ -30,6 +30,8 @@
         <button (click)="capturePhoto()">Capture Photo</button>
         |
         <button (click)="saveImage()">Save Image</button>
+        |
+        <button (click)="flipCamera()">Flip Camera</button>
         <!-- BOTONES FIN    -->
     </div>
     <hr>
