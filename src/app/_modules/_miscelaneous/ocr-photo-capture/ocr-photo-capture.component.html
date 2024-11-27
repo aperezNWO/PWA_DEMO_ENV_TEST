@@ -27,9 +27,9 @@
        <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo" />
        <hr />
         <!-- BOTONES INICIO -->
-        <button (click)="capturePhoto()">Capture Photo</button>
+        <button (click)="capturePhoto()" [disabled]="(this.captureButtonDisabled)">{{this.captureButtonStatus}}</button>
         |
-        <button (click)="saveImage()">Save Image</button>
+        <button (click)="saveImage()" [disabled]="(this.saveImageButtonDisabled)">{{this.statusButtonSaveImage}}</button>
         |
         <button (click)="flipCamera()">Flip Camera</button>
         <!-- BOTONES FIN    -->

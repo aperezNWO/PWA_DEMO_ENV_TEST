@@ -24,7 +24,9 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   //
   public status : string = '';
   //
-  public statusButton  : string = '[save]';
+  public statusButton          : string = '[save]';
+  public statusButtonSaveImage : string = '[save image]';
+  public captureButtonStatus   : string = '[capture image]';
   
   ///////////////////////////////////////////////////////////////
   @ViewChild('video', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
@@ -41,6 +43,9 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   hiddenCameraContainer : boolean = false;
   cameraContainerHidden : boolean = false;  
   capturedImageHidden   : boolean = true;
+  captureButtonDisabled   : boolean = false;
+  saveImageButtonDisabled : boolean = true;
+
   selectedIndex         : number  = 0;
   //
   @ViewChild('_sourceList')    _sourceList       : any;
@@ -90,6 +95,9 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
           this.hiddenCameraContainer = false;         
         break;
     }
+    //
+    this.status = "";
+    //
     console.log(`Selected Source : ${this.selectedIndex}`);
   }
   /** The begin event of sign */
@@ -123,13 +131,24 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   uploadImage(base64ImageString : string):void {
     // Replace 'yourBase64ImageString' with the actual base64 image string
     //const base64ImageString = 'yourBase64ImageString';
-    this.statusButton = '..parsing..';
+    this.statusButton          = '..parsing..';
+    this.statusButtonSaveImage = '..parsing..';
+
+    this.capturedImageHidden     = false;
+    this.captureButtonDisabled   = true;
+    this.saveImageButtonDisabled = true;
+
     //
     this.mcsdService.uploadBase64Image(base64ImageString).subscribe(
       (response) => {
         console.log('Image uploaded successfully:', response);
         this.status = JSON.parse(JSON.stringify(response))['message'];
-        this.statusButton = '[save]';
+        this.statusButton            = '[save]';
+        this.statusButtonSaveImage   = '[save image]';
+        this.captureButtonStatus     = '[start capture]';
+        this.captureButtonDisabled   = false;
+        this.saveImageButtonDisabled = true;
+
       },
       (error) => {
         //
@@ -167,31 +186,38 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   //
 
   capturePhoto() {
-    //
-    this.cameraContainerHidden = true;
-    this.capturedImageHidden   = false;
-    //
-    const video   = this.videoElement.nativeElement;
-    const canvas  = this.canvas.nativeElement;
-    const context = canvas.getContext('2d');
-    //
-    if (context) {
+    if (this.captureButtonStatus == '[capture image]')
+    {
+        //
+        this.cameraContainerHidden   = true;
+        this.capturedImageHidden     = false;
+        this.captureButtonDisabled   = true;
+        this.saveImageButtonDisabled = false;
+        //
+        const video   = this.videoElement.nativeElement;
+        const canvas  = this.canvas.nativeElement;
+        const context = canvas.getContext('2d');
+        //
+        if (context) {
 
-      canvas.width  = video.videoWidth / 4;
-      canvas.height = video.videoHeight / 4;
+          canvas.width  = video.videoWidth / 4;
+          canvas.height = video.videoHeight / 4;
 
-      console.log("width: " + canvas.width + " height: " + canvas.height);
+          console.log("width: " + canvas.width + " height: " + canvas.height);
 
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      this.capturedImage = canvas.toDataURL('image/png');
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          this.capturedImage = canvas.toDataURL('image/png');
+        }
+    } else 
+    {
+      this.cameraContainerHidden   = false;
+      this.capturedImageHidden     = true;
+      this.captureButtonStatus     = '[capture image]';
     }
   }
   //
   saveImage() {
     if (this.capturedImage) {
-      //
-      this.cameraContainerHidden = false;
-      this.capturedImageHidden   = true;
       //
       this.uploadImage(this.capturedImage)
     }
