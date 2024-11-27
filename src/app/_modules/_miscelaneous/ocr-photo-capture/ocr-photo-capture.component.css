@@ -12,7 +12,36 @@
 video {
     /*transform: scaleX(1); /* Flip horizontally */
     /*-webkit-transform: scaleX(1); /* For Safari */
-    width: 50%; /* Optional: adjust video size */
-    height:50%;
+    width: 150px;     
+    height:150px;
     transform: scaleX(1); 
   }
+
+      /*------------------------------------------------*/
+    /* ESTILO PARA FORMJLARIO                         */
+    /*------------------------------------------------*/
+    .form-group {
+        width:350px;
+        margin-bottom: 1em;
+        display: flex;
+        align-items: center;
+        background-color: #ccc;
+    }
+  
+    label {
+        width      :  150px;
+        margin-left:  5px; /* Add spacing between label and input */
+        margin-left:  5px; /* Add spacing between label and input */
+    }
+    
+    input[type="text"]
+    {
+        width: 10px;
+    }
+    
+    input,
+    textarea,
+    select {
+        /* Adjust width and other styles as needed */
+        flex: 1; /* Grow input fields to fill remaining space */
+    }

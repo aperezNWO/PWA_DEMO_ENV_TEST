@@ -1,14 +1,15 @@
-import { Component, ElementRef, ViewChild     } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild     } from '@angular/core';
 import { MCSDService              } from 'src/app/_services/mcsd.service';
 import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
 import { NgxSignatureOptions      } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
+import { _languageName            } from 'src/app/_models/algorithm.model';
 
 @Component({
   selector: 'app-ocr-photo-capture',
   templateUrl: './ocr-photo-capture.component.html',
   styleUrl: './ocr-photo-capture.component.css'
 })
-export class OcrPhotoCaptureComponent {
+export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   /** Catch object, call functions via instance object */
   @ViewChild('signature') signature: NgxSignaturePadComponent | undefined;
   /** You can see more introduction in the below about NgxSignatureOptions */
@@ -28,20 +29,59 @@ export class OcrPhotoCaptureComponent {
   ///////////////////////////////////////////////////////////////
   @ViewChild('video') video!: ElementRef<HTMLVideoElement>;
   @ViewChild('canvas') canvas!: ElementRef<HTMLCanvasElement>;
-
-  capturedImage: string | null = null;
-  facingMode: string | null = null;
-
+  //
+  capturedImage       : string | null = null;
+  facingMode          : string | null = null;
+  //
+  tituloListadOrigen    : string | null = "[ORIGEN CAPTURA]";
+  __sourceList          : any;
+  hiddenCanvasContainer : boolean = false;
+  hiddenCameraContainer : boolean = false;
+  cameraContainerHidden : boolean = false;  
+  capturedImageHidden   : boolean = true;
+  selectedIndex         : number  = 0;
+  //
+  @ViewChild('_sourceList')    _sourceList       : any;
+  //
   constructor(public mcsdService : MCSDService)
   {
-
+      //
   }
-
-  
-  ngAfterViewInit() {
+  //
+  ngOnInit(): void {
+    //-----------------------------------------------------------------------------
+    this.hiddenCanvasContainer = false;
+    this.hiddenCameraContainer = true;
+    //
     this.startCamera();
   }
-
+  //  
+  ngAfterViewInit() {
+    //-----------------------------------------------------------------------------
+    this.__sourceList = new Array();
+    //
+    this.__sourceList.push( new _languageName(0,"(SELECCIONE OPCION..)" ,false));        
+    this.__sourceList.push( new _languageName(1,"(DESDE CANVAS)"        ,true));        
+    this.__sourceList.push( new _languageName(2,"(DESDE CAMARA)"        ,false));        
+  }
+  //
+  selectionChange() {
+    //
+    this.selectedIndex           = this._sourceList.nativeElement.options.selectedIndex;
+    //
+    switch (this.selectedIndex) 
+    {
+        case 1 : 
+          this.hiddenCanvasContainer = false;
+          this.hiddenCameraContainer = true;
+        break;
+        case 2 :
+          this.hiddenCanvasContainer = true;
+          this.hiddenCameraContainer = false;         
+        break;
+    }
+    console.log(`Selected Source : ${this.selectedIndex}`);
+  }
   /** The begin event of sign */
   onBeginSign(): void { }
  
@@ -96,12 +136,12 @@ export class OcrPhotoCaptureComponent {
   
   startCamera() {
 
-    this.facingMode = 'environment' ;
+    this.facingMode = 'user' ;
     
     navigator.mediaDevices.getUserMedia({ 
       // exact: 'user'          //  Selects the camera facing the user (typically the front-facing camera).
       // exact : "environment"  //  Selects the camera facing away from the user (typically the rear-facing camera).
-      video: { facingMode: { exact: this.facingMode } }, // Outward-facing camera
+      video: { facingMode: { exact: 'environment'  } }, // Outward-facing camera
     }).then((stream) => {
         this.video.nativeElement.srcObject = stream;
       })
@@ -109,16 +149,20 @@ export class OcrPhotoCaptureComponent {
         console.error('Error accessing camera:', err);
       });
   }
-
+  //
 
   capturePhoto() {
+    //
+    this.cameraContainerHidden = true;
+    this.capturedImageHidden   = false;
+    //
     const video   = this.video.nativeElement;
     const canvas  = this.canvas.nativeElement;
     const context = canvas.getContext('2d');
-
+    //
     if (context) {
 
-      canvas.width = video.videoWidth / 4;
+      canvas.width  = video.videoWidth / 4;
       canvas.height = video.videoHeight / 4;
 
       console.log("width: " + canvas.width + " height: " + canvas.height);
@@ -127,15 +171,17 @@ export class OcrPhotoCaptureComponent {
       this.capturedImage = canvas.toDataURL('image/png');
     }
   }
-
+  //
   saveImage() {
     if (this.capturedImage) {
-      //const blob = this.dataURLToBlob(this.capturedImage);
-      //saveAs(blob, 'captured-photo.png');
+      //
+      this.cameraContainerHidden = false;
+      this.capturedImageHidden   = true;
+      //
       this.uploadImage(this.capturedImage)
     }
   }
-
+  //
   dataURLToBlob(dataURL: string): Blob {
     const byteString = atob(dataURL.split(',')[1]);
     const mimeString = dataURL.split(',')[0].split(':')[1].split(';')[0];
