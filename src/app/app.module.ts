@@ -13,7 +13,6 @@ import { HttpClientModule              } from '@angular/common/http';
 import { AppComponent                  } from './app.component';
 import { AppRoutingModule              } from './app-routing.module';
 import { LogType                       } from './_models/algorithm.model';
-import { HomeComponent                 } from './_modules/_home/home.component';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { BoardComponent                } from "./_modules/_games/tic-tac-toe/offline/board/board.component";
 import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
@@ -22,24 +21,26 @@ import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-tow
 import { TowerComponent                } from './_modules/_games/hanoi/hanoi-towers/tower/tower.component';
 import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-auto/hanoi-auto.component';
-import { UntTestingComponent           } from './_modules/_unitTesting/nodejstesting/unt-testing.component';
 import { MessageComponent              } from './_modules/_miscelaneous/chat/message/message.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
-import { OcrComponent                  } from './_modules/_miscelaneous/ocr/ocr.component';
-import { ConfigService                 } from './_services/config.service';
-import { MCSDService                   } from './_services/mcsd.service';
+import { ConfigService                 } from './_services/config/config.service';
+import { MCSDService                   } from './_services/mcsd/mcsd.service';
 import { NavComponent                  } from './_modules/_home/nav/nav.component';
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
-import { RxJSPlaygroundComponent       } from './_modules/_miscelaneous/rx-jsplayground/rx-jsplayground.component';
-import { PhotoCaptureComponent         } from './_modules/_miscelaneous/photo-capture/photo-capture.component';
 import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
 import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
+import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
+import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
+import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
+import { HomeComponent                 } from './_modules/_home/home/home.component';
+import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
+import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -103,7 +104,6 @@ export class CustomErrorHandler implements ErrorHandler {
                     HanoiTowersComponent, 
                     HanoiObservableComponent,
                     HanoiAutoComponent,
-                    UntTestingComponent, 
                     MessageComponent, 
                     ChatComponent, 
                     RxJSPlaygroundComponent,
@@ -115,6 +115,8 @@ export class CustomErrorHandler implements ErrorHandler {
                     SCMComponent, 
                     TopicsComponent, 
                     PhotoCaptureComponent,
+                    UntTestingComponent,
+                    SpeechRecognitionComponent,
                   ],
     providers: [DatePipe, HttpClient, provideClientHydration(),
       [

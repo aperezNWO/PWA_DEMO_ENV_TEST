@@ -2,7 +2,7 @@ import { CommonModule             } from '@angular/common';
 import { Component, ViewChild     } from '@angular/core';
 import { SquareComponent          } from "../square/square.component";
 import { ListItem                 } from 'src/app/_models/algorithm.model';
-import { ChatService              } from 'src/app/_services/chat.service';
+import { ChatService              } from 'src/app/_services/chat/chat.service';
 import { TicTacToeEngine          } from 'src/app/_engines/tictactoe-engine';
 //
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ObservableService } from 'src/app/_services/observable.service';
+import { ObservableService } from 'src/app/_services/observable/observable.service';
 
 @Component({
   selector: 'app-rx-jsplayground',

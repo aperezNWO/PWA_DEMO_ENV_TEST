@@ -1,7 +1,7 @@
 import { Component, VERSION                     } from '@angular/core';
 import { Title                                  } from '@angular/platform-browser';
 import { Router                                 } from '@angular/router';
-import { ConfigService                          } from 'src/app/_services/config.service';
+import { ConfigService                          } from 'src/app/_services/config/config.service';
 import { CustomErrorHandler, LoggingInterceptor } from 'src/app/app.module';
 
 @Component({

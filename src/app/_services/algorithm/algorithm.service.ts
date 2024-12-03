@@ -6,7 +6,7 @@ import {
 } from '@angular/common/http';
 import { Injectable    } from '@angular/core';
 import { Observable    } from 'rxjs';
-import { ConfigService } from './config.service';
+import { ConfigService } from '../config/config.service';
 
 @Injectable({
   providedIn: 'root',

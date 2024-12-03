@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import io from 'socket.io-client';
 import { of } from 'rxjs';
-import { ConfigService } from './config.service';
+import { ConfigService } from '../config/config.service';
 
 //
 @Injectable({ providedIn: 'root' })

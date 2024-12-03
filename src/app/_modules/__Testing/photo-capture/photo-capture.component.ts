@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { saveAs                           } from 'file-saver';
-import { MCSDService } from 'src/app/_services/mcsd.service';
+import { MCSDService } from 'src/app/_services/mcsd/mcsd.service';
 
 @Component({
   selector: 'app-photo-capture',
