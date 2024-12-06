@@ -75,5 +75,16 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
       -- [_] OCR.
 
       -- [_] CV / BASIC SHAPES RECOGNITION.
+
+      
+-- [_] index.
+
+      -- [_] app routes.
+
+      -- [_] atributo adicional.
+
+      -- [_] grid.
+
+      -- [_] speech to text search.
       
 /////////////////////////////////////////////
