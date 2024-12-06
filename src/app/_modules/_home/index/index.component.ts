@@ -7,6 +7,24 @@ import { Component } from '@angular/core';
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
-export class IndexComponent {
-
+export class IndexComponent /* extends BaseComponent  */ {
+   //
+   constructor(
+    
+    //public _service    : _BaseService,
+    //public _authService: AuthService,
+    //public _configService : ConfigService
+)
+{
+    //
+    //super(_service, _authService, _configService, ENV_LIST_CPP_DEMO);
 }
+}
+
+/*
+@Injectable({
+	providedIn: 'root'
+})
+class _BaseService  extends BaseService {
+	
+}*/
