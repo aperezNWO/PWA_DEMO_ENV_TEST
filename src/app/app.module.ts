@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, ErrorHandler } from '@angular/core';
 import { Injectable, NgModule          } from '@angular/core';
-import { CommonModule, DatePipe        } from '@angular/common';
+import { AsyncPipe, CommonModule, DatePipe, DecimalPipe        } from '@angular/common';
 import { FormsModule                   } from '@angular/forms';
 import { ReactiveFormsModule           } from '@angular/forms';
 import { BrowserModule                 } from '@angular/platform-browser';
@@ -34,13 +34,15 @@ import { TopicsComponent               } from './_modules/_home/topics/topics.co
 import { finalize, tap                 } from 'rxjs';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
-import { NgbModule                     } from '@ng-bootstrap/ng-bootstrap'
+import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
 import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
 import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
+import { IndexComponent } from './_modules/_home/index/index.component';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -117,6 +119,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     PhotoCaptureComponent,
                     UntTestingComponent,
                     SpeechRecognitionComponent,
+                    IndexComponent,
                   ],
     providers: [DatePipe, HttpClient, provideClientHydration(),
       [
@@ -146,6 +149,14 @@ export class CustomErrorHandler implements ErrorHandler {
         BrowserAnimationsModule,
         NgxSignaturePadModule,
         NgbModule,
+        NgbModule,
+        NgbPaginationModule, 
+        NgbAlertModule,
+        NgbHighlight, 
+        NgbPaginationModule,
+        DecimalPipe, 
+        FormsModule, 
+        AsyncPipe, 
         ButtonModule,
     ]
 })

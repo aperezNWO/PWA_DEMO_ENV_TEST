@@ -1,11 +1,11 @@
 import { Inject, Injectable, QueryList, ViewChildren } from "@angular/core";
 import { Observable, of                              } from "rxjs";
-//import { _BaseModel, SiteRole                        } from "../_models/common/common";
-//import { _environment                                } from "../../environments/environment";
-//import { ConfigService                               } from "../_services/_config/config.service";
-//import { BaseService                                 } from "../_services/_config/base.service";
-//import { AuthService                                 } from "../_services/_config/auth.service";
-//import { _BaseSortEvent, BaseSortableHeader          } from "../_directives/BaseSortableHeader.directive";
+import { _BaseModel, SiteRole                        } from "../_models/common/common";
+import { _environment                                } from "../../environments/environment";
+import { _BaseSortEvent, BaseSortableHeader          } from "../_directives/BaseSortableHeader.directive";
+import { AuthService                                 } from "../_services/config/auth.service";
+import { ConfigService                               } from "../_services/config/config.service";
+import { BaseService                                 } from "../_services/config/base.service";
 
 @Injectable({
 	providedIn: 'root'
@@ -13,26 +13,26 @@ import { Observable, of                              } from "rxjs";
 export class BaseComponent
 {
     //
-    //@ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
+    @ViewChildren(BaseSortableHeader) headers: QueryList<BaseSortableHeader> | undefined;
     //
-	//public PagesList!       : Observable<_BaseModel[]>;
+	public PagesList!       : Observable<_BaseModel[]>;
 	public total!           : Observable<number>; 
 	//
-	//public ConfigRoleString : string = SiteRole.RoleConfig.toString(); 
+	public ConfigRoleString : string = SiteRole.RoleConfig.toString(); 
     //
-    constructor( /*public __service       : BaseService,*/
-                 /*ublic __authService   : AuthService,*/
-                 /*public __configService : ConfigService,*/
+    constructor( public __service       : BaseService,
+                 public __authService   : AuthService,
+                 public __configService : ConfigService,
                  @Inject('dictionaryKey') public _dictionaryKey: string,
                )
     {
         //
-        //this.PagesList       = of([]);
+        this.PagesList       = of([]);
         //
-        //const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
+        const pageSetting    = _environment.pageSettingDictionary[_dictionaryKey];
         //
         let _environmentList : string[] = [];
-        /*
+        //
         __configService.loadJsonData(pageSetting.p_Path,
                                     _environmentList).then(() => {
             //
@@ -44,10 +44,9 @@ export class BaseComponent
             //    
             this.PagesList  = __service.Pagelist;
             this.total      = __service.total;
-        });*/
+        });
     }
     //
-    /*
     onSort({ _column, _direction }: _BaseSortEvent) {
         // resetting other headers
         this.headers?.forEach((header) => {
@@ -56,7 +55,7 @@ export class BaseComponent
             }
         });
         //
-        //this.__service.sortColumn    = _column;
-        //this.__service.sortDirection = _direction;
-    }*/
+        this.__service.sortColumn    = _column;
+        this.__service.sortDirection = _direction;
+    }
 }
