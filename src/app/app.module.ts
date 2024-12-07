@@ -31,18 +31,19 @@ import { NavComponent                  } from './_modules/_home/nav/nav.componen
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
-import { finalize, tap                 } from 'rxjs';
-import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
-import { ButtonModule                  } from 'primeng/button';
-import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
-import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
 import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
 import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
-import { IndexComponent } from './_modules/_home/index/index.component';
+import { IndexComponent                } from './_modules/_home/index/index.component';
+import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
+import { finalize, tap                 } from 'rxjs';
+import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
+import { ButtonModule                  } from 'primeng/button';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -120,8 +121,9 @@ export class CustomErrorHandler implements ErrorHandler {
                     UntTestingComponent,
                     SpeechRecognitionComponent,
                     IndexComponent,
+                    NotFoundPageComponent,
                   ],
-    providers: [DatePipe, HttpClient, provideClientHydration(),
+    providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [
         { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
         { provide: ErrorHandler, useClass: CustomErrorHandler },

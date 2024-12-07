@@ -62,6 +62,7 @@ export class SpeechRecognitionComponent  implements OnInit  {
       const utterance = new SpeechSynthesisUtterance(this.transcript);
       utterance.lang = 'es-CO';
       window.speechSynthesis.speak(utterance);
+
     } else {
       alert('No text to speak!');
     }

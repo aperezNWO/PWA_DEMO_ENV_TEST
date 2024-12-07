@@ -1,5 +1,5 @@
 import { NgModule                      } from '@angular/core';
-import { RouterModule, Routes          } from '@angular/router';
+import { Route, RouterModule, Routes          } from '@angular/router';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
 import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
@@ -16,29 +16,35 @@ import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.comp
 import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
-import { SpeechRecognitionComponent } from './_modules/__Testing/speech-recognition/speech-recognition.component';
+import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
+import { IndexComponent                } from './_modules/_home/index/index.component';
+//
+export interface _Route extends Route
+{
+    caption : string;
+}
 
 //
-const routes : Routes = [ 
-  { path: 'Home'             , component: HomeComponent              },
-  { path: ''                 , component: HomeComponent              },
-  { path: 'Sudoku'           , component: SudokuComponent            },
-  { path: 'TicTacToe'        , component: TicTacToeComponent         },
-  { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   },
-  { path: 'Hanoi'            , component: HanoiTowersComponent       },
-  { path: 'HanoiRjxs'        , component: HanoiObservableComponent   },
-  { path: 'HanoiAuto'        , component: HanoiAutoComponent         },
-  { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
-  { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    },
-  { path: 'PhotoCapture'     , component: PhotoCaptureComponent      },
-  { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   },
-  { path: 'Ocr'              , component: OcrComponent               },
-  { path: 'SpeechRecognition', component: SpeechRecognitionComponent },
-  { path: 'BackendTesting'   , component: UntTestingComponent        },
-  { path: 'Dev'              , component: DevComponent               },
-  { path: 'SCM'              , component: SCMComponent               },
-  { path: 'Topics'           , component: TopicsComponent            },
-  { path: '**'               , component: NotFoundPageComponent      },
+export const routes : _Route[] = [ 
+  { path: 'Home'             , component: HomeComponent              , caption : 'Home'               },
+  { path: ''                 , component: HomeComponent              , caption : ''                   },
+  { path: 'Sudoku'           , component: SudokuComponent            , caption : 'Sudoku'             },
+  { path: 'TicTacToe'        , component: TicTacToeComponent         , caption : 'TicTacToe'          },
+  { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   , caption : 'TicTacToe-Online'   },
+  { path: 'Hanoi'            , component: HanoiTowersComponent       , caption : 'Hanoi'              },
+  { path: 'HanoiRjxs'        , component: HanoiObservableComponent   , caption : 'Hanoi-Rjxs'         },
+  { path: 'HanoiAuto'        , component: HanoiAutoComponent         , caption : 'Hanoi-Auto'         },
+  { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'    },
+  { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'      },
+  { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'  },
+  { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                },
+  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech-Recognition' },
+  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backen-dTesting'    },
+  { path: 'Dev'              , component: DevComponent               , caption : 'Dev'                },
+  { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                },
+  { path: 'Topics'           , component: TopicsComponent            , caption : 'Topics'             },
+  { path: 'Index'            , component: IndexComponent             , caption : 'Index'              },
+  { path: '**'               , component: NotFoundPageComponent      , caption : ''                   },
 ];
 
 @NgModule({

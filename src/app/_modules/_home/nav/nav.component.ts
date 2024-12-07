@@ -35,7 +35,11 @@ export class NavComponent {
     {
       'url': '/Topics', 
       'text': '[Topics]',
-    }    
+    },
+    {
+      'url': '/Index', 
+      'text': '[Index]',
+    }      
   ];
   //
   private  navbarCollapsed     : boolean = true;
