@@ -15,19 +15,13 @@ interface _BaseSortEvent {
 }
 //
 interface _BaseSearchResult {
-  //searchPages : _BaseModel[];
   searchPages : _Route[];
   total       : number;
 }   
 
-//
 type _SortDirection = 'asc' | 'desc' | '';
 //
 const pagerotate: { [key: string]: _SortDirection } = { asc: 'desc', desc: '', '': 'asc' };
-//
-//const compare = (v1: string | number | boolean, v2: string | number | boolean) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
-//const compare = (v1: Route , v2: Route ) => (v1 < v2 ? -1 : v1 > v2 ? 1 : 0);
-
 //
 interface _SearchState {
       page          : number;
@@ -37,37 +31,10 @@ interface _SearchState {
       sortDirection : _SortDirection;
 }
 //
-//function sort(pagelist: _BaseModel[], column: _SortColumn, direction: string): _BaseModel[] {
-/*
-function sort(pagelist: Routes, column: _SortColumn, direction: string): Routes {
-    if (direction === '' || column === '') {
-      return pagelist;
-    } else {
-      return [...pagelist].sort((a, b) => { 
-        const res = compare(a[column], b[column]);
-        return direction === 'asc' ? res : -res;
-      });
-    }
-}*/
-//
-//function matches(netcoreConfigPagelist: _BaseModel, term: string, pipe: PipeTransform) {
 function matches(netcoreConfigPagelist: _Route, term: string, pipe: PipeTransform) {
-return (
-  netcoreConfigPagelist.path?.toLowerCase().includes(term?.toLowerCase())        
-  /*
-  netcoreConfigPagelist.name.toLowerCase().includes(term?.toLowerCase())        ||
-  netcoreConfigPagelist.description.toLowerCase().includes(term?.toLowerCase()) ||
-  netcoreConfigPagelist.field_1?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_2?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_3?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_4?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_5?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_6?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_7?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_8?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_9?.toLowerCase().includes(term?.toLowerCase())    ||
-  netcoreConfigPagelist.field_10?.toLowerCase().includes(term?.toLowerCase())    */
-);
+    return (
+      netcoreConfigPagelist.path?.toLowerCase().includes(term?.toLowerCase())        
+    );
 }
 
 //
@@ -109,11 +76,7 @@ export class IndexComponent {
   public _total   = new BehaviorSubject<number>(0);
   public _search$ = new Subject<void>();
   //
-  //public _Pagelist = new BehaviorSubject<_BaseModel[]>([]);
   public _Pagelist = new BehaviorSubject<_Route[]>([]);
-  //
-  //public _SEARCH_PAGES: _BaseModel[] = [];
-  //public _SEARCH_PAGES: Routes = [];
   //
   public _state: _SearchState = {
     page: 1,
@@ -122,12 +85,12 @@ export class IndexComponent {
     sortColumn: '',
     sortDirection: '',
   };
-  //
-    //////////////////////////////////////////////////////////
-    recognition: any;
-    isListening = false;
-    transcript: string = '';
-    error: string = '';
+  //////////////////////////////////////////////////////////
+    recognition         : any;
+    isListening         : boolean  = false;
+    transcript          : string = '';
+    error               : string = '';
+    ListeningButtonIcon : string = '';
  
   //
   constructor(
@@ -135,33 +98,7 @@ export class IndexComponent {
     public _authService: AuthService,
   ) 
   {
-    //
-     // Initialize the SpeechRecognition object
-     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
-     if (SpeechRecognition) {
-       this.recognition = new SpeechRecognition();
-       this.recognition.lang = 'es-CO'; // Set language
-       this.recognition.interimResults = false; // Only final results
-       this.recognition.maxAlternatives = 1;
- 
-       // Event handlers
-       this.recognition.onresult = (event: any) => {
-         this.transcript = event.results[0][0].transcript;
-         console.log('Transcript:', this.transcript);
-       };
- 
-       this.recognition.onerror = (event: any) => {
-         this.error = event.error;
-         console.error('Error:', this.error);
-       };
- 
-       this.recognition.onend = () => {
-         this.isListening = false;
-         console.log('Recognition ended.');
-       };
-     } else {
-       alert('Speech Recognition API is not supported in your browser.');
-     }
+    this.InitializeSpeechRecognition();
     //
     this._search$
       .pipe(
@@ -178,6 +115,37 @@ export class IndexComponent {
     //
     this._search$.next();
   }
+  InitializeSpeechRecognition():void {
+    //
+    this.ListeningButtonIcon =  '../../../../assets/icons/mic_on.png';
+    this.isListening         = false;
+    // Initialize the SpeechRecognition object
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      this.recognition = new SpeechRecognition();
+      this.recognition.lang = 'es-CO'; // Set language
+      this.recognition.interimResults = false; // Only final results
+      this.recognition.maxAlternatives = 1;
+
+      // Event handlers
+      this.recognition.onresult = (event: any) => {
+        this.transcript = event.results[0][0].transcript;
+        console.log('Transcript:', this.transcript);
+      };
+
+      this.recognition.onerror = (event: any) => {
+        this.error = event.error;
+        this.isListening = false;
+        console.error('Error:', this.error);
+      };
+
+      this.recognition.onend = () => {
+        console.log('Recognition ended.');
+      };
+    } else {
+      alert('Speech Recognition API is not supported in your browser.');
+    }
+  }
   //
   private _search(): Observable<_BaseSearchResult> {
     //
@@ -189,11 +157,9 @@ export class IndexComponent {
     const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
     //
-    //_searchPages = sort(this._SEARCH_PAGES, sortColumn, sortDirection);
     _searchPages   = routes;
 
     // 2. filter
-   // _searchPages = _searchPages.filter((_searchPage: _BaseModel) => matches(_searchPage, searchTerm, this.pipe));
     _searchPages = _searchPages.filter((_searchPage: _Route) => matches(_searchPage, searchTerm, this.pipe));
     _total       = _searchPages.length;
 
@@ -275,25 +241,39 @@ export class IndexComponent {
     this.sortDirection = direction;
   }
   //////////////////////////////////////////////////////////
-
+  listeningEvent()
+  {
+      if (!this.isListening)
+        this.startListening();
+      else
+        this.stopListening();
+  }
   startListening() {
+    //
     if (this.recognition) {
+      console.log('listening started');
       this.isListening = true;
+      this.ListeningButtonIcon = '../../../../assets/icons/mic_off.png';
       this.recognition.start();
     }
   }
 
   stopListening() {
     if (this.recognition) {
+      console.log('listening ended');
       this.isListening = false;
+      this.ListeningButtonIcon = '../../../../assets/icons/mic_on.png';
       this.recognition.stop();
+      //
+      this.searchTerm = this.transcript;
+      //
+      this.speakText();
+
     }
   }
 
   speakText() {
     if (this.transcript) {
-      //
-      this.searchTerm = this.transcript;
       //
       const utterance = new SpeechSynthesisUtterance(this.transcript);
       utterance.lang = 'es-CO';

@@ -1,24 +1,6 @@
 <div align="left">
     <h1>[INDEX]</h1>
 	<hr>
-	<div class="speech-recognition-container">
-		<h2>Speech Recognition with Angular</h2>
-		<div class="controls">
-		  <button (click)="startListening()" [disabled]="isListening">Start Listening</button>
-		  <button (click)="stopListening()" [disabled]="!isListening">Stop Listening</button>
-		  <button (click)="speakText()">Speak Text</button>
-		</div>
-	  
-		<div class="output">
-		  <h3>Transcript:</h3>
-		  <p>{{ transcript || 'No speech detected yet.' }}</p>
-		</div>
-	  
-		<div *ngIf="error" class="error">
-		  <p>Error: {{ error }}</p>
-		</div>
-	  </div>
-	<hr>
 	<form>
     <div class="mb-3 row">
 		<label for="table-complete-search" class="col-xs-3 col-sm-auto col-form-label">Busqueda de Texto Completo:</label>
@@ -31,14 +13,22 @@
 				[(ngModel)]="searchTerm"
 			/>
 		</div>
+		<span class="col-sm-auto">
+			<button (click)="listeningEvent()"><img [src]="this.ListeningButtonIcon"></button>
+		</span>
 		@if (loading | async) {
 			<span class="col col-form-label">[Cargando...]</span>
 		}
+		@if ((this.isListening) && (!this.error))  {
+			<span class="col col-form-label">[Escuchando...]</span>
+		}
+		<span class="col col-form-label" *ngIf="error" class="error">
+			<p>Error: {{ error }}</p>
+	    </span>
 	</div>
 	<table class="table table-striped table-dark">
 		<thead>
 			<tr>
-				<!--(sortevent)="onSort($event)" -->
 				<th scope="col" sortable="path"            >[Pagina]</th>
 			</tr>
 		</thead>
