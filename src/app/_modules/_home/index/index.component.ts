@@ -87,10 +87,12 @@ export class IndexComponent {
   };
   //////////////////////////////////////////////////////////
     recognition         : any;
-    isListening         : boolean  = false;
-    transcript          : string = '';
-    error               : string = '';
-    ListeningButtonIcon : string = '';
+    isListening         : boolean   = false;
+    transcript          : string    = '';
+    error               : string    = '';
+    ListeningButtonIconOn : string  = './assets/images/mic_on.gif';
+    ListeningButtonIconOff: string  = './assets/images/mic_off.gif';
+    SpeakerIcon           : string  = './assets/images/speaker_on.gif';
  
   //
   constructor(
@@ -98,6 +100,7 @@ export class IndexComponent {
     public _authService: AuthService,
   ) 
   {
+    //
     this.InitializeSpeechRecognition();
     //
     this._search$
@@ -116,9 +119,6 @@ export class IndexComponent {
     this._search$.next();
   }
   InitializeSpeechRecognition():void {
-    //
-    this.ListeningButtonIcon =  '../../../../assets/icons/mic_on.png';
-    this.isListening         = false;
     // Initialize the SpeechRecognition object
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
     if (SpeechRecognition) {
@@ -129,6 +129,7 @@ export class IndexComponent {
 
       // Event handlers
       this.recognition.onresult = (event: any) => {
+        //
         this.transcript = event.results[0][0].transcript;
         console.log('Transcript:', this.transcript);
       };
@@ -140,6 +141,7 @@ export class IndexComponent {
       };
 
       this.recognition.onend = () => {
+        //
         console.log('Recognition ended.');
       };
     } else {
@@ -241,19 +243,11 @@ export class IndexComponent {
     this.sortDirection = direction;
   }
   //////////////////////////////////////////////////////////
-  listeningEvent()
-  {
-      if (!this.isListening)
-        this.startListening();
-      else
-        this.stopListening();
-  }
   startListening() {
     //
     if (this.recognition) {
       console.log('listening started');
       this.isListening = true;
-      this.ListeningButtonIcon = '../../../../assets/icons/mic_off.png';
       this.recognition.start();
     }
   }
@@ -261,14 +255,9 @@ export class IndexComponent {
   stopListening() {
     if (this.recognition) {
       console.log('listening ended');
+      //
       this.isListening = false;
-      this.ListeningButtonIcon = '../../../../assets/icons/mic_on.png';
-      this.recognition.stop();
-      //
-      this.searchTerm = this.transcript;
-      //
-      this.speakText();
-
+      this.recognition.stop()
     }
   }
 
@@ -278,6 +267,9 @@ export class IndexComponent {
       const utterance = new SpeechSynthesisUtterance(this.transcript);
       utterance.lang = 'es-CO';
       window.speechSynthesis.speak(utterance);
+      //
+      this.searchTerm = this.transcript;
+      //
     } else {
       alert('No text to speak!');
     }
