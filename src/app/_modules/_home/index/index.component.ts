@@ -93,6 +93,7 @@ export class IndexComponent {
     ListeningButtonIconOn : string  = './assets/images/mic_on.gif';
     ListeningButtonIconOff: string  = './assets/images/mic_off.gif';
     SpeakerIcon           : string  = './assets/images/speaker_on.gif';
+    clearFormIcon         : string  = './assets/images/clearForm.gif';;
  
   //
   constructor(
@@ -273,6 +274,11 @@ export class IndexComponent {
     } else {
       alert('No text to speak!');
     }
+  }
+
+  clearText()
+  {
+      this.searchTerm = "";
   }
 }
 

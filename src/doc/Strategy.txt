@@ -69,22 +69,25 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
       --[>>] Hanoi RJXS - Auto 
 
             --[>>] Merge Hanoi RJXS with Hanoi Game Engine. 
+-- [x] index.
 
--- [_] OPEN CV  / c++
+      -- [x] app routes.
 
-      -- [_] OCR.
+      -- [x] atributo adicional.
+
+      -- [x] grid.
+
+      -- [x] speech to text search.
+
+-- [_] OPEN CV
+
+      -- [_] OCR ? .
 
       -- [_] CV / BASIC SHAPES RECOGNITION.
 
-      
--- [_] index.
+      -- [_] CV / COLORED SHAPES RECOGNITION.
 
-      -- [_] app routes.
+      -- [_] C++ Builder. 
 
-      -- [_] atributo adicional.
-
-      -- [_] grid.
-
-      -- [_] speech to text search.
       
 /////////////////////////////////////////////
