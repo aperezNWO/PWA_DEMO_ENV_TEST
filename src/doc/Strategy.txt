@@ -89,5 +89,19 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
       -- [_] C++ Builder. 
 
+-- [_] amigo secreto.
+
+      -- [_] SMTP CLIENT / node.js.
+
+      -- [_] excel list with open fields.
+
+      -- [_] https://gemini.google.com/app/ebedc87978d91d09.
+
+
+-- [_] miscelaneous.
+
+      -- [_] move a.i. prompts from ENV_LANDING.
+
+      -- [_] SPLIT "STABLE RELEASES" FROM "DEV".
       
 /////////////////////////////////////////////

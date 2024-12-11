@@ -18,6 +18,8 @@ import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplaygro
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
 import { IndexComponent                } from './_modules/_home/index/index.component';
+import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
+import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 //
 export interface _Route extends Route
 {
@@ -26,25 +28,27 @@ export interface _Route extends Route
 
 //
 export const routes : _Route[] = [ 
-  { path: 'Home'             , component: HomeComponent              , caption : 'Home'               },
-  { path: ''                 , component: HomeComponent              , caption : ''                   },
-  { path: 'Sudoku'           , component: SudokuComponent            , caption : 'Sudoku'             },
-  { path: 'TicTacToe'        , component: TicTacToeComponent         , caption : 'TicTacToe'          },
-  { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   , caption : 'TicTacToe-Online'   },
-  { path: 'Hanoi'            , component: HanoiTowersComponent       , caption : 'Hanoi'              },
-  { path: 'HanoiRjxs'        , component: HanoiObservableComponent   , caption : 'Hanoi-Rjxs'         },
-  { path: 'HanoiAuto'        , component: HanoiAutoComponent         , caption : 'Hanoi-Auto'         },
-  { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'    },
-  { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'      },
-  { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'  },
-  { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                },
-  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech-Recognition' },
-  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backen-dTesting'    },
-  { path: 'Dev'              , component: DevComponent               , caption : 'Dev'                },
-  { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                },
-  { path: 'Topics'           , component: TopicsComponent            , caption : 'Topics'             },
-  { path: 'Index'            , component: IndexComponent             , caption : 'Index'              },
-  { path: '**'               , component: NotFoundPageComponent      , caption : ''                   },
+  { path: 'Home'             , component: HomeComponent              , caption : 'Home'                },
+  { path: ''                 , component: HomeComponent              , caption : ''                    },
+  { path: 'Sudoku'           , component: SudokuComponent            , caption : 'Sudoku'              },
+  { path: 'TicTacToe'        , component: TicTacToeComponent         , caption : 'TicTacToe'           },
+  { path: 'TicTacToeOnline'  , component: TicTacToeOnlineComponent   , caption : 'TicTacToe-Online'    },
+  { path: 'Hanoi'            , component: HanoiTowersComponent       , caption : 'Hanoi - Timer'       },
+  { path: 'HanoiRjxs'        , component: HanoiObservableComponent   , caption : 'Hanoi - Rjxs'        },
+  { path: 'HanoiAuto'        , component: HanoiAutoComponent         , caption : 'Hanoi - Rjxs -Auto'  },
+  { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'     },
+  { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'       },
+  { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
+  { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
+  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech -Recognition' },
+  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backen -Testing'     },
+  { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'    },
+  { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'     },
+  { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                 },
+  { path: 'Topics'           , component: TopicsComponent            , caption : 'Topics'              },
+  { path: 'AiPrompts'        , component: AiPromptsComponent         , caption : 'A.I. Prompts'        },
+  { path: 'Index'            , component: IndexComponent             , caption : 'Index'               },
+  { path: '**'               , component: NotFoundPageComponent      , caption : ''                    },
 ];
 
 @NgModule({

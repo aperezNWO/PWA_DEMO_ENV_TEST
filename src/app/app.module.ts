@@ -44,6 +44,8 @@ import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstr
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
+import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
+import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -122,6 +124,8 @@ export class CustomErrorHandler implements ErrorHandler {
                     SpeechRecognitionComponent,
                     IndexComponent,
                     NotFoundPageComponent,
+                    AiPromptsComponent,
+                    StableReleasesComponent,
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [

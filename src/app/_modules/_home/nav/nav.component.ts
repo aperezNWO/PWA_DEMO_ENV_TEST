@@ -26,7 +26,11 @@ export class NavComponent {
     },
     {
       'url': '/Dev',
-      'text': '[Dev]',
+      'text': '[Testing Releases]',
+    },
+    {
+      'url': '/StableReleses',
+      'text': '[Stable Releases]',
     },
     {
       'url': '/SCM', 
@@ -35,6 +39,10 @@ export class NavComponent {
     {
       'url': '/Topics', 
       'text': '[Topics]',
+    },
+    {
+      'url': '/AiPrompts', 
+      'text': '[A.I. Prompts]',
     },
     {
       'url': '/Index', 
