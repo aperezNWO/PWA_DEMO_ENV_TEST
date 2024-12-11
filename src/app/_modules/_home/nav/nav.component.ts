@@ -29,7 +29,7 @@ export class NavComponent {
       'text': '[Testing Releases]',
     },
     {
-      'url': '/StableReleses',
+      'url': '/StableReleases',
       'text': '[Stable Releases]',
     },
     {
