@@ -50,4 +50,8 @@ td {
     flex: 1; /* Grow input fields to fill remaining space */
   }
   
+  .message-data
+  {
+    color:aqua;
+  }
   
