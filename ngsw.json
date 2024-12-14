@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1734145633576,
+  "timestamp": 1734216407139,
   "index": "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/896.4519226224848d4d.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
-        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.970f7579abd1a34f.js",
+        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.f53f63d6a4c6baab.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.5e3bca8c6c8ed777.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.2f0f537efed4403c.js",
@@ -80,8 +80,8 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/color.dae87a04d07ca92b.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/hue.8b1818380241e6ac.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "64c21471f03f1884baf6e51f072526e2617f1b3b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.970f7579abd1a34f.js": "b043738db83bd3527f64478fa6f83de25f5461f7",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "d37fe520399dada65b3a09abdc50cac7e1807007",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.f53f63d6a4c6baab.js": "9b23b4cff46bdc688199a724259ddde3aa0e84c7",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest": "e13577e9817bde7c3ea1af3fcc523f86335d0f73",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.5e3bca8c6c8ed777.js": "ff441d1fec645e170840c2eed69b4ce02ffd756d",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.2f0f537efed4403c.js": "ca2f8d3ecd8f81f61e4ed464e199891a927f7612",
