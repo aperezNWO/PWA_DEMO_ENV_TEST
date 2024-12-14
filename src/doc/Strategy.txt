@@ -104,6 +104,8 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
       -- [X] SPLIT "STABLE RELEASES" FROM "DEV".
 
-      -- [>] BACK TO HOME LINK ON FOOTER.
+      -- [x] BACK TO HOME LINK ON FOOTER.
+
+      -- [>] read config from database.
       
 /////////////////////////////////////////////

@@ -7,6 +7,7 @@ import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-aut
 import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-towers/game-hanoi.component';
 import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
+import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
@@ -20,6 +21,7 @@ import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recog
 import { IndexComponent                } from './_modules/_home/index/index.component';
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
+
 //
 export interface _Route extends Route
 {
@@ -40,6 +42,7 @@ export const routes : _Route[] = [
   { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'       },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
+  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                },
   { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech -Recognition' },
   { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backen -Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'    },
