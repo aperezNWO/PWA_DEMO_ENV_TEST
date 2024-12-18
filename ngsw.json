@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1734484144811,
+  "timestamp": 1734491581412,
   "index": "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/973.316ac4d5fee2f217.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
-        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.54f8fe2e513002ec.js",
+        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.811c9cbde3626c80.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.a34eca325dcbbc9a.js",
@@ -80,8 +80,8 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/color.febf5f041e83bfbe.png": "c54e4eac0b6c88b9da8cfdf00b1d9093b828286b",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/hue.de26927932756490.png": "ec215387067c733aed6649b96d8a81798a58b21b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "46092e587b81df1b65c9897caa857f536d038c3c",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.54f8fe2e513002ec.js": "23d55460c0a6a0c0f0a51c4ca0ea78c12e78fd0c",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "bb2a287fafd059d4f3e31314c438e16f5fa171db",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.811c9cbde3626c80.js": "0fd5f264a2660a943438f3f707008d9a21825713",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest": "e13577e9817bde7c3ea1af3fcc523f86335d0f73",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js": "a063506f957de345af77eb04df62e5280a953eb1",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.a34eca325dcbbc9a.js": "339ef709892449fe43fe710f31d25cc688b3857b",
