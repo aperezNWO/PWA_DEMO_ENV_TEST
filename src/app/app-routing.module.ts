@@ -1,5 +1,5 @@
 import { NgModule                      } from '@angular/core';
-import { Route, RouterModule, Routes          } from '@angular/router';
+import { Route, RouterModule, Routes   } from '@angular/router';
 import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
 import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
 import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
@@ -21,6 +21,7 @@ import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recog
 import { IndexComponent                } from './_modules/_home/index/index.component';
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
+import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 
 //
 export interface _Route extends Route
@@ -42,16 +43,17 @@ export const routes : _Route[] = [
   { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'       },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
-  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                },
-  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech -Recognition' },
-  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backen -Testing'     },
-  { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'    },
-  { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'     },
-  { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                 },
-  { path: 'Topics'           , component: TopicsComponent            , caption : 'Topics'              },
-  { path: 'AiPrompts'        , component: AiPromptsComponent         , caption : 'A.I. Prompts'        },
-  { path: 'Index'            , component: IndexComponent             , caption : 'Index'               },
-  { path: '**'               , component: NotFoundPageComponent      , caption : ''                    },
+  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                  },
+  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech  - Recognition' },
+  { path: 'ShapeRecognition' , component: OpenCvShapeReconComponent  , caption : 'Shape   - Recognition' },
+  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend - Testing'     },
+  { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
+  { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
+  { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                   },
+  { path: 'Topics'           , component: TopicsComponent            , caption : 'Topics'                },
+  { path: 'AiPrompts'        , component: AiPromptsComponent         , caption : 'A.I. Prompts'          },
+  { path: 'Index'            , component: IndexComponent             , caption : 'Index'                 },
+  { path: '**'               , component: NotFoundPageComponent      , caption : ''                      },
 ];
 
 @NgModule({

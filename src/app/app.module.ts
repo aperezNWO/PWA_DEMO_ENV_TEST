@@ -46,6 +46,7 @@ import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
+import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 //
 export function loadConfig(configService: ConfigService) {
   return () => configService.loadConfig();
@@ -126,6 +127,7 @@ export class CustomErrorHandler implements ErrorHandler {
                     NotFoundPageComponent,
                     AiPromptsComponent,
                     StableReleasesComponent,
+                    OpenCvShapeReconComponent,
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [
