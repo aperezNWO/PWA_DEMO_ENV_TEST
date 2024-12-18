@@ -27,7 +27,6 @@
     "@eve-sama/ngx-signature-pad": "^16.0.0",
     "@ng-bootstrap/ng-bootstrap": "^16.0.0",
     "@popperjs/core": "^2.11.8",
-    "@techstark/opencv-js": "^4.10.0-release.1",
     "bootstrap": "^5.3.2",
     "chart.js": "^4.4.1",
     "file-saver": "^2.0.5",

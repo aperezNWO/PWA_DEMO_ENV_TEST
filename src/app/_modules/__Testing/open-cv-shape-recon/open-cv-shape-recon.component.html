@@ -3,4 +3,6 @@
     <p>OpenCV Loaded: {{ isOpenCVLoaded }}</p>
     <canvas #outputCanvas></canvas>
   </div>
-<canvas #canvas width="640" height="480"></canvas>
+<input type="file" (change)="uploadImage($event)">
+<canvas #canvas></canvas>
+
