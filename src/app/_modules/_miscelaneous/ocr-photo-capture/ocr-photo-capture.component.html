@@ -24,7 +24,7 @@
           <video #video autoplay [style]="this.videoStyle"></video>
           <canvas #canvas hidden ></canvas>
      </div>
-     <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo" />
+     <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo" (change)="onFileSelected($event)" />
      <hr />
       <!-- BOTONES INICIO -->
       <button (click)="capturePhoto()" [disabled]="(this.captureButtonDisabled)">{{this.captureButtonStatus}}</button>
@@ -37,6 +37,12 @@
   <hr>
   <!-- STATUS INICIO -->
   <span style="padding:2px; width:100px;height:10px;background-color: azure;">{{this.status}}</span>
+  <div *ngIf="detectedShapes.length > 0">
+    <h3>Detected Shapes:</h3>
+    <ul>
+      <li *ngFor="let shape of detectedShapes">{{ shape }}</li>
+    </ul>
+  </div>
   <hr />
   <!-- STATUS FIN        -->
   <!-- FORMULARIO INICIO -->

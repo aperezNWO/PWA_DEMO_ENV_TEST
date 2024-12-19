@@ -3,6 +3,7 @@ import { MCSDService              } from 'src/app/_services/mcsd/mcsd.service';
 import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
 import { NgxSignatureOptions      } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
 import { _languageName            } from 'src/app/_models/entityInfo.model';
+import { ShapeDetectionService } from 'src/app/_services/shape-detection.service';
 
 @Component({
   selector: 'app-ocr-photo-capture',
@@ -49,9 +50,11 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
   saveImageButtonDisabled : boolean = true;
   selectedIndex           : number  = 0;
   selectedIndexEngines    : number  = 0;
-  
+  ////////////////////////////////////////////////////////////////
+  detectedShapes: string[] = [];
+  imageURL: string | ArrayBuffer | null = null;
   //
-  constructor(public mcsdService : MCSDService)
+  constructor(public mcsdService : MCSDService, private shapeDetectionService: ShapeDetectionService)
   {
       //
   }
@@ -75,7 +78,7 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
     this.__engineList = new Array();
     this.__engineList.push( new _languageName(0,"(SELECCIONE OPCION..)"                        ,false));        
     this.__engineList.push( new _languageName(1,"(OCR / TESSERACT - javascript)"               ,true));        
-    //this.__engineList.push( new _languageName(2,"(COMPUTER VISION / OPENCV - javascript) "     ,false));        
+    this.__engineList.push( new _languageName(2,"(COMPUTER VISION / OPENCV - javascript) "     ,false));        
     //this.__sourceList.push( new _languageName(2,"(COMPUTER VISION / TENSORFLOW)"  ,false));        
     //-----------------------------------------------------------------------------
   }
@@ -275,4 +278,25 @@ export class OcrPhotoCaptureComponent implements AfterViewInit , OnInit {
     this.stopCamera();
     await this.startCamera();
   }
+   ////////////////////////////////////////////////////////////////////////
+   onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.imageURL = e.target.result;
+        this.detectShapes();
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  detectShapes(): void {
+    const img = new Image();
+    img.onload = () => {
+      const shapes = this.shapeDetectionService.detectShapes(img);
+      this.detectedShapes = shapes;
+    };
+    img.src = this.imageURL as string;
+}  
 }

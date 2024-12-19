@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component             } from '@angular/core';
 import { ShapeDetectionService } from 'src/app/_services/shape-detection.service';
 
 

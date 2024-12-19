@@ -1,7 +1,8 @@
-import { Component, ViewChild     } from '@angular/core';
-import { MCSDService              } from 'src/app/_services/mcsd/mcsd.service';
-import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
-import { NgxSignatureOptions      } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
+import { Component, ViewChild                       } from '@angular/core';
+import { MCSDService as BackendService              } from 'src/app/_services/mcsd/mcsd.service';
+import { NgxSignaturePadComponent                   } from '@eve-sama/ngx-signature-pad/lib/ngx-signature-pad.component';
+import { NgxSignatureOptions                        } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
+
 //
 @Component({
   selector: 'app-ocr',
@@ -25,7 +26,7 @@ export class OcrComponent {
   //
   public statusButton  : string = '[save]';
   //
-  constructor(public mcsdService : MCSDService)
+  constructor(public backendService : BackendService)
   {
       //
   }
@@ -61,7 +62,7 @@ export class OcrComponent {
     //const base64ImageString = 'yourBase64ImageString';
     this.statusButton = '..parsing..';
     //
-    this.mcsdService.uploadBase64Image(base64ImageString).subscribe(
+    this.backendService.uploadBase64Image(base64ImageString).subscribe(
       (response) => {
         console.log('Image uploaded successfully:', response);
         this.status = JSON.parse(JSON.stringify(response))['message'];
