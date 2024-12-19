@@ -9,7 +9,7 @@ import { Observable                                              } from 'rxjs';
   providedIn: 'root'
 })
 //
-export class MCSDService implements OnInit {
+export class BackendService implements OnInit {
     ////////////////////////////////////////////////////////////////  
     // CAMPOS
     ////////////////////////////////////////////////////////////////  

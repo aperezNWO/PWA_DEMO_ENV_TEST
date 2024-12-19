@@ -1,5 +1,5 @@
 <div class="content" align="center">
-  <h1>[OCR / COMPUTER VISION]</h1>
+  <h1>[MISCELANEOUS - OCR]</h1>
   <div id="canvasContainer" [hidden]="this.hiddenCanvasContainer">
       <hr/>
       <!-- CANVAS INICIO   -->
@@ -19,12 +19,13 @@
       <!-- BOTONES FIN      -->
   </div> 
   <div id ="cameraContainer" [hidden]="this.hiddenCameraContainer">
-      <hr>
+     <hr>
      <div class="camera-container" [hidden]="this.cameraContainerHidden">
           <video #video autoplay [style]="this.videoStyle"></video>
           <canvas #canvas hidden ></canvas>
      </div>
-     <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo" (change)="onFileSelected($event)" />
+     <!--(change)="onFileSelected($event)"-->
+     <img [src]="capturedImage" *ngIf="capturedImage" [hidden]="this.capturedImageHidden" alt="Captured Photo"  />
      <hr />
       <!-- BOTONES INICIO -->
       <button (click)="capturePhoto()" [disabled]="(this.captureButtonDisabled)">{{this.captureButtonStatus}}</button>
@@ -37,12 +38,6 @@
   <hr>
   <!-- STATUS INICIO -->
   <span style="padding:2px; width:100px;height:10px;background-color: azure;">{{this.status}}</span>
-  <div *ngIf="detectedShapes.length > 0">
-    <h3>Detected Shapes:</h3>
-    <ul>
-      <li *ngFor="let shape of detectedShapes">{{ shape }}</li>
-    </ul>
-  </div>
   <hr />
   <!-- STATUS FIN        -->
   <!-- FORMULARIO INICIO -->

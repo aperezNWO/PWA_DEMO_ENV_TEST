@@ -14,7 +14,6 @@ import { SCMComponent                  } from './_modules/_home/scm/scm.componen
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
-import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
@@ -40,7 +39,6 @@ export const routes : _Route[] = [
   { path: 'HanoiRjxs'        , component: HanoiObservableComponent   , caption : 'Hanoi - Rjxs'        },
   { path: 'HanoiAuto'        , component: HanoiAutoComponent         , caption : 'Hanoi - Rjxs -Auto'  },
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'     },
-  { path: 'PhotoCapture'     , component: PhotoCaptureComponent      , caption : 'Photo-Capture'       },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
   { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                  },

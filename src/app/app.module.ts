@@ -26,13 +26,12 @@ import { ChatComponent                 } from './_modules/_miscelaneous/chat/cha
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
 import { ConfigService                 } from './_services/config/config.service';
-import { MCSDService                   } from './_services/mcsd/mcsd.service';
+import { BackendService                   } from './_services/mcsd/mcsd.service';
 import { NavComponent                  } from './_modules/_home/nav/nav.component';
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
-import { PhotoCaptureComponent         } from './_modules/__Testing/photo-capture/photo-capture.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
@@ -87,7 +86,7 @@ export class LoggingInterceptor implements HttpInterceptor {
 //
 export class CustomErrorHandler implements ErrorHandler {
     //
-    constructor(public mcsdService : MCSDService) { } 
+    constructor(public mcsdService : BackendService) { } 
     //
     handleError(_error: Error): void 
     { 
@@ -120,7 +119,6 @@ export class CustomErrorHandler implements ErrorHandler {
                     DevComponent, 
                     SCMComponent, 
                     TopicsComponent, 
-                    PhotoCaptureComponent,
                     UntTestingComponent,
                     SpeechRecognitionComponent,
                     IndexComponent,

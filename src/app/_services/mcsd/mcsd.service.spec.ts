@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MCSDService } from './mcsd.service';
+import { BackendService } from './mcsd.service';
 
 describe('MCSDService', () => {
-  let service: MCSDService;
+  let service: BackendService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(MCSDService);
+    service = TestBed.inject(BackendService);
   });
 
   it('should be created', () => {

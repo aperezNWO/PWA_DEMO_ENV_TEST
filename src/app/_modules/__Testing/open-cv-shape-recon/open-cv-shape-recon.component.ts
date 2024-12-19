@@ -1,5 +1,6 @@
-import { Component             } from '@angular/core';
-import { ShapeDetectionService } from 'src/app/_services/shape-detection.service';
+import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { BackendService } from 'src/app/_services/mcsd/mcsd.service';
+import { ShapeDetectionService } from 'src/app/_services/shapeDetection/shape-detection.service';
 
 
 @Component({
@@ -7,13 +8,15 @@ import { ShapeDetectionService } from 'src/app/_services/shape-detection.service
   templateUrl: './open-cv-shape-recon.component.html',
   styleUrl: './open-cv-shape-recon.component.css'
 })
-export class OpenCvShapeReconComponent {
+export class OpenCvShapeReconComponent implements AfterViewInit  {
   detectedShapes: string[] = [];
   imageURL: string | ArrayBuffer | null = null;
+  @ViewChild('video', { static: true }) videoElement!: ElementRef<HTMLVideoElement>;
+  videoStyle                                         : string | null = "width: 150px;height:150px; transform : scaleX(1);"; 
+   ////////////////////////////////////////////////////////////////
+  constructor(public mcsdService: BackendService, private shapeDetectionService: ShapeDetectionService) {
 
-  constructor(private shapeDetectionService: ShapeDetectionService) {
 
-    
   }
 
   onFileSelected(event: any): void {
@@ -31,9 +34,22 @@ export class OpenCvShapeReconComponent {
   detectShapes(): void {
     const img = new Image();
     img.onload = () => {
-      const shapes = this.shapeDetectionService.detectShapes(img);
-      this.detectedShapes = shapes;
+          //
+          const shapes = this.shapeDetectionService.detectShapes(img);
+          this.detectedShapes = shapes;
+          //
+          const utterance = new SpeechSynthesisUtterance(this.detectedShapes.toString());
+          speechSynthesis.speak(utterance);
     };
     img.src = this.imageURL as string;
-}  
+
+
+  }
+
+
+  ngAfterViewInit() {
+    //this.startCamera();
+  }
+  ////////////////////////////////////////////////////
+  
 }
