@@ -107,5 +107,7 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
       -- [x] BACK TO HOME LINK ON FOOTER.
 
       -- [>] read config from database.
+
+-- [_] file generation zip / xls | zip / csv.      
       
 /////////////////////////////////////////////
