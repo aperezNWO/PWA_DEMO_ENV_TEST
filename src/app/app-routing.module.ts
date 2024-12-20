@@ -21,6 +21,7 @@ import { IndexComponent                } from './_modules/_home/index/index.comp
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
+import { ShapeReconCanvasComponent } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
 
 //
 export interface _Route extends Route
@@ -41,8 +42,9 @@ export const routes : _Route[] = [
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'     },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
-  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                  },
-  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech  - Recognition' },
+  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                     },
+  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech  - Recognition'    },
+  { path: 'ShapeReconCanvas' , component: ShapeReconCanvasComponent  , caption : 'Shape   - Recon - Canvas' },
   { path: 'ShapeRecognition' , component: OpenCvShapeReconComponent  , caption : 'Shape   - Recognition' },
   { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend - Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
