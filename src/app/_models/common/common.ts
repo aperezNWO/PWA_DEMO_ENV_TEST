@@ -65,4 +65,4 @@ export interface PageSetting {
 export interface PageSettingDictionary {
    [key: string]: PageSetting;
 }
- 
+

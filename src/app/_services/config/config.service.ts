@@ -1,7 +1,6 @@
 import { Injectable                 } from '@angular/core';
 import { HttpClient                 } from '@angular/common/http';
 import { _environment               } from '../../../environments/environment';
-import { PageSetting                } from '../../_models/common/common';
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +11,26 @@ export class ConfigService {
   {
 
   }
+  loadSCMList() {
+    return this.http.get('./assets/json/scm.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading scm list..." + JSON.stringify(data));
+          //
+          _environment.scmList = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
+      });
+  }
+  
   //
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadAiPrompts() {
     return this.http.get('./assets/json/aiPrompts.json').toPromise()
       .then((data: any) => {
           //
-          console.log("loading ai Pormpts..." + JSON.stringify(data));
+          console.log("loading ai Prompts..." + JSON.stringify(data));
           //
           _environment.aiPrompts = data; // Assign loaded data to environment variable
       })
@@ -26,6 +38,7 @@ export class ConfigService {
         console.error('Error loading configuration:', error);
       });
   }
+  /*
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadJsonData(p_Path: string, array : string[]) {
     return this.http.get(p_Path).toPromise()
@@ -39,7 +52,8 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading configuration:', error);
       });
-  }  
+  } */
+  /*
   //
   loadJsonist() {
     return this.http.get('./assets/config/_jsonList.json').toPromise()
@@ -54,8 +68,9 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading configuration:', error);
       });
-  }
+  }*/
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  /*
   loadUsersData() {
     return this.http.get('./assets/config/_UsersInfo.json').toPromise()
       .then((data: any) => {
@@ -67,8 +82,9 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading users:', error);
       });
-  }
+  }*/
   //
+  /*
   loadPagesInfoData() {
     return this.http.get('./assets/config/_PagesInfo.json').toPromise()
       .then((data: any) => {
@@ -80,7 +96,7 @@ export class ConfigService {
       .catch(error => {
         console.error('Error loading routes dada...', error);
       });
-  }
+  }*/
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadConfig() {
     return this.http.get('./assets/config.json').toPromise()

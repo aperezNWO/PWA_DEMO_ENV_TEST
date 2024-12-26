@@ -47,13 +47,25 @@ import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-pr
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
-
+//  
+@Injectable({
+  providedIn: 'root'
+})
 //
-export function loadConfig(configService: ConfigService) {
-  //
-  configService.loadAiPrompts();
-  //
-  return () => configService.loadConfig();
+export class CustomErrorHandler implements ErrorHandler {
+    //
+    constructor(public mcsdService : BackendService) { } 
+    //
+    handleError(_error: Error): void 
+    { 
+      // 
+      console.warn("[CUSTOM ERROR HANDLING]:\n" + _error.name + "\n" + _error.message); 
+      //
+      let logType : LogType = LogType.Error
+      //
+      this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]",_error.message,logType);
+      //
+    }
 }
 //
 @Injectable({
@@ -84,26 +96,16 @@ export class LoggingInterceptor implements HttpInterceptor {
       );
   }
 }
-//  
-@Injectable({
-  providedIn: 'root'
-})
 //
-export class CustomErrorHandler implements ErrorHandler {
-    //
-    constructor(public mcsdService : BackendService) { } 
-    //
-    handleError(_error: Error): void 
-    { 
-      // 
-      console.warn("[CUSTOM ERROR HANDLING]:\n" + _error.name + "\n" + _error.message); 
-      //
-      let logType : LogType = LogType.Error
-      //
-      this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]",_error.message,logType);
-      //
-    }
-}   
+export function loadConfig(configService: ConfigService) {
+  //
+  configService.loadAiPrompts();
+  //
+  configService.loadSCMList();
+  //
+  return () => configService.loadConfig();
+}
+  
 //
 @NgModule({
     declarations: [

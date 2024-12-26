@@ -1,4 +1,4 @@
-import { PageSetting, PageSettingDictionary } from '../app/_models/common/common';
+import { PageSettingDictionary } from '../app/_models/common/common';
 
 export const environment = {
     production: true, // Set to true in environment.prod.ts
@@ -6,29 +6,33 @@ export const environment = {
 };
 
 interface EnvironmentConfig {
+    externalConfig          : {};                //
     pageSettingDictionary   : PageSettingDictionary;
+    /*
     currentUserId           : number;
     currentUserRoles        : string;     
-    externalConfig          : {};                //
     usersInfo               : [];                // 
     routesList              : [];                // 
     usersList               : [];                // 
     usersDictionary         : [];                // 
-    jsonList                : PageSetting[];     // 
-    aiPrompts               : [] 
+    jsonList                : PageSetting[];     // */
+    scmList                 : [],                //  
+    aiPrompts               : []                 //
 }
 
 
 export const _environment : EnvironmentConfig  = {
+    externalConfig          : {},        // 
     pageSettingDictionary   : {},
+    /*
     currentUserId           : 0,       
     currentUserRoles        : "",      
-    externalConfig          : {},        // 
     usersInfo               : [],        // 
     routesList              : [],        // 
     usersList               : [],        // 
     usersDictionary         : [],        // 
-    jsonList                : [],        // 
-    aiPrompts               : []        // 
+    jsonList                : [],        // */
+    scmList                 : [],                //      
+    aiPrompts               : []         // 
 };
 

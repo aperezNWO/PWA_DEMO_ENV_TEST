@@ -10,7 +10,7 @@ export class AiPromptsComponent {
       public aiPrompts : any[] = [];
       constructor()
       {
-        console.log('AI Prompts: ' + _environment.aiPrompts);
+        console.log('AI Prompts: ' + JSON.stringify(_environment.aiPrompts));
 
         this.aiPrompts = _environment.aiPrompts;
       }
