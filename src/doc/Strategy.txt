@@ -112,5 +112,24 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
 -- [_] show me a practial example of tensorflow.js and angular
 
-      -- [_]  https://claude.ai/chat/1fbb12fc-eab0-44da-b2a8-764005708a35      
+      -- [_]  https://claude.ai/chat/1fbb12fc-eab0-44da-b2a8-764005708a35     
+
+-- [_] django python backend.
+
+        -- [_] https://code.visualstudio.com/docs/python/tutorial-fastapi
+
+-- [_] scm.            
+
+        -- [_] ngb grid component.
+
+        -- [_] AI_PROMPTS.
+
+        -- [_] AI_DEV.
+
+        -- [_] DEV_ENVS.
+
+        -- [_] HOSTINGS.
+
+        -- [_] DB.
+                   
 /////////////////////////////////////////////
