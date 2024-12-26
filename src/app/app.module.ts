@@ -26,7 +26,7 @@ import { ChatComponent                 } from './_modules/_miscelaneous/chat/cha
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
 import { ConfigService                 } from './_services/config/config.service';
-import { BackendService                   } from './_services/mcsd/mcsd.service';
+import { BackendService                   } from './_services/backend/backend.service';
 import { NavComponent                  } from './_modules/_home/nav/nav.component';
 import { DevComponent                  } from './_modules/_home/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
@@ -46,9 +46,13 @@ import { ButtonModule                  } from 'primeng/button';
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
-import { ShapeReconCanvasComponent } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
+import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
+
 //
 export function loadConfig(configService: ConfigService) {
+  //
+  configService.loadAiPrompts();
+  //
   return () => configService.loadConfig();
 }
 //

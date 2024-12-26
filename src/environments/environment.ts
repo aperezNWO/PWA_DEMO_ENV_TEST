@@ -15,6 +15,7 @@ interface EnvironmentConfig {
     usersList               : [];                // 
     usersDictionary         : [];                // 
     jsonList                : PageSetting[];     // 
+    aiPrompts               : [] 
 }
 
 
@@ -28,4 +29,6 @@ export const _environment : EnvironmentConfig  = {
     usersList               : [],        // 
     usersDictionary         : [],        // 
     jsonList                : [],        // 
+    aiPrompts               : []        // 
 };
+

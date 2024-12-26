@@ -131,5 +131,27 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
         -- [_] HOSTINGS.
 
         -- [_] DB.
-                   
+
+-- [_] A.I. Prompts API QUERY EXAMPLE.
+
+      -- [_] djuango backend.
+      
+      -- [_] node.js backend.
+      
+
+-- [_] A.I. Prompts.            
+
+        -- [_] page list from json file.
+
+        -- [_] ngb grid component.
+
+        <li><a href="https://gemini.google.com/" target="_blank">Google Gemini.</a></li>
+        <li><a href="https://chatgpt.com/"       target="_blank">Chat GTP.</a></li>
+        <li><a href="https://claude.ai/new"      target="_blank">Arthropic - Claude.</a></li>
+        <li><a href="https://groq.com/"          target="_blank">Groq</a></li>
+        <li><a href="https://pi.ai/talk"         target="_blank">Inflection - PI</a></li>
+        <li><a href="https://www.meta.ai/"       target="_blank">Meta - A.I.</a></li>
+        <li><a href="https://venice.ai/"         target="_blank">Venice</a></li>
+        <li><a href="https://x.com/i/grok?focus=1" target="_blank">xAI</a></li>
+
 /////////////////////////////////////////////

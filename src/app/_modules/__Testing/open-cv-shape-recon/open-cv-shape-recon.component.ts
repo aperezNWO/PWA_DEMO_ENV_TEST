@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { BackendService } from 'src/app/_services/mcsd/mcsd.service';
+import { BackendService } from 'src/app/_services/backend/backend.service';
 import { ShapeDetectionService } from 'src/app/_services/shapeDetection/shape-detection.service';
 
 

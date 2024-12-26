@@ -12,6 +12,20 @@ export class ConfigService {
   {
 
   }
+  //
+  // ONLY HAPPENS ONCE ON APPMODULE LOADING
+  loadAiPrompts() {
+    return this.http.get('./assets/json/aiPrompts.json').toPromise()
+      .then((data: any) => {
+          //
+          console.log("loading ai Pormpts..." + JSON.stringify(data));
+          //
+          _environment.aiPrompts = data; // Assign loaded data to environment variable
+      })
+      .catch(error => {
+        console.error('Error loading configuration:', error);
+      });
+  }
   // ONLY HAPPENS ONCE ON APPMODULE LOADING
   loadJsonData(p_Path: string, array : string[]) {
     return this.http.get(p_Path).toPromise()
