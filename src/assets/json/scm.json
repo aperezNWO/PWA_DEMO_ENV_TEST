@@ -1,17 +1,29 @@
 [
     {
-        "type" : "ENV_ONLINE",
-        "name" : "CodeSandbox",
-        "url"  : "https://codesandbox.io/"
+        "id"          : 1,
+        "done"        : true,
+        "name"        : "CodeSandbox",
+        "description" : "ENV_ONLINE",
+        "field_1"     : "https://codesandbox.io/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
     },
     {
-        "type" : "ENV_ONLINE",
-        "name" : "Git Hub - CodeSpaces",
-        "url"  : "https://github.com/codespaces/"
+        "id"          : 2,
+        "done"        : true,
+        "name"        : "Git Hub - CodeSpaces",
+        "description" : "ENV_ONLINE",
+        "field_1"     : "https://github.com/codespaces/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
     },
     {
-        "type" : "ENV_ONLINE",
-        "name" : "Online GDB",
-        "url"  : "https://www.onlinegdb.com/"
+        "id"          : 3,
+        "done"        : true,
+        "name"        : "Online GDB",
+        "description" : "ENV_ONLINE",
+        "field_1"     : "https://www.onlinegdb.com/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
     }
 ]

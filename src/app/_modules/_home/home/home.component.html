@@ -1,6 +1,5 @@
 <div align="center" class="animate">
 <h1>Welcome to {{this._appBrand}} - {{ this._appEnv }}</h1>
-<hr/>
 <hr>
 <a routerLink="/">
     <img
@@ -42,5 +41,11 @@
     style="width: 50px"
     />
 </a>
+<hr>
+<span *ngFor="let page of pages">
+    <span *ngIf="page" style="padding:5px;">
+        <a routerLink="/{{page.url}}"><span align="left">{{page.text}}</span></a>
+    </span>
+</span>
 <hr>
 </div>

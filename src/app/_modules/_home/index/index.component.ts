@@ -80,7 +80,7 @@ export class IndexComponent {
   //
   public _state: _SearchState = {
     page: 1,
-    pageSize: 10,
+    pageSize: 4,
     searchTerm: '',
     sortColumn: '',
     sortDirection: '',

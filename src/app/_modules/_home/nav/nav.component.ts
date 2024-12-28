@@ -37,12 +37,12 @@ export class NavComponent {
       'text': '[SCM]',
     },
     {
-      'url': '/Topics', 
-      'text': '[Topics]',
-    },
-    {
       'url': '/AiPrompts', 
       'text': '[A.I. Prompts]',
+    },
+    {
+      'url': '/Topics', 
+      'text': '[Topics]',
     },
     {
       'url': '/Index', 

@@ -15,6 +15,26 @@ export class HomeComponent {
   _appEnv        : string = '';
   _title         : string = '';
   //
+    //
+    pages =[
+      {
+        'url': '/Dev', 
+        'text': '[TESTING RELEASES]',
+      },  
+      {
+        'url': '/StableReleases', 
+        'text': '[STABLE RELEASES]',
+      },    
+      {
+        'url': '/SCM',
+        'text': '[SCM]',
+      },
+      {
+        'url': '/AiPrompts', 
+        'text': '[A.I. PROMPTS]',
+      }
+    ];
+  //
   constructor(private titleService: Title, private configService: ConfigService,public customErrorHandler : CustomErrorHandler,public loggingInterceptor : LoggingInterceptor) {
     // IMPLEMENT AS MAP AND ITERATE
     this._appBrand   = this.configService.getConfigValue("appBrand");

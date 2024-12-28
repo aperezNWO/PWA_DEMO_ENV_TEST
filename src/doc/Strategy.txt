@@ -124,10 +124,9 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
       
       -- [_] node.js backend.
       
+-- [x] A.I. Prompts.            
 
--- [_] A.I. Prompts.            
-
-        -- [_] page list from json file.
+        -- [x] page list from json file.
 
         <li><a href="https://gemini.google.com/" target="_blank">Google Gemini.</a></li>
         <li><a href="https://chatgpt.com/"       target="_blank">Chat GTP.</a></li>
@@ -143,15 +142,15 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
         -- [_] ngb grid component.
 
-        -- [_] AI_PROMPTS.
+            -- [_] AI_PROMPTS.
 
-        -- [_] AI_DEV.
+            -- [_] AI_DEV.
 
-        -- [_] DEV_ENVS.
+            -- [_] DEV_ENVS.
 
-        -- [_] HOSTINGS.
+            -- [_] HOSTINGS.
 
-        -- [_] DB.
+            -- [_] DB.
 
 -- [_] ENV_PUBLIC  / ACERCA DE / TECHNICAL SPECS (WEB):
 
@@ -165,5 +164,12 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
      
       -- [_] AIPrompts:
  
+ -- [_] HOME
+  
+      -- [_] ICON QUERY URL TO INDEX.
+
+-- [_] TOPICS
+  
+      -- [_] LINK TO ENV_LANDING.
 
 /////////////////////////////////////////////

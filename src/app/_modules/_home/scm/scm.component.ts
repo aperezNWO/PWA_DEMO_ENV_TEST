@@ -5,16 +5,18 @@ import { DecimalPipe                                       } from '@angular/comm
 import { AuthService                                       } from 'src/app/_services/config/auth.service';
 import { SiteRole                                          } from 'src/app/_models/common/common';
 import { BehaviorSubject, debounceTime, delay, Observable, of, Subject, switchMap, tap } from 'rxjs';
-import { _environment } from 'src/environments/environment';
-//
+import { _environment                                      } from 'src/environments/environment';
 //
 export interface _SCMItem 
 {
-    type : string;
-    name : string;
-    url  : string;
-
-}
+    id           : number;
+    done         : boolean;
+    name         : string;
+    description  : string;
+    field_1      : string;
+    field_2      : string;
+    field_3      : string;
+  }
 //
 type _SortColumn = keyof _SCMItem | '';
 //
@@ -42,9 +44,9 @@ interface _SearchState {
 //
 function matches(scmList: _SCMItem, term: string, pipe: PipeTransform) {
     return (
-      scmList.type?.toLowerCase().includes(term?.toLowerCase()) ||       
-      scmList.name?.toLowerCase().includes(term?.toLowerCase()) ||              
-      scmList.url?.toLowerCase().includes(term?.toLowerCase())        
+      scmList.name?.toLowerCase().includes(term?.toLowerCase()) ||       
+      scmList.description?.toLowerCase().includes(term?.toLowerCase()) ||              
+      scmList.field_1?.toLowerCase().includes(term?.toLowerCase())        
     );
 }
 
