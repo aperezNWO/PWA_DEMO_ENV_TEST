@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1735538625128,
+  "timestamp": 1735539530399,
   "index": "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
   "assetGroups": [
     {
@@ -19,7 +19,7 @@
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.a34eca325dcbbc9a.js",
-        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/styles.d17e4ef1f72ecfc4.css"
+        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/styles.06b2ac011273638b.css"
       ],
       "patterns": []
     },
@@ -90,12 +90,12 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/color.febf5f041e83bfbe.png": "c54e4eac0b6c88b9da8cfdf00b1d9093b828286b",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/hue.de26927932756490.png": "ec215387067c733aed6649b96d8a81798a58b21b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "a9285358d823c4ec36f988281eff3a9841ec6f31",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "f7c16875572261643a1eabd83c7be9538a0acf78",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.87e889f4bc5aabba.js": "4fdd2bc3dcb4c403af3baacd08dbf02d135f7e1a",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest": "e13577e9817bde7c3ea1af3fcc523f86335d0f73",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js": "a063506f957de345af77eb04df62e5280a953eb1",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.a34eca325dcbbc9a.js": "339ef709892449fe43fe710f31d25cc688b3857b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/styles.d17e4ef1f72ecfc4.css": "73200e81ff320db9a1da3048bdeb311872a31487"
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/styles.06b2ac011273638b.css": "0cab6333479be78200b866c4401b01f97901b452"
   },
   "navigationUrls": [
     {
