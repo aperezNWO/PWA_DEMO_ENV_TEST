@@ -3,7 +3,7 @@
         "id"          : 1,
         "done"        : true,
         "name"        : "CodeSandbox",
-        "description" : "ENV_ONLINE",
+        "description" : "ENV_ONLINE_MAIN",
         "field_1"     : "https://codesandbox.io/",
         "field_2"     : "[N/A]",
         "field_3"     : "#"
@@ -12,7 +12,7 @@
         "id"          : 2,
         "done"        : true,
         "name"        : "Git Hub - CodeSpaces",
-        "description" : "ENV_ONLINE",
+        "description" : "ENV_ONLINE_MAIN",
         "field_1"     : "https://github.com/codespaces/",
         "field_2"     : "[N/A]",
         "field_3"     : "#"
@@ -21,8 +21,53 @@
         "id"          : 3,
         "done"        : true,
         "name"        : "Online GDB",
-        "description" : "ENV_ONLINE",
+        "description" : "ENV_ONLINE_MAIN",
         "field_1"     : "https://www.onlinegdb.com/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
+    },
+    {
+        "id"          : 4,
+        "done"        : true,
+        "name"        : "Visual Studio - Code",
+        "description" : "ENV_OFFLINE_MAIN",
+        "field_1"     : "https://code.visualstudio.com/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
+    },
+    {
+        "id"          : 5,
+        "done"        : true,
+        "name"        : "Visual Studio - Community",
+        "description" : "ENV_OFFLINE_MAIN",
+        "field_1"     : "https://visualstudio.microsoft.com/es/vs/community/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
+    },
+    {
+        "id"          : 6,
+        "done"        : true,
+        "name"        : "C++ BUILDER COMMUNITY EDITION",
+        "description" : "ENV_OFFLINE_MAIN",
+        "field_1"     : "https://www.embarcadero.com/products/cbuilder/starter",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
+    },
+    {
+        "id"          : 7,
+        "done"        : true,
+        "name"        : "Git Hub",
+        "description" : "REPO_MAIN",
+        "field_1"     : "https://github.com/aperezNWO/",
+        "field_2"     : "[N/A]",
+        "field_3"     : "#"
+    },
+    {
+        "id"          : 8,
+        "done"        : true,
+        "name"        : "Azure Devops",
+        "description" : "REPO_MAIN",
+        "field_1"     : "https://alejandroperezacosta.visualstudio.com/",
         "field_2"     : "[N/A]",
         "field_3"     : "#"
     }
