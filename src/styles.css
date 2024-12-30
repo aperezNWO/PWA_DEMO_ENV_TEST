@@ -29,7 +29,7 @@ body {
    height: 100%;
    margin: 0; 
    font-family: Roboto, "Helvetica Neue", sans-serif; 
-   font-size: x-small;
+   font-size: xx-small;
    /*background-color: darkolivegreen;*/
    background-color: var(--dark-theme-bg);
    color: var(--dark-theme-text);
