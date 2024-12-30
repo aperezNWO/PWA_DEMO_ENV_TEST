@@ -107,8 +107,8 @@ https://g.co/bard/share/0ff09e2380c7
     </ul>
   <h2>Front End</h2>
     <ul>
-{
-		"id"               : 1,
+    {
+	[x]	"id"               : 1,
 		"done"             : true,
 		"name"             : "[PWA_DEMO - ENV_LANDING]",
 		"description"      : "Angular Learning - Landing Page",
@@ -122,7 +122,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               :  2,
+	[x]	"id"               :  2,
 		"done"             : true,
 		"name"             : "[PWA_DEMO - ENV_TEST]",
 		"description"      : "Angular Learning - Testing Page",
@@ -136,7 +136,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{ 
-		"id"               : 3,
+	[x]	"id"               : 3,
 		"done"             : true,
 		"name"             : "[PWA_DEMO - ENV_DEV]",
 		"description"      : "Angular Learning - DEV Page",
@@ -150,7 +150,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               : 4,
+	[x]	"id"               : 4,
 		"done"             : true,
 		"name"             : "[PWA_DEMO - ENV_PROD]",
 		"description"      : "Angular Learning - PROD",
@@ -164,7 +164,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               : 5,
+	[x]	"id"               : 5,
 		"done"             : true,
 		"name"             : "[PWA_DEMO - ENV_PUBLIC]",
 		"description"      : "Angular Learning - PUBLIC",
@@ -178,7 +178,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               : 6,
+	[x]	"id"               : 6,
 		"done"             : true,
 		"name"             : "[IONIC DEMO - ENV TEST]",
 		"description"      : "IONIC Learning - ENV TEST",
@@ -192,7 +192,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               : 7,
+	[x]	"id"               : 7,
 		"done"             : true,
 		"name"             : "[PRIMENG DEMO - QUICKSTART]",
 		"description"      : "PRIMGENG DEMO - QUICKSTART",
@@ -206,7 +206,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""
 	},
 	{
-		"id"               : 8,
+	[x]	"id"               : 8,
 		"done"             : true,
 		"name"             : "[NGBOOTRSAP DEMO - ENV TEST]",
 		"description"      : "NGBOOTSRAP DEMO - ENV TEST",
@@ -220,7 +220,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""		
 	},
 	{
-		"id"               : 8,
+	[x]	"id"               : 8,
 		"done"             : true,
 		"name"             : "[NGBOOTSRAP DEMO - ENV DEV]",
 		"description"      : "NGBOOTSRAP DEMO - ENV DEV",
@@ -234,7 +234,7 @@ https://g.co/bard/share/0ff09e2380c7
 		"field_9"          : ""		
 	},
 	{
-		"id"               : 9,
+	[x]	"id"               : 9,
 		"done"             : false,
 		"name"             : "[TAILDWIND DEMO - ENV TEST]",
 		"description"      : "[TAILDWIND DEMO - ENV TEST]",

@@ -16,6 +16,8 @@ export interface _SCMItem
     field_1      : string;
     field_2      : string;
     field_3      : string;
+    field_4      : string;
+    field_5      : string;
   }
 //
 type _SortColumn = keyof _SCMItem | '';
@@ -44,9 +46,13 @@ interface _SearchState {
 //
 function matches(scmList: _SCMItem, term: string, pipe: PipeTransform) {
     return (
-      scmList.name?.toLowerCase().includes(term?.toLowerCase()) ||       
+      scmList.name?.toLowerCase().includes(term?.toLowerCase())        ||       
       scmList.description?.toLowerCase().includes(term?.toLowerCase()) ||              
-      scmList.field_1?.toLowerCase().includes(term?.toLowerCase())        
+      scmList.field_1?.toLowerCase().includes(term?.toLowerCase())     ||    
+      scmList.field_2?.toLowerCase().includes(term?.toLowerCase())     ||    
+      scmList.field_3?.toLowerCase().includes(term?.toLowerCase())     ||  
+      scmList.field_4?.toLowerCase().includes(term?.toLowerCase())     || 
+      scmList.field_5?.toLowerCase().includes(term?.toLowerCase())     
     );
 }
 
@@ -93,7 +99,7 @@ export class SCMComponent {
   //
   public _state: _SearchState = {
     page: 1,
-    pageSize: 4,
+    pageSize: 6,
     searchTerm: '',
     sortColumn: '',
     sortDirection: '',

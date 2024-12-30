@@ -40,6 +40,7 @@
       <th align="left" scope="col" sortable="type"            >[Type]</th>
       <th align="left" scope="col" sortable="name"            >[desc_1]</th>
       <th align="left" scope="col" sortable="name"            >[desc_2]</th>
+      <th align="left" scope="col" sortable="name"            >[desc_3]</th>
     </tr>
   </thead> 
   <tbody>
@@ -60,6 +61,11 @@
           <td align="left">
             <a [href]="scmItem.field_3" target="_blank">
               <ngb-highlight [result]="scmItem.field_2" [term]="searchTerm" />
+            </a>
+          </td>
+          <td align="left">
+            <a [href]="scmItem.field_5" target="_blank">
+              <ngb-highlight [result]="scmItem.field_4" [term]="searchTerm" />
             </a>
           </td>
         </tr>
