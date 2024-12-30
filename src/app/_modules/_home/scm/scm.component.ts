@@ -18,6 +18,8 @@ export interface _SCMItem
     field_3      : string;
     field_4      : string;
     field_5      : string;
+    field_6      : string;
+    field_7      : string;
   }
 //
 type _SortColumn = keyof _SCMItem | '';
@@ -52,7 +54,9 @@ function matches(scmList: _SCMItem, term: string, pipe: PipeTransform) {
       scmList.field_2?.toLowerCase().includes(term?.toLowerCase())     ||    
       scmList.field_3?.toLowerCase().includes(term?.toLowerCase())     ||  
       scmList.field_4?.toLowerCase().includes(term?.toLowerCase())     || 
-      scmList.field_5?.toLowerCase().includes(term?.toLowerCase())     
+      scmList.field_5?.toLowerCase().includes(term?.toLowerCase())     || 
+      scmList.field_6?.toLowerCase().includes(term?.toLowerCase())     || 
+      scmList.field_7?.toLowerCase().includes(term?.toLowerCase())     
     );
 }
 
@@ -121,7 +125,7 @@ export class SCMComponent {
   ) 
   {
     //
-    //this.InitializeSpeechRecognition();
+    this.InitializeSpeechRecognition();
     //
     this._search$
       .pipe(
@@ -149,7 +153,7 @@ export class SCMComponent {
     const { sortColumn, sortDirection, pageSize, page, searchTerm } = this._state;
 
     //
-    console.log("search : " + _environment.scmList);
+    console.log("search : " + JSON.stringify(_environment.scmList));
     _searchPages   = _environment.scmList;
 
     // 2. filter
@@ -234,7 +238,7 @@ export class SCMComponent {
     this.sortDirection = direction;
   }
   //////////////////////////////////////////////////////////
-  /*
+  
   InitializeSpeechRecognition():void {
     // Initialize the SpeechRecognition object
     const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
@@ -302,5 +306,4 @@ export class SCMComponent {
   {
       this.searchTerm = "";
   }
-  */    
 } 

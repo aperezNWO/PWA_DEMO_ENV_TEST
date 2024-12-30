@@ -14,14 +14,12 @@
       [(ngModel)]="searchTerm"
     />
   </div>
-  <!--
   <span class="col-sm-auto">
     <button (click)="startListening()" [disabled]="this.isListening">   <img [src]="this.ListeningButtonIconOn"></button>
     <button (click)="stopListening()"  [disabled]="!this.isListening">  <img [src]="this.ListeningButtonIconOff"></button>
     <button (click)="speakText()"      [disabled]="this.isListening">   <img [src]="this.SpeakerIcon"></button>
     <button (click)="clearText()"     								>   <img [src]="this.clearFormIcon"></button>
   </span>
-  -->
   @if (loading | async) {
     <span class="col col-form-label">[Cargando...]</span>
   }
@@ -37,10 +35,11 @@
     <tr>
       <th align="left" scope="col" sortable="id"              >#</th>
       <th align="left" scope="col" sortable="done"            >(Hecho)</th>
-      <th align="left" scope="col" sortable="type"            >[Type]</th>
+      <th align="left" scope="col" sortable="description"     >[Type]</th>
       <th align="left" scope="col" sortable="name"            >[desc_1]</th>
-      <th align="left" scope="col" sortable="name"            >[desc_2]</th>
-      <th align="left" scope="col" sortable="name"            >[desc_3]</th>
+      <th align="left" scope="col" sortable="field_2"         >[desc_2]</th>
+      <th align="left" scope="col" sortable="field_4"         >[desc_3]</th>
+      <th align="left" scope="col" sortable="field_6"         >[desc_4]</th>
     </tr>
   </thead> 
   <tbody>
@@ -66,6 +65,11 @@
           <td align="left">
             <a [href]="scmItem.field_5" target="_blank">
               <ngb-highlight [result]="scmItem.field_4" [term]="searchTerm" />
+            </a>
+          </td>
+          <td align="left">
+            <a [href]="scmItem.field_7" target="_blank">
+              <ngb-highlight [result]="scmItem.field_6" [term]="searchTerm" />
             </a>
           </td>
         </tr>

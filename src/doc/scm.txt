@@ -249,56 +249,11 @@ https://g.co/bard/share/0ff09e2380c7
 	}
     </ul>
 
-   <h2>Backend & hosting / node.js </h2>
-    <ul>
-	{
-		"id"               : 1,
-		"done"             : true,
-		"name"             : "OCR DEMO",
-		"description"      : "OCR DEMO",
-		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
-		"field_2"          : "https://github.com/Exam70486/cs_nodejs_ocr_/blob/main/index.js",
-		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_nodejs_ocr_/main",      
-		"field_4"          : "https://zdsjg8-3000.csb.app/" 
-	},
-	{
-		"id"               : 2,
-		"done"             : true,
-		"name"             : "CHAT DEMO",
-		"description"      : "CHAT DEMO",
-		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
-		"field_2"          : "https://github.com/Exam70486/cs_node_js_test_chat/blob/main/index.js",
-		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_node_js_test_chat/main",      
-		"field_4"          : "https://4d9gc8-3000.csb.app" 
-	},
-	{
-		"id"               : 3,
-		"done"             : true,
-		"name"             : "Sudoku GAME",
-		"description"      : "Sudoku GAME",
-		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesSudoku",
-		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/modules/sudoku.js",
-		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
-		"field_4"          : "https://dpfkr5-4000.csb.app/Sudoku_Generate_NodeJS" 
-	},
-	{
-		"id"               : 4,
-		"done"             : true,
-		"name"             : "CSV/XLS DEMO",
-		"description"      : "CSV/XLS DEMO",
-		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
-		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/index.js",
-		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
-		"field_4"          : "https://dpfkr5-4000.csb.app/GenerarInformeCSVJson" 
-	}
-
-    </ul>
-
    
     <h2>Backend & hosting / SPRINGBOOT </h2>
     <ul>
- {
-		"id"               : 1,
+    {
+	[x]	"id"               : 1,
         "done"             : true,
         "name"             : "Listado desde MS SQL Server",
         "description"      : "Listado desde MS SQL Server",
@@ -309,7 +264,7 @@ https://g.co/bard/share/0ff09e2380c7
         "field_4"          : "https://docs.spring.io/spring-boot/docs/2.1.x/reference/html/boot-features-sql.html"   
     },
     {
-		"id"               : 2,
+	[x]	"id"               : 2,
         "done"             : true,
         "name"             : "Algoritmo discancia mas corta",
         "description"      : "Algoritmo discancia mas corta",
@@ -321,10 +276,56 @@ https://g.co/bard/share/0ff09e2380c7
     }
     </ul>
 
-  <h2>Backend & hosting / .NET CORE / C++ </h2>
+ 
+   <h2>Backend & hosting / node.js </h2>
     <ul>
-    
-    		"id"               : 1,
+	{
+	[x]	"id"               : 1,
+		"done"             : true,
+		"name"             : "OCR DEMO",
+		"description"      : "OCR DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
+		"field_2"          : "https://github.com/Exam70486/cs_nodejs_ocr_/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_nodejs_ocr_/main",      
+		"field_4"          : "https://zdsjg8-3000.csb.app/" 
+	},
+	{
+	[x]	"id"               : 2,
+		"done"             : true,
+		"name"             : "CHAT DEMO",
+		"description"      : "CHAT DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
+		"field_2"          : "https://github.com/Exam70486/cs_node_js_test_chat/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_node_js_test_chat/main",      
+		"field_4"          : "https://4d9gc8-3000.csb.app" 
+	},
+	{
+	[x]	"id"               : 3,
+		"done"             : true,
+		"name"             : "Sudoku GAME",
+		"description"      : "Sudoku GAME",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesSudoku",
+		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/modules/sudoku.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
+		"field_4"          : "https://dpfkr5-4000.csb.app/Sudoku_Generate_NodeJS" 
+	},
+	{
+	[x]	"id"               : 4,
+		"done"             : true,
+		"name"             : "CSV/XLS DEMO",
+		"description"      : "CSV/XLS DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
+		"field_4"          : "https://dpfkr5-4000.csb.app/GenerarInformeCSVJson" 
+	}
+
+    </ul>
+
+
+ <h2>Backend & hosting / .NET CORE / C++ </h2>
+    <ul>
+    [x]	"id"               : 1,
         "done"             : true,
         "name"             : "Generar archivos CSV/XLS",
         "description"      : "Generar archivos CSV/XLS",
@@ -335,7 +336,7 @@ https://g.co/bard/share/0ff09e2380c7
         "field_4"          : "https://angularwebapidemo.somee.com/demos/GenerarInformeCSVJson"
 	},
     {
-		"id"               : 2,
+	[x]	"id"               : 2,
         "done"             : true,
         "name"             : "Generar archivos PDF",
         "description"      : "Generar archivos PDF",
@@ -346,7 +347,7 @@ https://g.co/bard/share/0ff09e2380c7
         "field_4"          : "https://angularwebapidemo.somee.com/demos/_GetPdf?subjectName=taty"
 	},
     {
-		"id"               : 3,
+	[x]	"id"               : 3,
         "done"             : true,
         "name"             : "Algoritmo de Ordenamiento",
         "description"      : "Algoritmo de Ordenamiento",
