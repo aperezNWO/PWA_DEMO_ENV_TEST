@@ -96,36 +96,266 @@ https://g.co/bard/share/0ff09e2380c7
     </ul>
         <h2>Environments / offline</h2>
     <ul>  
-      <li><a target="_blank" href="#">Visual Studio - Code</a></li>
-      <li><a target="_blank" href="#">Visual Studio - Community</a></li>
-      <li><a target="_blank" href="#">C++ Builder</a></li>
+      x <li><a target="_blank" href="#">Visual Studio - Code</a></li>
+      x <li><a target="_blank" href="#">Visual Studio - Community</a></li>
+      x <li><a target="_blank" href="#">C++ Builder</a></li>
     </ul>
     <h2>Repos</h2> 
     <ul>
-      <li><a target="_blank" href="https://github.com/aperezNWO/">Git Hub</a></li>
-      <li><a target="_blank" href="https://alejandroperezacosta.visualstudio.com/">Visual Studio</a></li>
+      X <li><a target="_blank" href="https://github.com/aperezNWO/">Git Hub</a></li>
+      x <li><a target="_blank" href="https://alejandroperezacosta.visualstudio.com/">Azure Devops</a></li>
     </ul>
   <h2>Front End</h2>
     <ul>
-      <li><a href="https://github.com/aperezNWO/PWA_DEMO_ENV_TEST"   target="_blank">[REPO]</a>|<a target="_blank" href="https://apereznwo.github.io/PWA_DEMO_ENV_TEST/">[ENV_TEST]</a></li>
-      <li><a href="https://github.com/apereznwo/angularMCSD_public/" target="_blank">[REPO]</a>|<a target="_blank" href="https://apereznwo.github.io/AngularMCSD_Public/">[ENV_DEV]</a></li>
-      <li><a href="https://github.com/apereznwo/angularMCSD"         target="_blank">[REPO]</a>|<a target="_blank" href="https://apereznwo.github.io/AngularMCSD/">[ENV_PROD]</a></li>
-    </ul>
-    <h2>Backend & hosting</h2>
-    <ul>
-      <li><a href="https://alejandroperezacosta.visualstudio.com/mcsdWebApiTFS" target="_blank">[REPO]</a>|<a target="_blank" href="https://webapiangulardemo.somee.com/"                  >[.NET CORE / C# ]</a></li>
-      <li><a href="https://alejandroperezacosta.visualstudio.com/mcsdWebApiTFS" target="_blank">[REPO]</a>|<a target="_blank" href="https://github.com/aperezNWO/CppBuilder01/tree/master" >[.NET CORE / C++]</a></li>        
-      <li><a href="https://github.com/aperezNWO/CS_NodeJs"                      target="_blank">[REPO]</a>|<a target="_blank" href="https://jh6mc8-4000.csb.app/index"                     >[Node Js - Prod]</a></li>
-      <li><a href="https://github.com/aperezNWO/cs_node_js_test"                target="_blank">[REPO]</a>|<a target="_blank" href="https://hk2fjg-4000.csb.app/index"                     >[Node Js - Test #1 (SOURCE/PUBLISHED/NON-RELATED)]</a></li>
-      <li><a href="#"                                                           target="_blank">[REPO]</a>|<a target="_blank" href="https://398xnm-4000.csb.app/INDEX"                     >[Node Js - Test #2 (NO SOURCE/PUBLISHED/RELATED)]</a></li>
-      <li><a href="https://github.com/aperezNWO/cs_node_js_test_chat"           target="_blank">[REPO]</a>|<a target="_blank" href="https://2ylppr-3000.csb.app"                           >[Node Js - Chat - Test]</a></li>        
-      <li><a href="https://github.com/aperezNWO/cs_nodejs_ocr_"                 target="_blank">[REPO]</a>|<a target="_blank" href="https://cqxd3m-3000.csb.app/upload"                    >[Node Js - OCR]</a></li>        
-      <li><a href="https://github.com/aperezNWO/CS_NodeJs_Ocr_Sudoku"           target="_blank">[REPO]</a>|<a target="_blank" href="#" >[Node Js - OCR - SUDOKU]</a></li>        
-      <li><a target="_blank" href="https://angularwebapidemo.somee.com/">Somee - NET CORE / MS SQL SERVER #1 (alejandro.perez.acosta&#64;hotmail.com)</a></li>
-      <li><a target="_blank" href="https://angularwebapidemo.somee.com/">Somee - NET CORE / MS SQL SERVER #2 (alejandro.perez.acosta&#64;gmail.com)</a></li>
-      <li><a target="_blank" href="https://angularcppdemo.somee.com/">Somee - NET CORE / MS SQL SERVER #3 (df149032&#64;outlook.com) </a></li>        
-      <li><a target="_blank" href="https://pages.github.com">Git Hub Pages</a></li>
-      <li><a target="_blank" href="https://codesandbox.io">Code Sandbox</a></li>
+{
+		"id"               : 1,
+		"done"             : true,
+		"name"             : "[PWA_DEMO - ENV_LANDING]",
+		"description"      : "Angular Learning - Landing Page",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs/",
+		"field_8"          : "17.3.8",
+		"field_5"          : "NGBOOTSTRAP", 
+		"field_6"          : "https://ng-bootstrap.github.io/#/home",      
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_LANDING/",
+		"field_2"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_LANDING.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               :  2,
+		"done"             : true,
+		"name"             : "[PWA_DEMO - ENV_TEST]",
+		"description"      : "Angular Learning - Testing Page",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.8",
+		"field_5"          : "Material",  
+		"field_6"          : "https://material.angular.io/",  
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/",
+		"field_2"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_TEST.git",
+		"field_9"          : ""
+	},
+	{ 
+		"id"               : 3,
+		"done"             : true,
+		"name"             : "[PWA_DEMO - ENV_DEV]",
+		"description"      : "Angular Learning - DEV Page",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.8",
+		"field_5"          : "Material", 
+		"field_6"          : "https://material.angular.io/",   
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_DEV/",
+		"field_2"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_DEV.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               : 4,
+		"done"             : true,
+		"name"             : "[PWA_DEMO - ENV_PROD]",
+		"description"      : "Angular Learning - PROD",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.8",
+		"field_5"          : "Material",   
+		"field_6"          : "https://material.angular.io/", 
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PROD/",
+		"field_2"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PROD.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               : 5,
+		"done"             : true,
+		"name"             : "[PWA_DEMO - ENV_PUBLIC]",
+		"description"      : "Angular Learning - PUBLIC",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "https://material.angular.io/", 
+		"field_5"          : "17.0.8",
+		"field_6"          : "Material",   
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+		"field_2"          : "https://github.com/aperezNWO/PWA_DEMO_ENV_PUBLIC.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               : 6,
+		"done"             : true,
+		"name"             : "[IONIC DEMO - ENV TEST]",
+		"description"      : "IONIC Learning - ENV TEST",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.3.0",
+		"field_5"          : "IONIC", 
+		"field_6"          : "https://ionicframework.com/",    
+		"field_1"          : "https://apereznwo.github.io/IONIC_DEMO_ENV_TEST/",
+		"field_2"          : "https://github.com/aperezNWO/IONIC_DEMO_ENV_TEST.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               : 7,
+		"done"             : true,
+		"name"             : "[PRIMENG DEMO - QUICKSTART]",
+		"description"      : "PRIMGENG DEMO - QUICKSTART",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.0",
+		"field_5"          : "PRIMENG",
+		"field_6"          : "https://primeng.org/",     
+		"field_1"          : "https://apereznwo.github.io/primeng-quickstart-cli/",
+		"field_2"          : "https://github.com/aperezNWO/primeng-quickstart-cli.git",
+		"field_9"          : ""
+	},
+	{
+		"id"               : 8,
+		"done"             : true,
+		"name"             : "[NGBOOTRSAP DEMO - ENV TEST]",
+		"description"      : "NGBOOTSRAP DEMO - ENV TEST",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.0",
+		"field_5"          : "NGBOOTSRAP",  
+		"field_6"          : "https://ng-bootstrap.github.io/#/home",   
+		"field_1"          : "https://apereznwo.github.io/NG_BOOTSTRAP_DEMO_ENV_TEST/",
+		"field_2"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_TEST.git",
+		"field_9"          : ""		
+	},
+	{
+		"id"               : 8,
+		"done"             : true,
+		"name"             : "[NGBOOTSRAP DEMO - ENV DEV]",
+		"description"      : "NGBOOTSRAP DEMO - ENV DEV",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.0",
+		"field_5"          : "NGBOOTSRAP",    
+		"field_6"          : "https://ng-bootstrap.github.io/#/home", 
+		"field_1"          : "https://apereznwo.github.io/NG_BOOTSTRAP_DEMO_ENV_DEV/",
+		"field_2"          : "https://github.com/aperezNWO/NG_BOOTSTRAP_DEMO_ENV_DEV.git",
+		"field_9"          : ""		
+	},
+	{
+		"id"               : 9,
+		"done"             : false,
+		"name"             : "[TAILDWIND DEMO - ENV TEST]",
+		"description"      : "[TAILDWIND DEMO - ENV TEST]",
+		"field_3"          : "Angular",
+		"field_4"          : "https://v17.angular.io/docs",
+		"field_8"          : "17.0.0",
+		"field_5"          : "Tailwind",   
+		"field_6"          : "https://tailwindcss.com/",  
+		"field_1"          : "",
+		"field_2"          : "",
+		"field_9"          : ""		
+	}
     </ul>
 
+   <h2>Backend & hosting / node.js </h2>
+    <ul>
+	{
+		"id"               : 1,
+		"done"             : true,
+		"name"             : "OCR DEMO",
+		"description"      : "OCR DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Ocr",
+		"field_2"          : "https://github.com/Exam70486/cs_nodejs_ocr_/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_nodejs_ocr_/main",      
+		"field_4"          : "https://zdsjg8-3000.csb.app/" 
+	},
+	{
+		"id"               : 2,
+		"done"             : true,
+		"name"             : "CHAT DEMO",
+		"description"      : "CHAT DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/Chat",
+		"field_2"          : "https://github.com/Exam70486/cs_node_js_test_chat/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/cs_node_js_test_chat/main",      
+		"field_4"          : "https://4d9gc8-3000.csb.app" 
+	},
+	{
+		"id"               : 3,
+		"done"             : true,
+		"name"             : "Sudoku GAME",
+		"description"      : "Sudoku GAME",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/GamesSudoku",
+		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/modules/sudoku.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
+		"field_4"          : "https://dpfkr5-4000.csb.app/Sudoku_Generate_NodeJS" 
+	},
+	{
+		"id"               : 4,
+		"done"             : true,
+		"name"             : "CSV/XLS DEMO",
+		"description"      : "CSV/XLS DEMO",
+		"field_1"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
+		"field_2"          : "https://github.com/Exam70486/CS_NodeJs/blob/main/index.js",
+		"field_3"          : "https://codesandbox.io/p/github/Exam70486/CS_NodeJs/main",      
+		"field_4"          : "https://dpfkr5-4000.csb.app/GenerarInformeCSVJson" 
+	}
+
+    </ul>
+
+   
+    <h2>Backend & hosting / SPRINGBOOT </h2>
+    <ul>
+ {
+		"id"               : 1,
+        "done"             : true,
+        "name"             : "Listado desde MS SQL Server",
+        "description"      : "Listado desde MS SQL Server",
+        "field_6"          : "Spring Boot",
+        "field_1"          : "Spring Boot, REST Service, MS SQL SERVER",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV/",
+        "field_3"          : "https://github.com/aperezNWO/JAVA2_EE_SB_DEMO/blob/master/src/main/java/com/example/DAO/personasDAO.java",
+        "field_4"          : "https://docs.spring.io/spring-boot/docs/2.1.x/reference/html/boot-features-sql.html"   
+    },
+    {
+		"id"               : 2,
+        "done"             : true,
+        "name"             : "Algoritmo discancia mas corta",
+        "description"      : "Algoritmo discancia mas corta",
+        "field_6"          : "Spring Boot",
+        "field_1"          : "Spring Boot, REST service, Dijkstra",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/AlgorithmDijkstra",
+        "field_3"          : "https://github.com/aperezNWO/JAVA2_EE_SB_DEMO/blob/master/src/main/java/com/example/demo/DemoEndPoint.java",
+        "field_4"          : "https://spring.io/guides/tutorials/rest"  
+    }
+    </ul>
+
+  <h2>Backend & hosting / .NET CORE / C++ </h2>
+    <ul>
+    
+    		"id"               : 1,
+        "done"             : true,
+        "name"             : "Generar archivos CSV/XLS",
+        "description"      : "Generar archivos CSV/XLS",
+        "field_5"          : ".net core",
+        "field_1"          : ".net core, sql server, api rest",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV/",
+        "field_3"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Web/Controllers/DemosController.cs",
+        "field_4"          : "https://angularwebapidemo.somee.com/demos/GenerarInformeCSVJson"
+	},
+    {
+		"id"               : 2,
+        "done"             : true,
+        "name"             : "Generar archivos PDF",
+        "description"      : "Generar archivos PDF",
+        "field_5"          : ".net core",
+        "field_1"          : ".net core, sql server, api rest, EPPPlus",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationPDF/",
+        "field_3"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Web/Controllers/DemosController.cs",
+        "field_4"          : "https://angularwebapidemo.somee.com/demos/_GetPdf?subjectName=taty"
+	},
+    {
+		"id"               : 3,
+        "done"             : true,
+        "name"             : "Algoritmo de Ordenamiento",
+        "description"      : "Algoritmo de Ordenamiento",
+        "field_5"          : ".net core",
+        "field_1"          : ".net core, sql server, api rest, QuickSort, Bubble Sort",
+        "field_2"          : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/AlgorithmSort/",
+        "field_3"          : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Web/Controllers/DemosController.cs",
+        "field_4"          : "https://angularwebapidemo.somee.com/demos/_GetSort?p_sortAlgoritm=2&p_unsortedList=16|1|20|15|12|8|19|6|11|14|23|5|2|10|9|13|24|7|22|18|0|17|3|21|4"
+	}
+    </ul>
+  
 /////////////////////////////////////////////////////////////////////////////////

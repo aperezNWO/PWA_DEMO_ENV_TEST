@@ -19,11 +19,11 @@ export class HomeComponent {
     pages =[
       {
         'url': '/Dev', 
-        'text': '[TESTING RELEASES]',
+        'text': '[TESTING]',
       },  
       {
         'url': '/StableReleases', 
-        'text': '[STABLE RELEASES]',
+        'text': '[PRODUCTION]',
       },    
       {
         'url': '/SCM',

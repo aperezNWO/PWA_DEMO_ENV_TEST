@@ -53,12 +53,12 @@
               <ngb-highlight [result]="scmItem.description" [term]="searchTerm" />
           </td>
           <td align="left">
-            <a [routerLink]="scmItem.field_1">
+            <a [href]="scmItem.field_1" target="_blank">
               <ngb-highlight [result]="scmItem.name" [term]="searchTerm" />
             </a>
           </td>
           <td align="left">
-            <a [routerLink]="scmItem.field_3">
+            <a [href]="scmItem.field_3" target="_blank">
               <ngb-highlight [result]="scmItem.field_2" [term]="searchTerm" />
             </a>
           </td>
