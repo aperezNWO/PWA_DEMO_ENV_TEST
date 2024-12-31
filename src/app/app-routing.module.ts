@@ -9,7 +9,7 @@ import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-obs
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
-import { DevComponent                  } from './_modules/_home/dev/dev.component';
+import { DevComponent                  } from './_modules/__Testing/dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
@@ -21,7 +21,8 @@ import { IndexComponent                } from './_modules/_home/index/index.comp
 import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
-import { ShapeReconCanvasComponent } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
+import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
+import { BouncingBallComponent } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
 
 //
 export interface _Route extends Route
@@ -47,6 +48,7 @@ export const routes : _Route[] = [
   { path: 'ShapeReconCanvas' , component: ShapeReconCanvasComponent  , caption : 'Shape   - Recon - Canvas' },
   { path: 'ShapeRecognition' , component: OpenCvShapeReconComponent  , caption : 'Shape   - Recognition' },
   { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend - Testing'     },
+  { path: 'BouncingBall'     , component: BouncingBallComponent      , caption : 'Boucing - Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
   { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
   { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                   },
