@@ -22,9 +22,10 @@ import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-pr
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
-import { BouncingBallComponent         } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
-import { Hanoi3dComponent              } from './_modules/__Testing/hanoi3d/hanoi3d.component';
-import { TetrisComponent               } from './_modules/_games/hanoi/tetris/tetris.component';
+import { BouncingBallComponent         } from './_modules/_miscelaneous/bouncing-ball/bouncing-ball.component';
+import { Hanoi3dComponent              } from './_modules/_games/hanoi3d/hanoi3d.component';
+import { TetrisComponent               } from './_modules/_games/tetris/tetris.component';
+import { MathParsingComponent          } from './_modules/_miscelaneous/math-parsing/math-parsing.component';
 
 //
 export interface _Route extends Route
@@ -53,6 +54,7 @@ export const routes : _Route[] = [
   { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend - Testing'     },
   { path: 'BouncingBall'     , component: BouncingBallComponent      , caption : 'Boucing - Testing'     },
   { path: 'Tetris'           , component: TetrisComponent            , caption : 'Tetris  - Testing'     },
+  { path: 'MathParsing'      , component: MathParsingComponent       , caption : 'Math    - Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
   { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
   { path: 'SCM'              , component: SCMComponent               , caption : 'SCM'                   },

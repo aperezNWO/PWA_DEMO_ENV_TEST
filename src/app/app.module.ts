@@ -47,9 +47,10 @@ import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-pr
 import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
-import { BouncingBallComponent         } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
-import { Hanoi3dComponent              } from './_modules/__Testing/hanoi3d/hanoi3d.component';
-import { TetrisComponent               } from './_modules/_games/hanoi/tetris/tetris.component';
+import { BouncingBallComponent         } from './_modules/_miscelaneous/bouncing-ball/bouncing-ball.component';
+import { Hanoi3dComponent              } from './_modules/_games/hanoi3d/hanoi3d.component';
+import { TetrisComponent               } from './_modules/_games/tetris/tetris.component';
+import { MathParsingComponent } from './_modules/_miscelaneous/math-parsing/math-parsing.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -140,6 +141,7 @@ export function loadConfig(configService: ConfigService) {
                     BouncingBallComponent,
                     Hanoi3dComponent,
                     TetrisComponent,
+                    MathParsingComponent
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [
