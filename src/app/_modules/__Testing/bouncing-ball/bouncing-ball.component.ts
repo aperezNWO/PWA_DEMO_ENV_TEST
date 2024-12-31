@@ -21,11 +21,11 @@ export class BouncingBallComponent implements AfterViewInit {
   private restitution = 0.8; // Bounce factor, 1 = perfect elastic collision, <1 = energy loss
 
   ngAfterViewInit() {
-    this.ctx = this.canvas!.nativeElement.getContext('2d');
     this.animate();
   }
 
   animate = () => {
+    this.ctx = this.canvas!.nativeElement.getContext('2d');
     // Clear canvas
     this.ctx!.clearRect(0, 0, this.canvas!.nativeElement.width, this.canvas!.nativeElement.height);
 
