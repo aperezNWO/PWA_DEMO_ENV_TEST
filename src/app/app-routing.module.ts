@@ -9,7 +9,7 @@ import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-obs
 import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
 import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
-import { DevComponent                  } from './_modules/__Testing/dev/dev.component';
+import { DevComponent                  } from './_modules/__Testing/_dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
@@ -23,6 +23,7 @@ import { StableReleasesComponent       } from './_modules/_home/stable-releases/
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
 import { BouncingBallComponent } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
+import { Hanoi3dComponent } from './_modules/__Testing/hanoi3d/hanoi3d.component';
 
 //
 export interface _Route extends Route
@@ -40,6 +41,7 @@ export const routes : _Route[] = [
   { path: 'Hanoi'            , component: HanoiTowersComponent       , caption : 'Hanoi - Timer'       },
   { path: 'HanoiRjxs'        , component: HanoiObservableComponent   , caption : 'Hanoi - Rjxs'        },
   { path: 'HanoiAuto'        , component: HanoiAutoComponent         , caption : 'Hanoi - Rjxs -Auto'  },
+  { path: 'Hanoi3d'          , component: Hanoi3dComponent           , caption : 'Hanoi - 3d'          },
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'     },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },

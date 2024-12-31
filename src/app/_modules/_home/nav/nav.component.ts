@@ -38,7 +38,7 @@ export class NavComponent {
     },
     {
       'url': '/AiPrompts', 
-      'text': '[A.I. Prompts]',
+      'text': '[LLMs]',
     },
     {
       'url': '/Topics', 

@@ -37,7 +37,9 @@
     "socket.io": "^4.7.4",
     "socket.io-client": "^4.7.4",
     "speech-recognition": "^0.0.1",
+    "three": "^0.171.0",
     "tslib": "^2.6.2",
+    "tween": "^0.9.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "@angular/localize": "^17.0.1",
     "@types/file-saver": "^2.0.7",
     "@types/jasmine": "~5.1.2",
+    "@types/three": "^0.171.0",
     "jasmine-core": "~5.1.1",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",

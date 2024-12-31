@@ -360,3 +360,29 @@ https://g.co/bard/share/0ff09e2380c7
     </ul>
   
 /////////////////////////////////////////////////////////////////////////////////
+
+[{
+	"resource": "/c:/Users/pablo.perez/dev/_Angular/BaseLine/PWA_DEMO_ENV_TEST/src/app/_modules/__Testing/hanoi3d/hanoi3d.component.ts",
+	"owner": "typescript",
+	"code": "7016",
+	"severity": 8,
+	"message": "Could not find a declaration file for module 'three'. 'c:/Users/pablo.perez/dev/_Angular/BaseLine/PWA_DEMO_ENV_TEST/node_modules/three/build/three.cjs' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';`",
+	"source": "ts",
+	"startLineNumber": 2,
+	"startColumn": 24,
+	"endLineNumber": 2,
+	"endColumn": 31
+}]
+
+[{
+	"resource": "/c:/Users/pablo.perez/dev/_Angular/BaseLine/PWA_DEMO_ENV_TEST/src/app/_modules/__Testing/hanoi3d/hanoi3d.component.ts",
+	"owner": "typescript",
+	"code": "7016",
+	"severity": 8,
+	"message": "Could not find a declaration file for module 'tween'. 'c:/Users/pablo.perez/dev/_Angular/BaseLine/PWA_DEMO_ENV_TEST/node_modules/tween/tween.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/tween` if it exists or add a new declaration (.d.ts) file containing `declare module 'tween';`",
+	"source": "ts",
+	"startLineNumber": 4,
+	"startColumn": 24,
+	"endLineNumber": 4,
+	"endColumn": 31
+}]

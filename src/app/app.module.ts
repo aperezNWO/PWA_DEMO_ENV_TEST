@@ -28,7 +28,7 @@ import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic
 import { ConfigService                 } from './_services/config/config.service';
 import { BackendService                   } from './_services/backend/backend.service';
 import { NavComponent                  } from './_modules/_home/nav/nav.component';
-import { DevComponent                  } from './_modules/__Testing/dev/dev.component';
+import { DevComponent                  } from './_modules/__Testing/_dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
@@ -48,6 +48,7 @@ import { StableReleasesComponent       } from './_modules/_home/stable-releases/
 import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
 import { BouncingBallComponent         } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
+import { Hanoi3dComponent              } from './_modules/__Testing/hanoi3d/hanoi3d.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -135,7 +136,8 @@ export function loadConfig(configService: ConfigService) {
                     StableReleasesComponent,
                     OpenCvShapeReconComponent,
                     ShapeReconCanvasComponent,
-                    BouncingBallComponent
+                    BouncingBallComponent,
+                    Hanoi3dComponent
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [

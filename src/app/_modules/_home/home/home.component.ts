@@ -31,7 +31,7 @@ export class HomeComponent {
       },
       {
         'url': '/AiPrompts', 
-        'text': '[A.I. PROMPTS]',
+        'text': '[LLMs]',
       }
     ];
   //
