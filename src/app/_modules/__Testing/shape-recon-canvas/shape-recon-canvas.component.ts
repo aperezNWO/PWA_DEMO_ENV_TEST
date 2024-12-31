@@ -5,6 +5,7 @@ import { NgxSignaturePadComponent } from '@eve-sama/ngx-signature-pad/lib/ngx-si
 import { NgxSignatureOptions      } from '@eve-sama/ngx-signature-pad/lib/types/ngx-signature-pad';
 import { _languageName            } from 'src/app/_models/entityInfo.model';
 import { ShapeDetectionService } from 'src/app/_services/shapeDetection/shape-detection.service';
+import { ConnectableObservable } from 'rxjs';
 
 @Component({
   selector: 'app-shape-recon-canvas',
@@ -287,6 +288,8 @@ export class ShapeReconCanvasComponent implements AfterViewInit , OnInit {
     img.onload = () => {
           //
           const shapes        = this.shapeDetectionService.detectShapes(img);
+          //
+          console.log('Detected Shapes ' + shapes);
           this.detectedShapes = shapes;
           //
           this.status     = this.detectedShapes.toString();
