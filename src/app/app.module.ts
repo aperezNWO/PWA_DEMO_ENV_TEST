@@ -49,6 +49,7 @@ import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shap
 import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
 import { BouncingBallComponent         } from './_modules/__Testing/bouncing-ball/bouncing-ball.component';
 import { Hanoi3dComponent              } from './_modules/__Testing/hanoi3d/hanoi3d.component';
+import { TetrisComponent               } from './_modules/_games/hanoi/tetris/tetris.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -137,7 +138,8 @@ export function loadConfig(configService: ConfigService) {
                     OpenCvShapeReconComponent,
                     ShapeReconCanvasComponent,
                     BouncingBallComponent,
-                    Hanoi3dComponent
+                    Hanoi3dComponent,
+                    TetrisComponent,
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angula
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import * as THREE from 'three';
 import * as TWEEN from 'tween';
+import { PageRestartService } from 'src/app/_services/pageRestart/page-restart.service';
 
 @Component({
   selector: 'app-hanoi3d',
@@ -21,6 +22,15 @@ export class Hanoi3dComponent implements OnInit, AfterViewInit {
   currentMove = 0;
   isAnimating = false;
 
+  constructor(private pageRestartService: PageRestartService)
+  {
+    
+  }
+  
+  restart() {
+    this.pageRestartService.reloadPage(); // or use any other method
+  }
+    
   ngOnInit(): void {
 
   }
@@ -81,6 +91,7 @@ export class Hanoi3dComponent implements OnInit, AfterViewInit {
       this.solveHanoi(n - 1, auxiliary, target, source);
     }
   }  
+
   animateMove() {
     if (this.currentMove < this.moves.length && !this.isAnimating) {
       this.isAnimating = true;
@@ -91,8 +102,8 @@ export class Hanoi3dComponent implements OnInit, AfterViewInit {
       if (disksOnSource.length > 0) {
         const diskToMove = disksOnSource[0];
 
-        const targetY = this.towers[move.to].position.y + 0.25 + this.disks.filter(d => Math.abs(d.position.x - this.towers[move.to].position.x) < 0.1).length * 0.5
-
+        const targetY = this.towers[move.to].position.y + 0.25 + this.disks.filter(d => Math.abs(d.position.x - this.towers[move.to].position.x) < 0.1).length * 0.5;
+        
         new TWEEN.Tween(diskToMove.position)
           .to({ y: diskToMove.position.y + 3 }, 500) // Move up
           .onComplete(() => {
@@ -118,12 +129,10 @@ export class Hanoi3dComponent implements OnInit, AfterViewInit {
   }
 
   animate() {
-    requestAnimationFrame(this.animate.bind(this));
-    this.controls.update();
-    TWEEN.update(); // Crucial: Update TWEEN on each frame
-    if (this.currentMove < this.moves.length) {
-      this.animateMove();
-    }
-    this.renderer.render(this.scene, this.camera);
+      requestAnimationFrame(this.animate.bind(this));
+      TWEEN.update();
+      this.controls.update();
+      if (this.currentMove < this.moves.length) this.animateMove();
+      this.renderer.render(this.scene, this.camera);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { PageRestartService } from 'src/app/_services/pageRestart/page-restart.service';
 
 @Component({
   selector: 'app-bouncing-ball',
@@ -20,6 +21,13 @@ export class BouncingBallComponent implements AfterViewInit {
   private friction = 0.98; // Friction to slow down the ball
   private restitution = 0.8; // Bounce factor, 1 = perfect elastic collision, <1 = energy loss
 
+  constructor(private pageRestartService: PageRestartService)
+  {
+    
+  }
+  restart() {
+    this.pageRestartService.reloadPage(); // or use any other method
+  }
   ngAfterViewInit() {
     this.animate();
   }
