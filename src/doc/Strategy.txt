@@ -152,18 +152,6 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
             -- [_] DB.
 
--- [_] ENV_PUBLIC  / ACERCA DE / TECHNICAL SPECS (WEB):
-
-      -- [_] TECHNICAL SPECS (DETAIL) :
-
-            -- [_] json external list.
-
-      -- [_] SCM:
-
-            -- [_] json external list.
-     
-      -- [_] AIPrompts:
- 
  -- [_] HOME
   
       -- [_] ICON QUERY URL TO INDEX.
@@ -172,4 +160,20 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
   
       -- [_] LINK TO ENV_LANDING.
 
+-- [_] ENV_PUBLIC  / ACERCA DE / TECHNICAL SPECS (WEB):
+
+      -- [_] TECHNICAL SPECS (DETAIL) :
+
+            -- [_] json external list.
+
+      -- [_] SCM:
+
+             -- [_] ngb grid.
+
+                  -- [_] span row.
+             
+            -- [_] json external list.
+     
+      -- [_] LLM.
+      
 /////////////////////////////////////////////
