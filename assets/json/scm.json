@@ -340,6 +340,19 @@
     {
         "id"          : 28,
         "done"        : true,
+        "name"        : "[.NET CORE - SWAGGER]",
+        "description" : "ENV_ONLINE_HOSTING",
+        "field_1"     : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/",
+        "field_2"     : "[Repo]",
+        "field_3"     : "https://github.com/aperezNWO/mcsdNetCoreBackup/blob/main/mcsd.Web/Controllers/DemosController.cs",
+        "field_4"     : "[Hosting]",
+        "field_5"     : "https://www.somee.com",
+        "field_6"     : "[End Point]",
+        "field_7"     : "https://angularwebapidemo.somee.com/swagger"
+    },
+    {
+        "id"          : 29,
+        "done"        : true,
         "name"        : "[.NET CORE - SQL QUERY DEMO - CSV]",
         "description" : "ENV_ONLINE_HOSTING",
         "field_1"     : "https://apereznwo.github.io/PWA_DEMO_ENV_PUBLIC/#/FilesGenerationCSV",
@@ -351,7 +364,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/GenerarInformeCSVJson"
     },
     {
-        "id"          : 29,
+        "id"          : 30,
         "done"        : true,
         "name"        : "[.NET CORE - SQL QUERY DEMO - XLS]",
         "description" : "ENV_ONLINE_HOSTING",
@@ -364,7 +377,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/GenerarInformeJson"
     },
     {
-        "id"          : 30,
+        "id"          : 31,
         "done"        : true,
         "name"        : "[.NET CORE - GENERAR ARCHIVO PDF]",
         "description" : "ENV_ONLINE_HOSTING",
@@ -377,7 +390,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/_GetPdf?subjectName=taty"
     },
     {
-        "id"          : 31,
+        "id"          : 32,
         "done"        : true,
         "name"        : "[.NET CORE - ALGORITMO ORDENAMIENTO]",
         "description" : "ENV_ONLINE_HOSTING",
@@ -390,7 +403,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/_GetSort?p_sortAlgoritm=2&p_unsortedList=16|1|20|15|12|8|19|6|11|14|23|5|2|10|9|13|24|7|22|18|0|17|3|21|4"
     },
     {
-        "id"          : 32,
+        "id"          : 33,
         "done"        : true,
         "name"        : "[.NET CORE / C++ - ALGORITMO ORDENAMIENTO]",
         "description" : "ENV_ONLINE_HOSTING",
@@ -403,7 +416,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/_GetSort_cpp?p_sortAlgoritm=2&p_unsortedList=16|1|20|15|12|8|19|6|11|14|23|5|2|10|9|13|24|7|22|18|0|17|3|21|4"
     },
     {
-        "id"          : 33,
+        "id"          : 34,
         "done"        : true,
         "name"        : "[.NET CORE - DISTANCIA MAS CORTA]",
         "description" : "ENV_ONLINE_HOSTING",
@@ -416,7 +429,7 @@
         "field_7"     : "https://angularwebapidemo.somee.com/demos/GenerateRandomVertex?p_vertexSize=9&p_sourcePoint=0"
     },
     {
-        "id"          : 34,
+        "id"          : 35,
         "done"        : true,
         "name"        : "[.NET CORE / C++ - DISTANCIA MAS CORTA]",
         "description" : "ENV_ONLINE_HOSTING",
