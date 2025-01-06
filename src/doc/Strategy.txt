@@ -198,15 +198,14 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
 -- [_] download csv / xls /pdf file as zip.
 
--- [_] django python backend.
-
-        -- [_] https://code.visualstudio.com/docs/python/tutorial-fastapi
-
 -- [_] CORRECT HANOI 3D POSITION.
 
 -- [_] tensorflow.
 
 -- [_] join chart / xls / csv.
 
+-- [_] django python backend.
+
+        -- [_] https://code.visualstudio.com/docs/python/tutorial-django
      
 /////////////////////////////////////////////
