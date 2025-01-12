@@ -214,6 +214,16 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
       -- [_] c++.
 
-      -- [_] javascript.
-           
+      -- [_] java.
+
+-- [_] opencv.
+
+      -- [_] opencv.js typescript.
+
+      -- [_] python.
+
+      -- [_] c++.
+
+      -- [_] java.
+
 /////////////////////////////////////////////
