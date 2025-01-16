@@ -233,5 +233,9 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
       -- [_] Dynamic form.
 
       -- [_] email notification.
- 
+      
+      -- [_] log.
+
+      -- [_] LLM -> secure tips.
+      
 /////////////////////////////////////////////
