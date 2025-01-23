@@ -154,7 +154,6 @@ export function loadConfig(configService: ConfigService) {
           deps      : [ConfigService],
           multi     : true
         },
-
       ],
     ],
     bootstrap: [AppComponent],

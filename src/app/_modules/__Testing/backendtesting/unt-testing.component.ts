@@ -1,9 +1,7 @@
 import { Component        } from '@angular/core';
 import { Router           } from '@angular/router';
-import { AlgorithmService } from 'src/app/_services/algorithm/algorithm.service';
 import { Observable       } from 'rxjs';
-import { ConfigService } from 'src/app/_services/config/config.service';
-import { BackendService } from 'src/app/_services/backend/backend.service';
+import { BackendService   } from 'src/app/_services/backend/backend.service';
 //
 @Component({
   selector: 'app-unt-testing',
@@ -26,7 +24,7 @@ export class UntTestingComponent {
   protected BtnTestDjangoCaption          : string = '[TEST DJANGO]';
   //
   constructor(
-    private algorithmService: BackendService,
+    private backendervice: BackendService,
     private router: Router,
   ) {
     //
@@ -44,7 +42,7 @@ export class UntTestingComponent {
     this.BtnTestNodeJSCaption = '...(retrieving data)...';
     //
     let testNodeJsObservable: Observable<string> =
-      this.algorithmService._TestNodeJs();
+      this.backendervice._TestNodeJs();
     //
     const testNodeJsObserver = {
       next: (jsondata: string) => {
@@ -83,7 +81,7 @@ export class UntTestingComponent {
     this.BtnTestSpringBootCaption = '...(retrieving data)...';
     //
     let testSprinbBootObservable: Observable<string> =
-      this.algorithmService._TestSprinbBoot();
+      this.backendervice._TestSprinbBoot();
     //
     const testSprinbBootObserver = {
       next: (jsonData: string) => {
@@ -119,39 +117,39 @@ export class UntTestingComponent {
     //
     console.log('[TEST SPRINGBOOT] \n');
     //
-    this.BtnTestSpringBootCaption = '...(retrieving data)...';
+    this.BtnTestDjangoCaption = '...(retrieving data)...';
     //
-    let testSprinbBootObservable: Observable<string> =
-      this.algorithmService._TestSprinbBoot();
+    let testDjangoObservable: Observable<string> =
+      this.backendervice._TestDjango();
     //
-    const testSprinbBootObserver = {
+    const testDjangoObserver = {
       next: (jsonData: string) => {
         //
-        this.lblStatusSpringBoot =  jsonData;
+        this.lblStatusDjango =  jsonData;
         //
-        console.log('[TEST - NODEJS] - (return): ' + this.lblStatusSpringBoot);
+        console.log('[TEST - NODEJS] - (return): ' + this.lblStatusDjango);
         //
-        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
+        this.BtnTestDjangoCaption = '[TEST DJANGO]';
       },
       error: (err: Error) => {
         //
         let _status : string = JSON.stringify(err.message);
         //
         console.error(
-          '[TEST - SPRINBBOOT] - (ERROR) : ' + _status 
+          '[TEST - DJANGO] - (ERROR) : ' + _status 
         );
         //
-        this.lblStatusSpringBoot =  _status;
+        this.lblStatusDjango =  _status;
         //
-        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
+        this.BtnTestDjangoCaption = '[TEST DJANGO]';
       },
       complete: () => {
         //
-        console.log('[TEST - springboot]  -  (COMPLETE)');
+        console.log('[TEST - DJANGO]  -  (COMPLETE)');
       },
     };
     //
-    testSprinbBootObservable.subscribe(testSprinbBootObserver);
+    testDjangoObservable.subscribe(testDjangoObserver);
   }
 }
 

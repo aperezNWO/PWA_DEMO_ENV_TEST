@@ -47,6 +47,26 @@ export class BackendService implements OnInit {
       this.__baseUrlNodeJs = value;
     }
     //
+    public get _baseUrlSpringBoot(): string {
+    //
+      return this.__baseUrlSpringBoot;
+    }
+    //
+    public set _baseUrlSpringBoot(value: string) {
+      //
+      this.__baseUrlSpringBoot = value;
+    }
+    //
+    public get _baseUrlDjango(): string {
+    //
+      return this.__baseUrlDjango;
+    }
+    //
+    public set _baseUrlDjango(value: string) {
+      //
+      this.__baseUrlDjango = value;
+    }
+    //
     protected __baseUrlNetCore        : string = '';
     protected __baseUrlNodeJs         : string = '';
     protected __baseUrlSpringBoot     : string = '';
@@ -60,19 +80,20 @@ export class BackendService implements OnInit {
       //
       console.log("Calling MCSDService initialization...");
       //
+      this._baseUrlNetCore     = this._configService.getConfigValue('baseUrlNetCore');
+      this._baseUrlNodeJs      = this._configService.getConfigValue('baseUrlNodeJs');
+      this._baseUrlSpringBoot  = this._configService.getConfigValue('baseUrlSpringBoot');
+      this._baseUrlDjango      = this._configService.getConfigValue('baseUrlDjango');
+      
     }
     constructor(public http: HttpClient, public _configService : ConfigService) {
       //
       console.log("Calling MCSDService constructor...");
       //
-      this.__baseUrlNetCore     = this._configService.getConfigValue('baseUrlNetCore');
-      this.__baseUrlNodeJs      = this._configService.getConfigValue('baseUrlNodeJs');
-      this.__baseUrlSpringBoot  = this._configService.getConfigValue('baseUrlSpringBoot');
-      this.__baseUrlDjango      = this._configService.getConfigValue('baseUrlDjango');
-      //
-      console.log("baseUrlNetCore : " + this.__baseUrlNetCore);
-      console.log("baseUrlNodeJs  : " + this.__baseUrlNodeJs);
-      
+      this._baseUrlNetCore     = this._configService.getConfigValue('baseUrlNetCore');
+      this._baseUrlNodeJs      = this._configService.getConfigValue('baseUrlNodeJs');
+      this._baseUrlSpringBoot  = this._configService.getConfigValue('baseUrlSpringBoot');
+      this._baseUrlDjango      = this._configService.getConfigValue('baseUrlDjango');
     }
     ////////////////////////////////////////////////////////////////  
     // METODOS - [COMUNES]
@@ -518,9 +539,7 @@ export class BackendService implements OnInit {
   ////////////////////////////////////////////////////////////////
   _TestNodeJs(): Observable<string> {
     //
-    let p_url: string = `${this.__baseUrlNodeJs}databaseconnect`;
-    //let p_url: string = `https://ms7tks-4000.csb.app/databaseconnect`;
-    //let p_url: string ='https://fluffy-space-barnacle-vrwvjp6qjvphw9g-4000.app.github.dev/databaseconnect';
+    let p_url: string = this._configService.getConfigValue('baseUrlNodeJs') + 'databaseconnect';
     //
     let nodeJsOutput: Observable<string> = this.http.get<string>(
       p_url,
@@ -534,7 +553,7 @@ export class BackendService implements OnInit {
   //
   _TestSprinbBoot(): Observable<string> {
     //
-    let p_url: string = `${this.__baseUrlSpringBoot}hello`;
+    let p_url: string = this._configService.getConfigValue('baseUrlSpringBoot') + 'hello';
     //
     let nodeJsOutput: Observable<string> = this.http.get<string>(
       p_url,
@@ -548,7 +567,7 @@ export class BackendService implements OnInit {
   //
    _TestDjango(): Observable<string> {
     //
-    let p_url: string = `${this.__baseUrlDjango}`;
+    let p_url: string = this._configService.getConfigValue('baseUrlDjango');
     //
     let nodeJsOutput: Observable<string> = this.http.get<string>(
       p_url,
