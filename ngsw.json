@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1737616278628,
+  "timestamp": 1737646465041,
   "index": "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/973.316ac4d5fee2f217.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
-        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.02fb2ec9bf72c663.js",
+        "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.85aa9effdb3178a8.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js",
         "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.3409b7574c43778f.js",
@@ -90,8 +90,8 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/color.febf5f041e83bfbe.png": "c54e4eac0b6c88b9da8cfdf00b1d9093b828286b",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/hue.de26927932756490.png": "ec215387067c733aed6649b96d8a81798a58b21b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "0c1362bda7ed83ca17709b7131de35bcd6614c15",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.02fb2ec9bf72c663.js": "1ac30c3d6623e20ce26fa312936c4653d546f00c",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "c0633995383ccd0d079e6486b9f43a36cf74a2d8",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.85aa9effdb3178a8.js": "25af55e7bf7cbb17330d495ac6fb244cde51f305",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest": "e13577e9817bde7c3ea1af3fcc523f86335d0f73",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js": "a063506f957de345af77eb04df62e5280a953eb1",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/runtime.3409b7574c43778f.js": "b4d458e958005753fe5a2a0f4bf59a8cfd9e0e3c",
