@@ -129,36 +129,4 @@ export class AlgorithmService {
     //
     return this.http.request<HttpEvent<any>>(req);
   }
-  ////////////////////////////////////////////////////////////////
-  // BACKEND TEST
-  ////////////////////////////////////////////////////////////////
-  _TestNodeJs(): Observable<string> {
-    //
-    let p_url: string = `${this.__baseUrlNodeJs}databaseconnect`;
-    //let p_url: string = `https://ms7tks-4000.csb.app/databaseconnect`;
-    //let p_url: string ='https://fluffy-space-barnacle-vrwvjp6qjvphw9g-4000.app.github.dev/databaseconnect';
-    //
-    let nodeJsOutput: Observable<string> = this.http.get<string>(
-      p_url,
-      this.HTTPOptions_JSON,
-    );
-    //
-    console.log('Testing Url : [' + p_url+ ']');
-    //
-    return nodeJsOutput;
-  }
-  //
-  _TestSprinbBoot(): Observable<string> {
-    //
-    let p_url: string = `${this.__baseUrlSpringBoot}hello`;
-    //
-    let nodeJsOutput: Observable<string> = this.http.get<string>(
-      p_url,
-      this.HTTPOptions_Text,
-    );
-    //
-    console.log('Testing Url : [' + p_url+ ']');
-    //
-    return nodeJsOutput;
-  }
 }

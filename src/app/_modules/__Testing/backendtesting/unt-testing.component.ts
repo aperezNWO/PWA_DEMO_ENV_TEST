@@ -2,6 +2,8 @@ import { Component        } from '@angular/core';
 import { Router           } from '@angular/router';
 import { AlgorithmService } from 'src/app/_services/algorithm/algorithm.service';
 import { Observable       } from 'rxjs';
+import { ConfigService } from 'src/app/_services/config/config.service';
+import { BackendService } from 'src/app/_services/backend/backend.service';
 //
 @Component({
   selector: 'app-unt-testing',
@@ -11,16 +13,20 @@ import { Observable       } from 'rxjs';
 //
 export class UntTestingComponent {
   //
-  protected lblStatusNodeJs: string = '';
+  protected lblStatusNodeJs               : string = '';
   //
-  protected BtnTestNodeJSCaption: string = '[TEST NODE.JS]';
+  protected BtnTestNodeJSCaption          : string = '[TEST NODE.JS]';
   //
-  protected lblStatusSpringBoot: string = '';
+  protected lblStatusSpringBoot           : string = '';
   //
-  protected BtnTestSpringBootCaption: string = '[TEST SPRINGBOOT]';
+  protected BtnTestSpringBootCaption      : string = '[TEST SPRINGBOOT]';
+  //
+  protected lblStatusDjango               : string = '';
+  //
+  protected BtnTestDjangoCaption          : string = '[TEST DJANGO]';
   //
   constructor(
-    private algorithmService: AlgorithmService,
+    private algorithmService: BackendService,
     private router: Router,
   ) {
     //
@@ -108,4 +114,44 @@ export class UntTestingComponent {
     //
     testSprinbBootObservable.subscribe(testSprinbBootObserver);
   }
+  //
+  TestDjango(): void {
+    //
+    console.log('[TEST SPRINGBOOT] \n');
+    //
+    this.BtnTestSpringBootCaption = '...(retrieving data)...';
+    //
+    let testSprinbBootObservable: Observable<string> =
+      this.algorithmService._TestSprinbBoot();
+    //
+    const testSprinbBootObserver = {
+      next: (jsonData: string) => {
+        //
+        this.lblStatusSpringBoot =  jsonData;
+        //
+        console.log('[TEST - NODEJS] - (return): ' + this.lblStatusSpringBoot);
+        //
+        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
+      },
+      error: (err: Error) => {
+        //
+        let _status : string = JSON.stringify(err.message);
+        //
+        console.error(
+          '[TEST - SPRINBBOOT] - (ERROR) : ' + _status 
+        );
+        //
+        this.lblStatusSpringBoot =  _status;
+        //
+        this.BtnTestSpringBootCaption = '[TEST SPRINGBOOT]';
+      },
+      complete: () => {
+        //
+        console.log('[TEST - springboot]  -  (COMPLETE)');
+      },
+    };
+    //
+    testSprinbBootObservable.subscribe(testSprinbBootObserver);
+  }
 }
+

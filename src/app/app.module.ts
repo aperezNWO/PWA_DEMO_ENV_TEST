@@ -35,7 +35,7 @@ import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.comp
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
 import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
-import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
+import { UntTestingComponent           } from './_modules/__Testing/backendtesting/unt-testing.component';
 import { IndexComponent                } from './_modules/_home/index/index.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
 import { finalize, tap                 } from 'rxjs';

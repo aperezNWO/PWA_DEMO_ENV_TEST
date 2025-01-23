@@ -49,6 +49,8 @@ export class BackendService implements OnInit {
     //
     protected __baseUrlNetCore        : string = '';
     protected __baseUrlNodeJs         : string = '';
+    protected __baseUrlSpringBoot     : string = '';
+    protected __baseUrlDjango         : string = '';
     //
     ////////////////////////////////////////////////////////////////  
     // METODOS - [EVENT HANDLERS]
@@ -63,8 +65,10 @@ export class BackendService implements OnInit {
       //
       console.log("Calling MCSDService constructor...");
       //
-      this.__baseUrlNetCore = this._configService.getConfigValue('baseUrlNetCore');
-      this.__baseUrlNodeJs  = this._configService.getConfigValue('baseUrlNodeJs');
+      this.__baseUrlNetCore     = this._configService.getConfigValue('baseUrlNetCore');
+      this.__baseUrlNodeJs      = this._configService.getConfigValue('baseUrlNodeJs');
+      this.__baseUrlSpringBoot  = this._configService.getConfigValue('baseUrlSpringBoot');
+      this.__baseUrlDjango      = this._configService.getConfigValue('baseUrlDjango');
       //
       console.log("baseUrlNetCore : " + this.__baseUrlNetCore);
       console.log("baseUrlNodeJs  : " + this.__baseUrlNodeJs);
@@ -508,6 +512,52 @@ export class BackendService implements OnInit {
     let url = this._configService.getConfigValue('baseUrlNodeJsOcr');
     //
     return this.http.post(url, { base64Image });
+  }
+   ////////////////////////////////////////////////////////////////
+  // BACKEND TEST
+  ////////////////////////////////////////////////////////////////
+  _TestNodeJs(): Observable<string> {
+    //
+    let p_url: string = `${this.__baseUrlNodeJs}databaseconnect`;
+    //let p_url: string = `https://ms7tks-4000.csb.app/databaseconnect`;
+    //let p_url: string ='https://fluffy-space-barnacle-vrwvjp6qjvphw9g-4000.app.github.dev/databaseconnect';
+    //
+    let nodeJsOutput: Observable<string> = this.http.get<string>(
+      p_url,
+      this.HTTPOptions_JSON,
+    );
+    //
+    console.log('Testing Url : [' + p_url+ ']');
+    //
+    return nodeJsOutput;
+  }
+  //
+  _TestSprinbBoot(): Observable<string> {
+    //
+    let p_url: string = `${this.__baseUrlSpringBoot}hello`;
+    //
+    let nodeJsOutput: Observable<string> = this.http.get<string>(
+      p_url,
+      this.HTTPOptions_Text,
+    );
+    //
+    console.log('Testing Url : [' + p_url+ ']');
+    //
+    return nodeJsOutput;
+  }
+  //
+   _TestDjango(): Observable<string> {
+    //
+    let p_url: string = `${this.__baseUrlDjango}`;
+    //
+    let nodeJsOutput: Observable<string> = this.http.get<string>(
+      p_url,
+      this.HTTPOptions_Text,
+    );
+    //
+    console.log('Testing Url : [' + p_url+ ']');
+    //
+    return nodeJsOutput;
   }
 }
   

@@ -12,7 +12,7 @@ import { NotFoundPageComponent         } from './_modules/_home/not-found-page/n
 import { DevComponent                  } from './_modules/__Testing/_dev/dev.component';
 import { SCMComponent                  } from './_modules/_home/scm/scm.component';
 import { TopicsComponent               } from './_modules/_home/topics/topics.component';
-import { UntTestingComponent           } from './_modules/__Testing/nodejstesting/unt-testing.component';
+import { UntTestingComponent           } from './_modules/__Testing/backendtesting/unt-testing.component';
 import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
 import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
