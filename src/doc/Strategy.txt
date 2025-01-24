@@ -245,4 +245,15 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
       -- [_] java.
 
+
+-- [_] sites destination.
+
+        -- [_] env_landing -> marketing.
+
+        -- [_] env_public  -> programming demo.
+
+        -- [_] env_dev     -> tensorflow.
+
+        -- [_] env_prod    -> contact form.
+
 /////////////////////////////////////////////
