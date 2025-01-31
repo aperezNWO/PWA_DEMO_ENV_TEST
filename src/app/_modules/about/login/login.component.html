@@ -1,4 +1,14 @@
-<p>login works!</p>
+<div *ngIf="!isLoggedIn()">
+  <button (click)="login()">Login with Facebook</button>
+</div>
+<div *ngIf="isLoggedIn()">
+  <p>Welcome, {{ getUserName() }}!</p>
+  <button (click)="logout()">Logout</button>
+  <form (ngSubmit)="onSubmit()">
+    <input type="text" [(ngModel)]="message" name="message" placeholder="Your message">
+    <button type="submit">Send</button>
+  </form>
+</div>
 
 <div align="right">
     <a routerLink="/Home">[Volver al Inicio]</a>

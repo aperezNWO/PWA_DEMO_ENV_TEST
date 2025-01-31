@@ -53,6 +53,7 @@ import { RxJSPlaygroundComponent } from './_modules/__TestingReleases/rx-jsplayg
 import { ShapeReconCanvasComponent } from './_modules/__TestingReleases/shape-recon-canvas/shape-recon-canvas.component';
 import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-recognition/speech-recognition.component';
 import { LoginComponent } from './_modules/about/login/login.component';
+import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
 //  
 @Injectable({
   providedIn: 'root'
@@ -111,7 +112,7 @@ export function loadConfig(configService: ConfigService) {
   //
   return () => configService.loadConfig();
 }
-  
+
 //
 @NgModule({
     declarations: [
@@ -183,8 +184,15 @@ export function loadConfig(configService: ConfigService) {
         FormsModule, 
         AsyncPipe, 
         ButtonModule,
+        OAuthModule.forRoot(),
     ]
 })
 export class AppModule {
 
+  constructor() {
+
+   
+  }
+
+  
 }
