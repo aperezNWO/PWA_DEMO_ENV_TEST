@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OAuthService } from 'angular-oauth2-oidc';
 import { CustomErrorHandler } from 'src/app/app.module';
 
@@ -7,20 +8,21 @@ import { CustomErrorHandler } from 'src/app/app.module';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit  {
   message: string = '';
 
-  constructor(private oauthService: OAuthService, customErrorHandler : CustomErrorHandler) {
+  constructor(private oauthService: OAuthService, private router: Router, customErrorHandler : CustomErrorHandler) {
     this.configureOAuth();
   }
 
   private configureOAuth() {
     this.oauthService.configure({
       issuer: 'https://www.facebook.com/v12.0/dialog/oauth',
-      redirectUri: window.location.origin + '/',
+      tokenEndpoint: 'https://graph.facebook.com/v3.3/oauth/access_token',
       clientId: '1763416537924183',
-      scope: 'email', // Add other scopes as needed
-      strictDiscoveryDocumentValidation: false,
+      redirectUri: window.location.origin + '/',
+      scope: 'email',
+      responseType: 'code'
     });
 
     this.oauthService.setupAutomaticSilentRefresh();
@@ -28,6 +30,13 @@ export class LoginComponent {
     console.log('setup oautn')
   }
   
+  ngOnInit(): void {
+    if (this.oauthService.hasValidIdToken()) {
+      console.log('invalid token')
+      this.router.navigate(['/']);
+    }
+  }
+
   login() {
     try
     {

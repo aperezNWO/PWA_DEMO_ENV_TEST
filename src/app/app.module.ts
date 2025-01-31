@@ -147,7 +147,7 @@ export function loadConfig(configService: ConfigService) {
                     MathParsingComponent,
                     AboutComponent,
                     LoginComponent
-                  ],
+    ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [
         { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
@@ -159,7 +159,7 @@ export function loadConfig(configService: ConfigService) {
           deps      : [ConfigService],
           multi     : true
         },
-      ],
+       ],
     ],
     bootstrap: [AppComponent],
     imports: [
@@ -184,7 +184,12 @@ export function loadConfig(configService: ConfigService) {
         FormsModule, 
         AsyncPipe, 
         ButtonModule,
-        OAuthModule.forRoot(),
+        OAuthModule.forRoot({
+          resourceServer: {
+            allowedUrls: ['https://apereznwo.github.io/PWA_DEMO_ENV_TEST/Login'],
+            sendAccessToken: true,
+          }
+        })
     ]
 })
 export class AppModule {
