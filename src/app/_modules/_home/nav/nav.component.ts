@@ -32,21 +32,9 @@ export class NavComponent {
       'url': '/StableReleases',
       'text': '[Stable Releases]',
     },
-    {
-      'url': '/SCM', 
-      'text': '[SCM]',
-    },
-    {
-      'url': '/AiPrompts', 
-      'text': '[LLMs]',
-    },
-    {
-      'url': '/Topics', 
-      'text': '[Topics]',
-    },
-    {
-      'url': '/Index', 
-      'text': '[Index]',
+     {
+      'url': '/About', 
+      'text': '[About]',
     }      
   ];
   //

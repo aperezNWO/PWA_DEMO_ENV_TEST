@@ -256,4 +256,12 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
 
         -- [_] env_prod    -> contact form.
 
+-- [_] git hub source.        
+
+      -- [_] aperezNWO      -> PRIVATE.        
+
+      -- [_] aperezNWOGmail -> PUBLIC.        
+
+      -- [_] EXAM486        -> PUBLIC.        
+
 /////////////////////////////////////////////

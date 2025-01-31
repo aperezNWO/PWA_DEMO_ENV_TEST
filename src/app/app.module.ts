@@ -13,44 +13,46 @@ import { HttpClientModule              } from '@angular/common/http';
 import { AppComponent                  } from './app.component';
 import { AppRoutingModule              } from './app-routing.module';
 import { LogType                       } from './_models/algorithm.model';
-import { SudokuComponent               } from './_modules/_games/sudoku/sudoku.component';
-import { BoardComponent                } from "./_modules/_games/tic-tac-toe/offline/board/board.component";
-import { TicTacToeComponent            } from './_modules/_games/tic-tac-toe/offline/tic-tac-toe.component';
-import { TicTacToeOnlineComponent      } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
-import { HanoiTowersComponent          } from './_modules/_games/hanoi/hanoi-towers/game-hanoi.component';
-import { TowerComponent                } from './_modules/_games/hanoi/hanoi-towers/tower/tower.component';
-import { HanoiObservableComponent      } from './_modules/_games/hanoi/hanoi-observable/hanoi-observable.component';
-import { HanoiAutoComponent            } from './_modules/_games/hanoi/hanoi-auto/hanoi-auto.component';
-import { MessageComponent              } from './_modules/_miscelaneous/chat/message/message.component';
-import { ChatComponent                 } from './_modules/_miscelaneous/chat/chat/chat.component';
-import { OcrPhotoCaptureComponent      } from './_modules/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
-import { BoardOnlineComponent          } from './_modules/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
 import { ConfigService                 } from './_services/config/config.service';
-import { BackendService                   } from './_services/backend/backend.service';
+import { BackendService                } from './_services/backend/backend.service';
 import { NavComponent                  } from './_modules/_home/nav/nav.component';
-import { DevComponent                  } from './_modules/__Testing/_dev/dev.component';
-import { SCMComponent                  } from './_modules/_home/scm/scm.component';
-import { TopicsComponent               } from './_modules/_home/topics/topics.component';
-import { OcrComponent                  } from './_modules/__Testing/ocr/ocr.component';
-import { RxJSPlaygroundComponent       } from './_modules/__Testing/rx-jsplayground/rx-jsplayground.component';
+import { SCMComponent                  } from './_modules/about/scm/scm.component';
+import { TopicsComponent               } from './_modules/about/topics/topics.component';
 import { HomeComponent                 } from './_modules/_home/home/home.component';
-import { SpeechRecognitionComponent    } from './_modules/__Testing/speech-recognition/speech-recognition.component';
-import { UntTestingComponent           } from './_modules/__Testing/backendtesting/unt-testing.component';
-import { IndexComponent                } from './_modules/_home/index/index.component';
+import { IndexComponent                } from './_modules/about/index/index.component';
 import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
 import { finalize, tap                 } from 'rxjs';
 import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
 import { ButtonModule                  } from 'primeng/button';
-import { AiPromptsComponent            } from './_modules/_home/ai-prompts/ai-prompts.component';
-import { StableReleasesComponent       } from './_modules/_home/stable-releases/stable-releases.component';
-import { OpenCvShapeReconComponent     } from './_modules/__Testing/open-cv-shape-recon/open-cv-shape-recon.component';
-import { ShapeReconCanvasComponent     } from './_modules/__Testing/shape-recon-canvas/shape-recon-canvas.component';
-import { BouncingBallComponent         } from './_modules/_miscelaneous/bouncing-ball/bouncing-ball.component';
-import { Hanoi3dComponent              } from './_modules/_games/hanoi3d/hanoi3d.component';
-import { TetrisComponent               } from './_modules/_games/tetris/tetris.component';
-import { MathParsingComponent } from './_modules/_miscelaneous/math-parsing/math-parsing.component';
+import { AiPromptsComponent            } from './_modules/about/llms/ai-prompts.component';
+import { AboutComponent                } from './_modules/about/about/about.component';
+import { HanoiAutoComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-auto/hanoi-auto.component';
+import { HanoiObservableComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-observable/hanoi-observable.component';
+import { HanoiTowersComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-towers/game-hanoi.component';
+import { TowerComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-towers/tower/tower.component';
+import { Hanoi3dComponent } from './_modules/__StableReleases/_games/hanoi3d/hanoi3d.component';
+import { SudokuComponent } from './_modules/__StableReleases/_games/sudoku/sudoku.component';
+import { TetrisComponent } from './_modules/__StableReleases/_games/tetris/tetris.component';
+import { BoardComponent } from './_modules/__StableReleases/_games/tic-tac-toe/offline/board/board.component';
+import { TicTacToeComponent } from './_modules/__StableReleases/_games/tic-tac-toe/offline/tic-tac-toe.component';
+import { BoardOnlineComponent } from './_modules/__StableReleases/_games/tic-tac-toe/tic-tac-toe-online/board/board.component';
+import { TicTacToeOnlineComponent } from './_modules/__StableReleases/_games/tic-tac-toe/tic-tac-toe-online/tic-tac-toe-online.component';
+import { BouncingBallComponent } from './_modules/__StableReleases/_miscelaneous/bouncing-ball/bouncing-ball.component';
+import { ChatComponent } from './_modules/__StableReleases/_miscelaneous/chat/chat/chat.component';
+import { MessageComponent } from './_modules/__StableReleases/_miscelaneous/chat/message/message.component';
+import { MathParsingComponent } from './_modules/__StableReleases/_miscelaneous/math-parsing/math-parsing.component';
+import { OcrPhotoCaptureComponent } from './_modules/__StableReleases/_miscelaneous/ocr-photo-capture/ocr-photo-capture.component';
+import { StableReleasesComponent } from './_modules/__StableReleases/stable-releases/stable-releases.component';
+import { DevComponent } from './_modules/__TestingReleases/_dev/dev.component';
+import { UntTestingComponent } from './_modules/__TestingReleases/backendtesting/unt-testing.component';
+import { OcrComponent } from './_modules/__TestingReleases/ocr/ocr.component';
+import { OpenCvShapeReconComponent } from './_modules/__TestingReleases/open-cv-shape-recon/open-cv-shape-recon.component';
+import { RxJSPlaygroundComponent } from './_modules/__TestingReleases/rx-jsplayground/rx-jsplayground.component';
+import { ShapeReconCanvasComponent } from './_modules/__TestingReleases/shape-recon-canvas/shape-recon-canvas.component';
+import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-recognition/speech-recognition.component';
+import { LoginComponent } from './_modules/about/login/login.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -141,7 +143,9 @@ export function loadConfig(configService: ConfigService) {
                     BouncingBallComponent,
                     Hanoi3dComponent,
                     TetrisComponent,
-                    MathParsingComponent
+                    MathParsingComponent,
+                    AboutComponent,
+                    LoginComponent
                   ],
     providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
       [

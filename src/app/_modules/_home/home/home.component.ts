@@ -30,7 +30,7 @@ export class HomeComponent {
         'text': '[SCM]',
       },
       {
-        'url': '/AiPrompts', 
+        'url': '/LLMs', 
         'text': '[LLMs]',
       }
     ];
