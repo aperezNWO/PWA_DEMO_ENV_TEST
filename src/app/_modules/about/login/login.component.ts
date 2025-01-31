@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { OAuthService } from 'angular-oauth2-oidc';
-import { CustomErrorHandler } from 'src/app/app.module';
+import { FacebookLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+
 
 @Component({
   selector: 'app-login',
@@ -9,62 +8,52 @@ import { CustomErrorHandler } from 'src/app/app.module';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit  {
-  message: string = '';
+  user: SocialUser | null = null;
+  isLoggedIn: boolean = false;
 
-  constructor(private oauthService: OAuthService, private router: Router, customErrorHandler : CustomErrorHandler) {
-    this.configureOAuth();
-  }
+  constructor(private authService: SocialAuthService) {}
 
-  private configureOAuth() {
-    this.oauthService.configure({
-      issuer: 'https://www.facebook.com/v12.0/dialog/oauth',
-      tokenEndpoint: 'https://graph.facebook.com/v3.3/oauth/access_token',
-      clientId: '1763416537924183',
-      redirectUri: window.location.origin + '/',
-      scope: 'email',
-      responseType: 'code'
+  ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      this.isLoggedIn = (user != null);
+      console.log("Facebook User:", this.user); // Log the user details
     });
-
-    this.oauthService.setupAutomaticSilentRefresh();
-
-    console.log('setup oautn')
-  }
-  
-  ngOnInit(): void {
-    if (this.oauthService.hasValidIdToken()) {
-      console.log('invalid token')
-      this.router.navigate(['/']);
-    }
   }
 
-  login() {
-    try
-    {
-      console.log('LOGIN')
-      this.oauthService.initLoginFlow();
-    } 
-    catch (error)
-    {
-      console.error('LOGIN ERROR : ' + error)
-    }
-
+  loginWithFacebook() {
+    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
+      (userData) => {
+        console.log("User Data:", userData);
+        // Here you can send the token to your backend
+        // Example:
+        // this.sendTokenToBackend(userData.authToken);
+      },
+      (error) => {
+        console.error("Facebook login error:", error);
+      }
+    );
   }
 
   logout() {
-    this.oauthService.logOut();
+    this.authService.signOut();
+    this.user = null;
+    this.isLoggedIn = false;
   }
 
-  isLoggedIn(): boolean {
-    return this.oauthService.hasValidAccessToken();
-  }
-
-  getUserName(): string {
-    const claims = this.oauthService.getIdentityClaims();
-    return claims ? claims['name'] : '';
-  }
-
-  onSubmit() {
-    // Handle form submission
-    console.log('Message:', this.message);
-  }
+  // Example function to send token to your backend (replace with your actual logic)
+/*  sendTokenToBackend(token: string) {
+    // Make an HTTP request to your backend to verify the token
+    // Example using HttpClient (you'll need to import HttpClientModule)
+    // this.http.post('/api/auth/facebook', { token }).subscribe(
+    //   (response) => {
+    //     console.log('Token sent to backend:', response);
+    //     // Handle successful token verification
+    //   },
+    //   (error) => {
+    //     console.error('Error sending token to backend:', error);
+    //     // Handle error
+    //   }
+    // );
+  }*/
 }

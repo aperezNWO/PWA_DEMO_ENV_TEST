@@ -53,7 +53,7 @@ import { RxJSPlaygroundComponent } from './_modules/__TestingReleases/rx-jsplayg
 import { ShapeReconCanvasComponent } from './_modules/__TestingReleases/shape-recon-canvas/shape-recon-canvas.component';
 import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-recognition/speech-recognition.component';
 import { LoginComponent } from './_modules/about/login/login.component';
-import { OAuthModule, OAuthService } from 'angular-oauth2-oidc';
+import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 //  
 @Injectable({
   providedIn: 'root'
@@ -159,6 +159,20 @@ export function loadConfig(configService: ConfigService) {
           deps      : [ConfigService],
           multi     : true
         },
+        {
+          provide: 'SocialAuthServiceConfig',
+          useValue: {
+            autoLogin: false, // Set to true if you want auto login
+            providers: [
+              {
+                id: FacebookLoginProvider.PROVIDER_ID,
+                provider: new FacebookLoginProvider(
+                  '1763416537924183' // Replace with your Facebook App ID
+                )
+              }
+            ]
+          } as SocialAuthServiceConfig,
+        }
        ],
     ],
     bootstrap: [AppComponent],
@@ -184,12 +198,7 @@ export function loadConfig(configService: ConfigService) {
         FormsModule, 
         AsyncPipe, 
         ButtonModule,
-        OAuthModule.forRoot({
-          resourceServer: {
-            allowedUrls: ['https://apereznwo.github.io/PWA_DEMO_ENV_TEST/Login'],
-            sendAccessToken: true,
-          }
-        })
+        SocialLoginModule // Add SocialLoginModule
     ]
 })
 export class AppModule {
