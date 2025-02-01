@@ -1,10 +1,11 @@
 <div *ngIf="!isLoggedIn">
-  <button (click)="loginWithFacebook()">Login with Facebook</button>
+    <button (click)="loginWithFacebook()">Login with Facebook</button>
 </div>
 
 <div *ngIf="isLoggedIn">
   <p>Welcome, {{ user?.name }}!</p>
-  <img [src]="user?.photoUrl" alt="Profile Picture">
+  <!--<img [src]="user?.photoUrl" alt="Profile Picture">-->
+
   <button (click)="logout()">Logout</button>
 </div>
 

@@ -1,33 +1,32 @@
 import { APP_INITIALIZER, ErrorHandler } from '@angular/core';
-import { Injectable, NgModule          } from '@angular/core';
-import { AsyncPipe, CommonModule, DatePipe, DecimalPipe        } from '@angular/common';
-import { FormsModule                   } from '@angular/forms';
-import { ReactiveFormsModule           } from '@angular/forms';
-import { BrowserModule                 } from '@angular/platform-browser';
-import { provideClientHydration        } from '@angular/platform-browser';
-import { BrowserAnimationsModule       } from '@angular/platform-browser/animations';
-import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';  
-import { HttpHandler, HttpInterceptor  } from '@angular/common/http';  
-import { HttpRequest, HttpResponse     } from '@angular/common/http';                 
-import { HttpClientModule              } from '@angular/common/http';
-import { AppComponent                  } from './app.component';
-import { AppRoutingModule              } from './app-routing.module';
-import { LogType                       } from './_models/algorithm.model';
-import { ConfigService                 } from './_services/config/config.service';
-import { BackendService                } from './_services/backend/backend.service';
-import { NavComponent                  } from './_modules/_home/nav/nav.component';
-import { SCMComponent                  } from './_modules/about/scm/scm.component';
-import { TopicsComponent               } from './_modules/about/topics/topics.component';
-import { HomeComponent                 } from './_modules/_home/home/home.component';
-import { IndexComponent                } from './_modules/about/index/index.component';
-import { NotFoundPageComponent         } from './_modules/_home/not-found-page/not-found-page.component';
-import { finalize, tap                 } from 'rxjs';
-import { NgbHighlight, NgbModule                } from '@ng-bootstrap/ng-bootstrap';
-import { NgbPaginationModule, NgbAlertModule    } from '@ng-bootstrap/ng-bootstrap';
-import { NgxSignaturePadModule         } from '@eve-sama/ngx-signature-pad';
-import { ButtonModule                  } from 'primeng/button';
-import { AiPromptsComponent            } from './_modules/about/llms/ai-prompts.component';
-import { AboutComponent                } from './_modules/about/about/about.component';
+import { Injectable, NgModule } from '@angular/core';
+import { AsyncPipe, CommonModule, DatePipe, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { provideClientHydration } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { HttpHandler, HttpInterceptor } from '@angular/common/http';
+import { HttpRequest, HttpResponse } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { LogType } from './_models/algorithm.model';
+import { ConfigService } from './_services/config/config.service';
+import { BackendService } from './_services/backend/backend.service';
+import { NavComponent } from './_modules/_home/nav/nav.component';
+import { SCMComponent } from './_modules/about/scm/scm.component';
+import { TopicsComponent } from './_modules/about/topics/topics.component';
+import { HomeComponent } from './_modules/_home/home/home.component';
+import { IndexComponent } from './_modules/about/index/index.component';
+import { NotFoundPageComponent } from './_modules/_home/not-found-page/not-found-page.component';
+import { finalize, tap } from 'rxjs';
+import { NgbHighlight, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgxSignaturePadModule } from '@eve-sama/ngx-signature-pad';
+import { ButtonModule } from 'primeng/button';
+import { AboutComponent } from './_modules/about/about/about.component';
 import { HanoiAutoComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-auto/hanoi-auto.component';
 import { HanoiObservableComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { HanoiTowersComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-towers/game-hanoi.component';
@@ -52,34 +51,34 @@ import { OpenCvShapeReconComponent } from './_modules/__TestingReleases/open-cv-
 import { RxJSPlaygroundComponent } from './_modules/__TestingReleases/rx-jsplayground/rx-jsplayground.component';
 import { ShapeReconCanvasComponent } from './_modules/__TestingReleases/shape-recon-canvas/shape-recon-canvas.component';
 import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-recognition/speech-recognition.component';
-import { LoginComponent } from './_modules/about/login/login.component';
+import { ContactFormComponent } from './_modules/about/contactForm/contact-form..component';
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { LLMListComponent } from './_modules/about/llms/llm-list.component';
 //  
 @Injectable({
   providedIn: 'root'
 })
 //
 export class CustomErrorHandler implements ErrorHandler {
+  //
+  constructor(public mcsdService: BackendService) { }
+  //
+  handleError(_error: Error): void {
+    // 
+    console.warn("[CUSTOM ERROR HANDLING]:\n" + _error.name + "\n" + _error.message);
     //
-    constructor(public mcsdService : BackendService) { } 
+    let logType: LogType = LogType.Error
     //
-    handleError(_error: Error): void 
-    { 
-      // 
-      console.warn("[CUSTOM ERROR HANDLING]:\n" + _error.name + "\n" + _error.message); 
-      //
-      let logType : LogType = LogType.Error
-      //
-      this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]",_error.message,logType);
-      //
-    }
+    this.mcsdService.SetLog("[CUSTOM ERROR HANDLING]", _error.message, logType);
+    //
+  }
 }
 //
 @Injectable({
   providedIn: 'root'
 })
 export class LoggingInterceptor implements HttpInterceptor {
-  constructor() {}
+  constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     const started = Date.now();
@@ -115,98 +114,94 @@ export function loadConfig(configService: ConfigService) {
 
 //
 @NgModule({
-    declarations: [
-                    AppComponent, 
-                    HomeComponent, 
-                    SudokuComponent, 
-                    TicTacToeComponent, 
-                    HanoiTowersComponent, 
-                    HanoiObservableComponent,
-                    HanoiAutoComponent,
-                    MessageComponent, 
-                    ChatComponent, 
-                    RxJSPlaygroundComponent,
-                    TicTacToeOnlineComponent, 
-                    OcrComponent, 
-                    OcrPhotoCaptureComponent,
-                    NavComponent, 
-                    DevComponent, 
-                    SCMComponent, 
-                    TopicsComponent, 
-                    UntTestingComponent,
-                    SpeechRecognitionComponent,
-                    IndexComponent,
-                    NotFoundPageComponent,
-                    AiPromptsComponent,
-                    StableReleasesComponent,
-                    OpenCvShapeReconComponent,
-                    ShapeReconCanvasComponent,
-                    BouncingBallComponent,
-                    Hanoi3dComponent,
-                    TetrisComponent,
-                    MathParsingComponent,
-                    AboutComponent,
-                    LoginComponent
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SudokuComponent,
+    TicTacToeComponent,
+    HanoiTowersComponent,
+    HanoiObservableComponent,
+    HanoiAutoComponent,
+    MessageComponent,
+    ChatComponent,
+    RxJSPlaygroundComponent,
+    TicTacToeOnlineComponent,
+    OcrComponent,
+    OcrPhotoCaptureComponent,
+    NavComponent,
+    DevComponent,
+    SCMComponent,
+    TopicsComponent,
+    UntTestingComponent,
+    SpeechRecognitionComponent,
+    IndexComponent,
+    NotFoundPageComponent,
+    LLMListComponent,
+    StableReleasesComponent,
+    OpenCvShapeReconComponent,
+    ShapeReconCanvasComponent,
+    BouncingBallComponent,
+    Hanoi3dComponent,
+    TetrisComponent,
+    MathParsingComponent,
+    AboutComponent,
+    ContactFormComponent
+  ],
+  providers: [DatePipe, DecimalPipe, HttpClient, provideClientHydration(),
+    [
+      { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
+      { provide: ErrorHandler, useClass: CustomErrorHandler },
+      ConfigService,
+      {
+        provide: APP_INITIALIZER,
+        useFactory: loadConfig,
+        deps: [ConfigService],
+        multi: true
+      },
+      {
+        provide: 'SocialAuthServiceConfig',
+        useValue: {
+          autoLogin: false, // Set to true if you want auto login
+          providers: [
+            {
+              id: FacebookLoginProvider.PROVIDER_ID,
+              provider: new FacebookLoginProvider(
+                '1763416537924183' // Replace with your Facebook App ID
+              )
+            }
+          ]
+        } as SocialAuthServiceConfig,
+      }
     ],
-    providers: [DatePipe, DecimalPipe,HttpClient, provideClientHydration(),
-      [
-        { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true },
-        { provide: ErrorHandler, useClass: CustomErrorHandler },
-        ConfigService,
-        {
-          provide   : APP_INITIALIZER,
-          useFactory: loadConfig,
-          deps      : [ConfigService],
-          multi     : true
-        },
-        {
-          provide: 'SocialAuthServiceConfig',
-          useValue: {
-            autoLogin: false, // Set to true if you want auto login
-            providers: [
-              {
-                id: FacebookLoginProvider.PROVIDER_ID,
-                provider: new FacebookLoginProvider(
-                  '1763416537924183' // Replace with your Facebook App ID
-                )
-              }
-            ]
-          } as SocialAuthServiceConfig,
-        }
-       ],
-    ],
-    bootstrap: [AppComponent],
-    imports: [
-        BoardComponent,
-        TowerComponent,
-        BoardOnlineComponent,
-        AppRoutingModule,
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        BrowserModule,
-        BrowserAnimationsModule,
-        NgxSignaturePadModule,
-        NgbModule,
-        NgbModule,
-        NgbPaginationModule, 
-        NgbAlertModule,
-        NgbHighlight, 
-        NgbPaginationModule,
-        DecimalPipe, 
-        FormsModule, 
-        AsyncPipe, 
-        ButtonModule,
-        SocialLoginModule // Add SocialLoginModule
-    ]
+  ],
+  bootstrap: [AppComponent],
+  imports: [
+    BoardComponent,
+    TowerComponent,
+    BoardOnlineComponent,
+    AppRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    NgxSignaturePadModule,
+    NgbModule,
+    NgbModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    NgbHighlight,
+    NgbPaginationModule,
+    DecimalPipe,
+    FormsModule,
+    AsyncPipe,
+    ButtonModule,
+    SocialLoginModule // Add SocialLoginModule
+  ]
 })
 export class AppModule {
-
   constructor() {
-
-   
+      //
   }
-
-  
 }

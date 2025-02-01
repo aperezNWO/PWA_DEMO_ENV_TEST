@@ -3,13 +3,14 @@ import { FacebookLoginProvider, SocialAuthService, SocialUser } from '@abacritt/
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-contact-form',
+  templateUrl: './contact-form.component.html',
+  styleUrl: './contact-form.component.css'
 })
-export class LoginComponent implements OnInit  {
+export class ContactFormComponent implements OnInit  {
   user: SocialUser | null = null;
   isLoggedIn: boolean = false;
+  //isLoggedIn: boolean = true;
 
   constructor(private authService: SocialAuthService) {}
 

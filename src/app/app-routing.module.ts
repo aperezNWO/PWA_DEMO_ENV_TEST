@@ -23,8 +23,8 @@ import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-
 import { HomeComponent } from './_modules/_home/home/home.component';
 import { NotFoundPageComponent } from './_modules/_home/not-found-page/not-found-page.component';
 import { IndexComponent } from './_modules/about/index/index.component';
-import { AiPromptsComponent } from './_modules/about/llms/ai-prompts.component';
-import { LoginComponent } from './_modules/about/login/login.component';
+import { LLMListComponent } from './_modules/about/llms/llm-list.component';
+import { ContactFormComponent } from './_modules/about/contactForm/contact-form..component';
 import { SCMComponent } from './_modules/about/scm/scm.component';
 import { TopicsComponent } from './_modules/about/topics/topics.component';
 import { AboutComponent } from './_modules/about/about/about.component';
@@ -61,9 +61,9 @@ export const routes : _Route[] = [
   { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
   { path: 'SCM'              , component: SCMComponent               , caption : 'About - SCM'           },
   { path: 'Topics'           , component: TopicsComponent            , caption : 'About - Topics'        },
-  { path: 'LLMs'             , component: AiPromptsComponent         , caption : 'About - LLM List'      },
+  { path: 'LLMs'             , component: LLMListComponent           , caption : 'About - LLM List'      },
   { path: 'Index'            , component: IndexComponent             , caption : 'About - Index'         },
-  { path: 'Login'            , component: LoginComponent             , caption : 'About - Login'         },
+  { path: 'ContactForm'      , component: ContactFormComponent       , caption : 'About - Contact Form'  },
   { path: 'About'            , component: AboutComponent             , caption : 'About'                 },
   { path: '**'               , component: NotFoundPageComponent      , caption : ''                      },
 ];

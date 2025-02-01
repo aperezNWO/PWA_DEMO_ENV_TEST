@@ -1,18 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LLMListComponent           } from './llm-list.component';
 
-import { AiPromptsComponent } from './ai-prompts.component';
-
-describe('AiPromptsComponent', () => {
-  let component: AiPromptsComponent;
-  let fixture: ComponentFixture<AiPromptsComponent>;
+describe('LMListComponent', () => {
+  let component: LLMListComponent;
+  let fixture: ComponentFixture<LLMListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AiPromptsComponent]
+      imports: [LLMListComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AiPromptsComponent);
+    fixture = TestBed.createComponent(LLMListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

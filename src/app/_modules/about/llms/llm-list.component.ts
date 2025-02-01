@@ -2,11 +2,11 @@ import { Component    } from '@angular/core';
 import { _environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-ai-prompts',
-  templateUrl: './ai-prompts.component.html',
-  styleUrl: './ai-prompts.component.css'
+  selector: 'llm-list',
+  templateUrl: './llm-list.component.html',
+  styleUrl: './llm-list.component.css'
 })
-export class AiPromptsComponent {
+export class LLMListComponent {
       public aiPrompts : any[] = [];
       constructor()
       {
