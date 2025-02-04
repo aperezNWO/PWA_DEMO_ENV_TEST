@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FacebookLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
-
 
 @Component({
   selector: 'app-contact-form',
@@ -12,8 +12,26 @@ export class ContactFormComponent implements OnInit  {
   isLoggedIn: boolean = false;
   //isLoggedIn: boolean = true;
 
-  constructor(private authService: SocialAuthService) {}
+  contactForm!: FormGroup;
 
+  constructor(private authService: SocialAuthService, private fb: FormBuilder) {
+
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', [Validators.required, Validators.minLength(10)]],
+    });
+  }
+
+  onSubmit() {
+    if (this.contactForm.valid) {
+      console.log('Form Submitted!', this.contactForm.value);
+      // Here you can handle form submission, e.g., send data to a server
+    } else {
+      console.log('Form is invalid');
+    }
+  }
+  
   ngOnInit() {
     this.authService.authState.subscribe((user) => {
       this.user = user;
