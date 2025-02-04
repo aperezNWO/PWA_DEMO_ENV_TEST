@@ -16,10 +16,22 @@ export class ContactFormComponent implements OnInit  {
 
   constructor(private authService: SocialAuthService, private fb: FormBuilder) {
 
+
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.minLength(10)]],
+    });
+
+  }
+
+  ngOnInit() {
+    this.authService.authState.subscribe((user) => {
+
+      //this.user = user;
+      this.isLoggedIn = (user != null);
+      console.log("Facebook User:", this.user); // Log the user details
+
     });
   }
 
@@ -27,18 +39,12 @@ export class ContactFormComponent implements OnInit  {
     if (this.contactForm.valid) {
       console.log('Form Submitted!', this.contactForm.value);
       // Here you can handle form submission, e.g., send data to a server
+      this.logout();
     } else {
       console.log('Form is invalid');
     }
   }
   
-  ngOnInit() {
-    this.authService.authState.subscribe((user) => {
-      this.user = user;
-      this.isLoggedIn = (user != null);
-      console.log("Facebook User:", this.user); // Log the user details
-    });
-  }
 
   loginWithFacebook() {
     this.authService.signIn(FacebookLoginProvider.PROVIDER_ID).then(
@@ -47,6 +53,8 @@ export class ContactFormComponent implements OnInit  {
         // Here you can send the token to your backend
         // Example:
         // this.sendTokenToBackend(userData.authToken);
+        this.contactForm.get('name')?.reset(userData.name);
+        this.contactForm.get('email')?.reset(userData.email);
       },
       (error) => {
         console.error("Facebook login error:", error);

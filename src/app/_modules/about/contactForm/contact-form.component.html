@@ -3,7 +3,7 @@
 </div>
 
 <div *ngIf="isLoggedIn">
-  <p>Welcome, {{ user?.name }}!</p>
+  <!--<p>Welcome, {{ user?.name }}!</p>-->
   <!--<img [src]="user?.photoUrl" alt="Profile Picture">-->
 
   <div class="contact-form-container">
@@ -11,7 +11,7 @@
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="name">Name</label>
-        <input id="name" type="text" formControlName="name" />
+        <input id="name" type="text" formControlName="name" readonly="readonly"  />
         <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error">
           Name is required and must be at least 3 characters long.
         </div>
@@ -19,7 +19,7 @@
   
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" />
+        <input id="email" type="email" formControlName="email" readonly="readonly" />
         <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
           Please enter a valid email address.
         </div>
