@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1738641652616,
+  "timestamp": 1738641908680,
   "index": "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html",
   "assetGroups": [
     {
@@ -66,7 +66,7 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/973.316ac4d5fee2f217.js": "fea8414d15f033ec1561c7706d1902fe8f5f3632",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/Inter-italic.var.c44ea10c00012b51.woff2": "9995712e0ca3cda14c7d6014abe0f979cf57ec53",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/Inter-roman.var.ed4cd0c7c0b73726.woff2": "d56a83c1e298702010cde038317713aaef23fe6c",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/config.json": "26c9c3a714bd1396366a2eb029d7644ccb4029e7",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/config.json": "c3e531ada1587bb049ad637f7ef6e4b4b3589361",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
@@ -90,7 +90,7 @@
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/color.febf5f041e83bfbe.png": "c54e4eac0b6c88b9da8cfdf00b1d9093b828286b",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/hue.de26927932756490.png": "ec215387067c733aed6649b96d8a81798a58b21b",
-    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "c527a538dffd32216c7386ca34e0aa599bcb4173",
+    "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/index.html": "2f2b0eb3c967531616c326c8fae066f6c1f05836",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/main.1ca9b7fa1fee5173.js": "523a16f56fa73881ccac62c0efeb50ea8164422e",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/manifest.webmanifest": "e13577e9817bde7c3ea1af3fcc523f86335d0f73",
     "https://apereznwo.github.io/PWA_DEMO_ENV_TEST/polyfills.d4aa8125b65d4528.js": "a063506f957de345af77eb04df62e5280a953eb1",
