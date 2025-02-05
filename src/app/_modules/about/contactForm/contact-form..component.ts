@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FacebookLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-form',
@@ -14,7 +15,7 @@ export class ContactFormComponent implements OnInit  {
 
   contactForm!: FormGroup;
 
-  constructor(private authService: SocialAuthService, private fb: FormBuilder) {
+  constructor(private authService: SocialAuthService, private fb: FormBuilder, private http: HttpClient) {
 
 
     this.contactForm = this.fb.group({
@@ -39,6 +40,26 @@ export class ContactFormComponent implements OnInit  {
     if (this.contactForm.valid) {
       console.log('Form Submitted!', this.contactForm.value);
       // Here you can handle form submission, e.g., send data to a server
+
+      if (this.contactForm.valid) {
+        const formData = this.contactForm.value;
+  
+        // Send the form data to the backend
+        this.http.post('https://v4xzkl-4000.csb.app/contact', formData).subscribe(
+          (response) => {
+            console.log('Form submitted successfully!', response);
+            alert('Thank you! Your message has been sent.');
+            this.contactForm.reset(); // Reset the form after successful submission
+          },
+          (error) => {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting the form. Please try again.');
+          }
+        );
+      } else {
+        console.log('Form is invalid');
+      }
+
       this.logout();
     } else {
       console.log('Form is invalid');
