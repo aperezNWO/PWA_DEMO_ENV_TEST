@@ -11,7 +11,7 @@ import { ActivatedRoute                         } from '@angular/router';
 })
 export class AppComponent {
    //
-   title          : string = 'PWA_DEMO_ENV_TEST';
+   title          : string = '[TUTORIAS DE PROGRAMACION - FORMULARIO DE CONTACTO]';
    //
    _title         : string = '';
    _appName       : string = '';
@@ -41,8 +41,6 @@ export class AppComponent {
     this._appVersion = keyValue;
     //
     console.log(`${keyName} :  ${this.configService.getConfigValue(keyName)} `)
-    //
-    //router.navigateByUrl('/Home');
   }
   //
   ngOnInit() {

@@ -1,5 +1,11 @@
+<hr>
+<h2>Contáctenos</h2>
+<hr>
 <div *ngIf="!isLoggedIn">
-    <button (click)="loginWithFacebook()">Login with Facebook</button>
+    <button (click)="loginWithFacebook()">AutoCompletar con Facebook</button>
+    <hr>
+    <a (click)="this.isLoggedIn = true;">Ir a Formulario</a>
+    <hr>
 </div>
 
 <div *ngIf="isLoggedIn">
@@ -7,37 +13,37 @@
   <!--<img [src]="user?.photoUrl" alt="Profile Picture">-->
 
   <div class="contact-form-container">
-    <h2>Contact Us</h2>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="name">Name</label>
-        <input id="name" type="text" formControlName="name" readonly="readonly"  />
+        <label for="name">Nombre</label>
+        <input id="name" type="text" maxlength="100" formControlName="name" placeholder="Ingrese su nombre"/>
         <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="error">
-          Name is required and must be at least 3 characters long.
+          Nombre es requerido y debe ser por lo menos 3 caracteres de largo.
         </div>
       </div>
   
       <div class="form-group">
         <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" readonly="readonly" />
+        <input id="email" type="email" formControlName="email" placeholder="Ingrese su email"/>
         <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="error">
-          Please enter a valid email address.
+          Por favor ingrese un email válido.
         </div>
       </div>
   
       <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" formControlName="message"></textarea>
+        <label for="message">Mensaje</label>
+        <textarea id="message" formControlName="message" maxlength="100" placeholder="Ingrese su mensaje (máximo 100 caracteres)"></textarea>
         <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
           Message is required and must be at least 10 characters long.
+          Mensaje es rquerido y debe ser al menos 10 caracteres de largo
         </div>
       </div>
   
-      <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+      <button type="submit" [disabled]="contactForm.invalid">[Enviar]</button>
     </form>
   </div>
 
-  <button (click)="logout()">Logout</button>
+  <span *ngIf="!isLoggedIn"><button (click)="logout()">Logout</button></span>
 </div>
 <!--
 <div align="right">

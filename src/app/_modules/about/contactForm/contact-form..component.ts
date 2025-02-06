@@ -48,7 +48,7 @@ export class ContactFormComponent implements OnInit  {
         this.http.post('https://9rfn3t-4000.csb.app/contact', formData).subscribe(
           (response) => {
             console.log('Form submitted successfully!', response);
-            alert('Thank you! Your message has been sent.');
+            alert('Gracias! Se le enviará pronto un email con más información.');
             this.contactForm.reset(); // Reset the form after successful submission
           },
           (error) => {
