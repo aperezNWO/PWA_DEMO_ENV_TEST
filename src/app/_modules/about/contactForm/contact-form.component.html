@@ -34,8 +34,7 @@
         <label for="message">Mensaje</label>
         <textarea id="message" formControlName="message" maxlength="100" placeholder="Ingrese su mensaje (máximo 100 caracteres)"></textarea>
         <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="error">
-          Message is required and must be at least 10 characters long.
-          Mensaje es rquerido y debe ser al menos 10 caracteres de largo
+             Mensaje es rquerido y debe ser al menos 10 caracteres de largo
         </div>
       </div>
   

@@ -45,7 +45,7 @@ export class AppComponent {
   //
   ngOnInit() {
       //
-      this.titleService.setTitle(`${this._appName} ${this._appVersion}`);
+      this.titleService.setTitle(`${this._appName} - ${this._appVersion}`);
       //
       this.route.queryParams.subscribe(params => {
         //
