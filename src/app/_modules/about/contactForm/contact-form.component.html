@@ -2,9 +2,9 @@
 <h2>Contáctenos</h2>
 <hr>
 <div *ngIf="!isLoggedIn">
-    <button (click)="loginWithFacebook()">AutoCompletar con Facebook</button>
-    <hr>
     <a (click)="this.isLoggedIn = true;">Ir a Formulario</a>
+    <hr>
+    <button (click)="loginWithFacebook()">AutoCompletar con Facebook</button>
     <hr>
 </div>
 
