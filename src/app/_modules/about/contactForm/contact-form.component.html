@@ -5,7 +5,6 @@
     <a (click)="this.isLoggedIn = true;">Ir a Formulario</a>
     <hr>
     <button (click)="loginWithFacebook()">AutoCompletar con Facebook</button>
-    <hr>
 </div>
 
 <div *ngIf="isLoggedIn">
@@ -44,6 +43,7 @@
 
   <span *ngIf="!isLoggedIn"><button (click)="logout()">Logout</button></span>
 </div>
+<hr>
 <!--
 <div align="right">
     <a routerLink="/Home">[Volver al Inicio]</a>
