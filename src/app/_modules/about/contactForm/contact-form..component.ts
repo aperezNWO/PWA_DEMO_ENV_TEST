@@ -10,8 +10,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactFormComponent implements OnInit  {
   user: SocialUser | null = null;
-  isLoggedIn: boolean = false;
-  //isLoggedIn: boolean = true;
+  //isLoggedIn: boolean = false;
+  isLoggedIn: boolean = true;
 
   contactForm!: FormGroup;
 
