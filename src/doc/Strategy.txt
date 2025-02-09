@@ -282,3 +282,26 @@ https://chat.openai.com/share/f383e00f-3b68-45c8-ad3f-d5bd32b9933e
             -- [_] env_LANDING => MARKETING.
 
 /////////////////////////////////////////////
+
+
+-- [_] CONTACT FORM.
+
+      -- [_]  ADMIN WEB SITE.
+
+            -- [_]  CHANGE LANDING FOR ADMIN.
+
+            -- [_]  ADD CONTACT FORM LOG GRID.
+ 
+      -- [_]  CONTACT FORM.
+
+            -- [_]  RENEW TEST ENV.
+
+            -- [_]  CHANGE DEV ENV FOR CONTACT ENV.
+
+            -- [_]  ADD FORM "ContacFormoAuth" to CONTACT ENV ( as test).
+
+            -- [_]  LEAVE FORM "ContacFormo" to CONTACT ENV ( as PUBLIC / PROD).
+
+-- [_] PEDING FRECODECAMP ENV (ML / TENSORFLOW / ETC).
+
+/////////////////////////////////////////////
