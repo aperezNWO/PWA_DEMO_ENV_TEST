@@ -28,6 +28,7 @@ import { ContactFormComponent } from './_modules/about/contactForm/contact-form.
 import { SCMComponent } from './_modules/about/scm/scm.component';
 import { TopicsComponent } from './_modules/about/topics/topics.component';
 import { AboutComponent } from './_modules/about/about/about.component';
+import { WebAssemblyComponent } from './_modules/__TestingReleases/web-assembly/web-assembly.component';
 
 //
 export interface _Route extends Route
@@ -49,14 +50,15 @@ export const routes : _Route[] = [
   { path: 'RxJsPlayground'   , component: RxJSPlaygroundComponent    , caption : 'RxJs-Playground'     },
   { path: 'OcrPhotoCapture'  , component: OcrPhotoCaptureComponent   , caption : 'Ocr-Photo-Capture'   },
   { path: 'Ocr'              , component: OcrComponent               , caption : 'Ocr'                 },
-  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                     },
-  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech  - Recognition'    },
-  { path: 'ShapeReconCanvas' , component: ShapeReconCanvasComponent  , caption : 'Shape   - Recon - Canvas' },
-  { path: 'ShapeRecognition' , component: OpenCvShapeReconComponent  , caption : 'Shape   - Recognition' },
-  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend - Testing'     },
-  { path: 'BouncingBall'     , component: BouncingBallComponent      , caption : 'Boucing - Testing'     },
-  { path: 'Tetris'           , component: TetrisComponent            , caption : 'Tetris  - Testing'     },
-  { path: 'MathParsing'      , component: MathParsingComponent       , caption : 'Math    - Testing'     },
+  { path: 'Chat'             , component: ChatComponent              , caption : 'Chat'                          },
+  { path: 'SpeechRecognition', component: SpeechRecognitionComponent , caption : 'Speech       - Recognition'    },
+  { path: 'ShapeReconCanvas' , component: ShapeReconCanvasComponent  , caption : 'Shape        - Recon - Canvas' },
+  { path: 'ShapeRecognition' , component: OpenCvShapeReconComponent  , caption : 'Shape        - Recognition' },
+  { path: 'BackendTesting'   , component: UntTestingComponent        , caption : 'Backend      - Testing'     },
+  { path: 'BouncingBall'     , component: BouncingBallComponent      , caption : 'Boucing      - Testing'     },
+  { path: 'Tetris'           , component: TetrisComponent            , caption : 'Tetris       - Testing'     },
+  { path: 'MathParsing'      , component: MathParsingComponent       , caption : 'Math         - Testing'     },
+  { path: 'WebAssembly'      , component: WebAssemblyComponent       , caption : 'WebAsemmbly  - Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
   { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
   { path: 'SCM'              , component: SCMComponent               , caption : 'About - SCM'           },

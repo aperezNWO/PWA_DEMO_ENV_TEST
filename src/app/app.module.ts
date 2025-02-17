@@ -54,6 +54,7 @@ import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-
 import { ContactFormComponent } from './_modules/about/contactForm/contact-form..component';
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { LLMListComponent } from './_modules/about/llms/llm-list.component';
+import { WebAssemblyComponent } from './_modules/__TestingReleases/web-assembly/web-assembly.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -145,7 +146,8 @@ export function loadConfig(configService: ConfigService) {
     TetrisComponent,
     MathParsingComponent,
     AboutComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    WebAssemblyComponent
   ],
   providers: [DatePipe, DecimalPipe, HttpClient, provideClientHydration(),
     [
