@@ -23,7 +23,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/assets/wasm/hello.wasm",
+              {
+                "glob": "**/*.wasm",
+                "input": "src/assets/",
+                "output": "/assets/"
+              },
               "src/manifest.webmanifest",
               "src/manifest.webmanifest",
               "src/manifest.webmanifest"

@@ -22,14 +22,19 @@
     "lib": [
       "ES2022",
       "dom"
-    ],
-    "resolveJsonModule": true,
-    "esModuleInterop": true
+    ],  
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+ "include": [
+    "src/**/*",
+    "src/**/*.d.ts"
+  ]
 }
