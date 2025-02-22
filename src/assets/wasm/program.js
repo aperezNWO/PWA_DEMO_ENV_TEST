@@ -621,7 +621,7 @@ function createExportWrapper(name, nargs) {
 
 var wasmBinaryFile;
 function findWasmBinary() {
-    return locateFile('/assets/wasm/program.wasm');
+    return locateFile('https://apereznwo.github.io/PWA_DEMO_ENV_TEST/assets/wasm/program.wasm');
 }
 
 function getBinarySync(file) {
