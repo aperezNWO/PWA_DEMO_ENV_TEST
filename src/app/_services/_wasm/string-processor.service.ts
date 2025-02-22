@@ -4,7 +4,6 @@ import program from 'src/assets/wasm/program';
 
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +14,24 @@ export class StringProcessorService {
   async initialize() {
     if (!this.isLoaded) {
       try {
-        this.wasmModule = await program();
-        this.isLoaded = true;
+
+        fetch('assets/wasm/program.wasm')
+          .then(response => response.arrayBuffer())
+          .then(bytes => WebAssembly.instantiate(bytes, {
+            env: {
+              memory: new WebAssembly.Memory({ initial: 256, maximum: 512 }),  // Shared memory (if required)
+              print: (arg: number) => console.log("WASM says:", arg), // Example import function
+              abort: () => console.error("WASM aborted!") // Handle errors from WASM
+            }
+          }))
+          .then(({ instance }) => {
+            console.log("WASM Loaded Successfully!", instance);
+            this.isLoaded = true;
+          })
+          .catch(err => console.error("Failed to load WASM:", err));
+
+        //this.wasmModule = await program();
+        //this.isLoaded = true;
       } catch (error) {
         console.error('Failed to load WebAssembly module:', error);
         throw error;
