@@ -1,0 +1,116 @@
+<div class="content" align="center">
+    <h1>{{this.pageTitle}}</h1>
+    <hr>
+    <div class="reference" align="right">
+      <button class="btn btn-primary" (click)="this.toggleList()">{{this.toogleLisCaption}}</button>
+      <ul *ngIf="isListVisible" align="left" widdth="10px">
+          <li> [Frontend]
+            <ul>
+              <li><a [routerLink]="'/GridParam'"         [queryParams]="{ searchTerm: 'c094e0c5-c29b-4bdf-91ea-8204bb6e8942' , pageName : 'PAGE_DEMOS_ANGULAR_JAVASCRIPT' }">[Angular]</a></li>
+            </ul>
+          </li>
+          <li>[Backend]
+            <ul>
+              <li><a [routerLink]="'/GridParam'"         [queryParams]="{ searchTerm: '40dd1cce-91b6-4fa3-bb64-053130fd1ff6' , pageName : 'PAGE_DEMOS_NETCORE_CPP'        }">[c++ / dll source]</a></li>
+            </ul>
+            <UL>
+              <LI><a [routerLink]="'/GridParam'"         [queryParams]="{ searchTerm: 'ae1c7a78-3fd5-4e41-965f-0bfd091c4a1d' , pageName : 'PAGE_DEMOS_NETCORE_CPP'        }">[c++ / .net core dll import]</a></LI>
+            </UL>
+          </li>
+          <li>[Librerias]
+              <ul>
+                <li><a href="https://www.npmjs.com/package/ngx-signaturepad" target="_blank">[ngx-signaturepad]</a></li>
+              </ul>
+              <ul>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video" target="_blank">[HTML Video]</a></li>
+              </ul>
+              <ul>
+                <li><a href="https://docs.opencv.org/4.x/d5/d10/tutorial_js_root.html" target="_blank">[OpenCv / Javascript]</a></li>
+              </ul>
+              <ul>
+                <li><a href="https://docs.opencv.org/4.x/dc/da3/tutorial_copyMakeBorder.html" target="_blank">[OpenCv / C++]</a></li>
+              </ul>
+            </li>
+          <li>[Temas]
+              <ul>
+                <li><a href="https://en.wikipedia.org/wiki/Computer_vision" target="_blank">[Computer Vision]</a></li>
+              </ul>
+          </li>
+      </ul>
+  </div>  
+   <!-- [hidden]="this.hiddenCanvasContainer"-->
+    <div id="canvasContainer" [hidden]="this.hiddenCanvasContainer">
+        <hr/>
+        <!-- CANVAS INICIO   -->
+        <div aling="center">Please use the finger or the mouse pointer to draw</div>
+        <br>
+        <ngx-signature-pad
+          #signature
+          [options]="options"
+          (beginSign)="onBeginSign()"
+          (endSign)="onEndSign()">
+        </ngx-signature-pad>
+        <!-- CANVAS FIN      -->
+        <!-- BOTONES INICIO   -->
+        <hr/>
+        <input type="button" value="{{this.statusButton}}" (click)="this.saveSignature()" [disabled]="(this.statusButton=='..parsing..')">
+        |
+        <button (click)="this.clearSignature()">Clear Signature</button>
+        <br>
+        <!-- BOTONES FIN      -->
+    </div> 
+    <!--[hidden]="this.hiddenCameraContainer"-->
+    <div id ="cameraContainer" [hidden]="this.hiddenCameraContainer">
+       <hr>
+       <!--[hidden]="this.cameraContainerHidden"-->
+       <div class="camera-container" [hidden]="this.cameraContainerHidden">
+            <video #video autoplay [style]="this.videoStyle"></video>
+            <canvas #canvas hidden ></canvas>
+       </div>
+       <!--[hidden]="this.capturedImageHidden"-->
+       <img [src]="capturedImage" *ngIf="capturedImage"  alt="Captured Photo" [hidden]="this.capturedImageHidden"/>
+       <hr />
+        <!-- BOTONES INICIO -->
+        <button (click)="capturePhoto()" [disabled]="(this.captureButtonDisabled)">{{this.captureButtonStatus}}</button>
+        |
+        <button (click)="saveImage()" [disabled]="(this.saveImageButtonDisabled)">{{this.statusButtonSaveImage}}</button>
+        |
+        <button (click)="flipCamera()">Flip Camera</button>
+        <!-- BOTONES FIN    -->
+    </div>
+    <hr>
+    <!-- STATUS INICIO -->
+    <span style="padding:2px; width:100px;height:10px;background-color: azure;">{{this.status_message()}}</span>
+    <hr />
+    <!-- STATUS FIN        -->
+    <!-- FORMULARIO INICIO -->
+    <div class="form-group" align="left" id="SourceListDiv">
+      <label for="sourceList"><span id="tituloListadoLenguajes">{{this.tituloListadOrigen}}</span></label>
+      &nbsp;<select   id="sourceList"
+                      name="sourceList"
+                      #_sourceList 
+                      (change)="this.selectionChange()">
+                      <option *ngFor="let _sourceName of __sourceList" 
+                      [value]="_sourceName._index"
+                      [selected]="_sourceName._selected">{{_sourceName._value}}</option>
+      </select>
+    </div>      
+    <div class="form-group" align="left" id="EngineListDiv">
+      <label for="engineList"><span id="titleEngines">{{this.titleEngineList}}</span></label>
+      &nbsp;<select   id="engineList"
+                      name="engineList"
+                      #_engineList 
+                      (change)="this.selectionChangeEngines()">
+                      <option *ngFor="let _engineName of __engineList" 
+                      [value]="_engineName._index"
+                      [selected]="_engineName._selected">{{_engineName._value}}</option>
+      </select>
+    </div>
+    <!-- FORMULARIO FIN -->
+    <div align="right">
+        <a [routerLink]="'/PageUrlList'" [queryParams]="{pageName : 'PAGE_DEMOS_MISELANEOUS_INDEX'}" >[Volver al Menu]</a>
+    </div>
+  </div>
+  
+  
+
