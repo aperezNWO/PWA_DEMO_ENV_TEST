@@ -7,7 +7,6 @@
     --[_] "defaultConnection": "workstation id=webapiangulardemo.mssql.somee.com;packet size=4096;user id=aperezNWO_SQLLogin_1;pwd=aperezNWO_SQLLogin_1;data source=webapiangulardemo.mssql.somee.com;persist security info=False;initial catalog=webapiangulardemo",
 
 
-
 ////////////////////////////////////////////////////////////////////////////
 
 --[_] URL PROD : https://apereznwo.github.io/CS_WebApiAngularDemo-forked-/

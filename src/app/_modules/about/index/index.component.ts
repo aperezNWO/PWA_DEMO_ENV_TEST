@@ -79,10 +79,10 @@ export class IndexComponent {
   public _Pagelist = new BehaviorSubject<_Route[]>([]);
   //
   public _state: _SearchState = {
-    page: 1,
-    pageSize: 4,
-    searchTerm: '',
-    sortColumn: '',
+    page         : 1,
+    pageSize     : 8,
+    searchTerm   : '',
+    sortColumn   : '',
     sortDirection: '',
   };
   //////////////////////////////////////////////////////////

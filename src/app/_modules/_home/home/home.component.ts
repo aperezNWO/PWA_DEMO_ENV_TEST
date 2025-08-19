@@ -25,14 +25,6 @@ export class HomeComponent {
         'url': '/StableReleases', 
         'text': '[PRODUCTION]',
       },    
-      {
-        'url': '/SCM',
-        'text': '[SCM]',
-      },
-      {
-        'url': '/LLMs', 
-        'text': '[LLMs]',
-      }
     ];
   //
   constructor(private titleService: Title, private configService: ConfigService,public customErrorHandler : CustomErrorHandler,public loggingInterceptor : LoggingInterceptor) {

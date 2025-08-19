@@ -51,7 +51,7 @@ import { OpenCvShapeReconComponent } from './_modules/__TestingReleases/open-cv-
 import { RxJSPlaygroundComponent } from './_modules/__TestingReleases/rx-jsplayground/rx-jsplayground.component';
 import { ShapeReconCanvasComponent } from './_modules/__TestingReleases/shape-recon-canvas/shape-recon-canvas.component';
 import { SpeechRecognitionComponent } from './_modules/__TestingReleases/speech-recognition/speech-recognition.component';
-import { ContactFormComponent } from './_modules/about/contactForm/contact-form..component';
+import { ContactFormComponent } from './_modules/__StableReleases/contactForm/contact-form..component';
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { LLMListComponent } from './_modules/about/llms/llm-list.component';
 import { WebAssemblyComponent } from './_modules/__TestingReleases/web-assembly/web-assembly.component';

@@ -24,7 +24,7 @@ import { HomeComponent } from './_modules/_home/home/home.component';
 import { NotFoundPageComponent } from './_modules/_home/not-found-page/not-found-page.component';
 import { IndexComponent } from './_modules/about/index/index.component';
 import { LLMListComponent } from './_modules/about/llms/llm-list.component';
-import { ContactFormComponent } from './_modules/about/contactForm/contact-form..component';
+import { ContactFormComponent } from './_modules/__StableReleases/contactForm/contact-form..component';
 import { SCMComponent } from './_modules/about/scm/scm.component';
 import { TopicsComponent } from './_modules/about/topics/topics.component';
 import { AboutComponent } from './_modules/about/about/about.component';

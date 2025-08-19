@@ -1,7 +1,5 @@
-<hr>
 <h2>Contáctenos</h2>
 <hr>
-
 <div *ngIf="isLoggedIn">
   <!--<p>Welcome, {{ user?.name }}!</p>-->
   <!--<img [src]="user?.photoUrl" alt="Profile Picture">-->
@@ -35,14 +33,9 @@
       <button type="submit" [disabled]="contactForm.invalid">[Enviar]</button>
     </form>
   </div>
-
-  <hr>
 </div>
-
-
 <div *ngIf="!isLoggedIn">
     <a (click)="this.isLoggedIn = true;">Volver al Formulario</a>
-    <hr>
 </div>
 
 <!--
