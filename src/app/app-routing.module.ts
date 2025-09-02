@@ -1,5 +1,5 @@
 import { NgModule                      } from '@angular/core';
-import { Route, RouterModule, Routes   } from '@angular/router';
+import { Route, RouterModule  } from '@angular/router';
 import { HanoiAutoComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-auto/hanoi-auto.component';
 import { HanoiObservableComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-observable/hanoi-observable.component';
 import { HanoiTowersComponent } from './_modules/__StableReleases/_games/hanoi/hanoi-towers/game-hanoi.component';
@@ -29,6 +29,7 @@ import { SCMComponent } from './_modules/about/scm/scm.component';
 import { TopicsComponent } from './_modules/about/topics/topics.component';
 import { AboutComponent } from './_modules/about/about/about.component';
 import { WebAssemblyComponent } from './_modules/__TestingReleases/web-assembly/web-assembly.component';
+import { AskLLMComponent } from './_modules/__TestingReleases/ask-llm/ask-llm.component';
 
 //
 export interface _Route extends Route
@@ -59,6 +60,7 @@ export const routes : _Route[] = [
   { path: 'Tetris'           , component: TetrisComponent            , caption : 'Tetris       - Testing'     },
   { path: 'MathParsing'      , component: MathParsingComponent       , caption : 'Math         - Testing'     },
   { path: 'WebAssembly'      , component: WebAssemblyComponent       , caption : 'WebAsemmbly  - Testing'     },
+  { path: 'AskLLM'           , component: AskLLMComponent            , caption : 'Ask LLM      - Testing'     },
   { path: 'Dev'              , component: DevComponent               , caption : 'Testing Releases'      },
   { path: 'StableReleases'   , component: StableReleasesComponent    , caption : 'Stable Releases'       },
   { path: 'SCM'              , component: SCMComponent               , caption : 'About - SCM'           },

@@ -55,6 +55,7 @@ import { ContactFormComponent } from './_modules/__StableReleases/contactForm/co
 import { FacebookLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { LLMListComponent } from './_modules/about/llms/llm-list.component';
 import { WebAssemblyComponent } from './_modules/__TestingReleases/web-assembly/web-assembly.component';
+import { AskLLMComponent } from './_modules/__TestingReleases/ask-llm/ask-llm.component';
 //  
 @Injectable({
   providedIn: 'root'
@@ -147,7 +148,8 @@ export function loadConfig(configService: ConfigService) {
     MathParsingComponent,
     AboutComponent,
     ContactFormComponent,
-    WebAssemblyComponent
+    WebAssemblyComponent,
+    AskLLMComponent,    
   ],
   providers: [DatePipe, DecimalPipe, HttpClient, provideClientHydration(),
     [
